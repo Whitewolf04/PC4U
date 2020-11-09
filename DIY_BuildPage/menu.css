@@ -38,7 +38,7 @@
     font-family: 'Arial';
 }
 
-#menu button:hover, a:hover
+button:hover, a:hover
 {
     cursor:pointer;
     color: cornflowerblue;

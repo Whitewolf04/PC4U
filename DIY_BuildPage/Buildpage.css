@@ -4,29 +4,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#highBudget {
+#even {
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: #d9d9d9;
 }
 
-#IntelMidBudget {
-    padding-bottom: 50px;
-    padding-top: 50px;
-}
-
-#AMDMidBudget {
-    padding-bottom: 50px;
-    padding-top: 50px;
-    background-color: #d9d9d9;
-}
-
-#IntelLowBudget {
-    padding-bottom: 50px;
-    padding-top: 50px;
-}
-
-#AMDLowBudget {
+#odd {
     padding-bottom: 50px;
     padding-top: 50px;
     background-color: #d9d9d9;
