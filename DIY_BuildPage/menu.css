@@ -39,3 +39,7 @@
 {
     display:inline-block;
 }
+
+#logo {
+    padding: 0;
+}
