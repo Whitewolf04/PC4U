@@ -6,25 +6,29 @@
     <title>PC4U</title>
     <link rel="stylesheet" type="text/css" href="DIY_Mainpage.css" />
     <link rel="stylesheet" type="text/css" href="menu.css" />
-    <script type = "text/javascript" src = "menu.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
 </head>
 
 <body>
-    <form id = "menu">
-        <div id = buttonGroup>
-            <img src="logo.png"/>
-            <a href="index.html">Main Page</a>
-            <a href="newsletter.html">Newsletter</a>
-            <a href="tutorial.html">Tutorial</a>
-            <a href="DIY_Mainpage.html">DIY</a>
+    <form id="menu">
+        <div id=buttonGroup>
+            <table border="0" id="buttonGroup"><tr>
+                <td><img src="../logo.png" width="50" height="50" id="logo"/></td>
+                <td><a href="index.html">Main Page</a></td>
+                <td><a href="newsletter.html">Newsletter</a></td>
+                <td><a href="tutorial.html">Tutorial</a></td>
+                <td><a href="DIY_Mainpage.html">DIY</a></td>
+            </tr></table>
         </div>
-        <div id = "buttonGroup">
-            <button id = "accountButton" onmouseover="displayAccountOptions()">Account</button>
+        <div id="buttonGroup">
+            <button id="accountButton" onmouseover="displayAccountOptions()">Account</button>
         </div>
     </form>
     <h1 id="banner">PC4U</h1>
-    <div>
-        <table cellspacing="0">
+    <br/>
+    <div id="builds">
+        <h2>Pre-Configured Builds depending on price range</h2>
+        <table cellspacing="0" id="pricerange">
             <tr>
                 <td id="budget"><a href="Budget_DIY.html">Budget</a></td>
                 <td id="mid"><a href="Midrange.html">Mid-Range</a></td>
@@ -32,13 +36,21 @@
             </tr>
 
             <tr>
-                <td id="budgetRange"><a href="Budget_DIY.html"></a>(< $1000)</td>
+                <td id="budgetRange">(< $1000)</td>
                 <td id="midRange">($1000 - $2000)</td>
                 <td id="highRange">(> $2000)</td>
             </tr>
         </table>
+        <footer>Note: All prices are in Canadian Dollar, and peripherals are not included</footer>
     </div>
-    <footer>Note: All prices are in Canadian Dollar, and peripherals are not included</footer>
+    <br/>
+
+    <div id="news">
+        <fieldset>
+            <legend>News</legend>
+            
+        </fieldset>
+    </div>
 </body>
 
 </html>

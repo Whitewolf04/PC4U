@@ -1,35 +1,75 @@
-table {
+table#pricerange {
     margin: auto;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 200%;
     padding: 50px;
 }
-td {
-    padding-left: 100px;
-    padding-right: 100px;
-}
+
 #budget {
     border-style: solid solid none solid;
     padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 #mid {
     border-style: solid none none none;
     padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 #high {
     border-style: solid solid none solid;
     padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 #budgetRange {
     border-style: none solid solid solid;
     padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 #midRange {
     border-style: none none solid none;
     padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 #highRange {
     border-style: none solid solid solid;
     padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#pricerange a {
+    font-size: 100%;
+}
+
+#builds {
+    border: 2px;
+    border-style: solid;
+    border-color: grey;
+}
+
+#builds h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 200%;
+    padding-top: 50px;
+}
+
+#news {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#news fieldset {
+    border: 2px;
+    border-style: solid;
+    border-color: grey;
+}
+
+#news legend {
+    font-size: 150%;
 }
