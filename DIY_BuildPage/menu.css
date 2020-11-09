@@ -3,9 +3,10 @@
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 300%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border: solid;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border: 2px;
+    border-style: solid;
     border-color: grey;
 }
 
@@ -65,4 +66,5 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+
 }

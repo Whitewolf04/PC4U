@@ -8,3 +8,37 @@ h1 {
     border: solid;
     border-color: grey;
 }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#highBudget {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#IntelMidBudget {
+    padding-bottom: 50px;
+}
+
+#AMDMidBudget {
+    padding-bottom: 50px;
+}
+
+#IntelLowBudget {
+    padding-bottom: 50px;
+}
+
+#AMDLowBudget {
+    padding-bottom: 50px;
+}
+
+#spec {
+    border: 3px;
+    border-style: solid;
+    border-color: grey;
+    width: 100%;
+    font-size: 150%;
+}
+
