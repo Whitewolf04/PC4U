@@ -17,7 +17,12 @@
     margin-bottom:-20px;
 }
 
-#menu button, a
+#logo
+{
+    padding:0;
+}
+
+#menu button, a.menuButton
 {
     text-decoration:none;
     background-color: white;
@@ -27,20 +32,39 @@
     text-align: center;
     display: inline-block;
     font-size: 16px;
+    font-weight:bold;
     outline:none;
     font-family: 'Arial';
 }
 
 #menu button:hover, a:hover
 {
+    cursor:pointer;
     color: cornflowerblue;
 }
 
-#menu #buttonGroup
+#shoppingCart
 {
-    display:inline-block;
+    float:right;
+    display:inline;
+    padding: 0px 30px 0px 8px;
+    margin-top:10px;
 }
 
-#logo {
-    padding: 0;
+#accountOptions
+{
+    display:none;
+    position:absolute;
+    z-index: 1;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    min-width:122px;
+}
+
+#accountOptions a
+{
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
 }

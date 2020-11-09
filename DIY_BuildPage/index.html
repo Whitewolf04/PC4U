@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 
-<html lang = "en">
+<html lang="en">
     <head>
         <title> PC4U </title>
-        <meta charset = "utf-8" />
-        <link rel = "stylesheet" type = "text/css" href = "index.css" />
-        <link rel = "stylesheet" type = "text/css" href = "menu.css" />
-        <script type = "text/javascript" src = "menu.js"></script>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="index.css" /> <!-- MAY POTENTIALLY BE NEEDED, OTHERWISE REMOVE -->
+        <link rel="stylesheet" type="text/css" href="menu.css" />
+        <script type="text/javascript" src="menu.js"></script>
     </head>
     <body>
-        <form id = "menu">
-            <div id = buttonGroup>
-                <a href="index.html">Main Page</a>
-                <a href="newsletter.html">Newsletter</a>
-                <a href="tutorial.html">Tutorial</a>
-                <a href="DIY_Mainpage.html">DIY</a>
+        <form id="menu" onsubmit="return false">
+            <div id="buttonGroup">
+                <table border="0" id="buttonGroup"><tr>
+                    <td><img src="../logo.png" width="50" height="50" id="logo"/></td>
+                    <td><a class="menuButton" href="index.html">Main Page</a></td>
+                    <td><a class="menuButton" href="newsletter.html">Newsletter</a></td>
+                    <td><a class="menuButton" href="tutorial.html">Tutorial</a></td>
+                    <td><a class="menuButton" href="DIY_Mainpage.html">DIY</a></td>
+                </tr></table>
             </div>
-            <div id = "buttonGroup">
-                <button id = "accountButton" onmouseover="displayAccountOptions()">Account</button>
+
+            <div id="buttonGroup">
+                <button id="accountButton" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Account</button>
                 <div id="accountOptions">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a class="menuButton" href="login.html" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Login</a>
+                    <a class="menuButton" href="register.html" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Register</a>
                 </div>
+                <a href="#">
+                    <img id="shoppingCart" src="shopping_cart_nohover.png" alt="Shopping Cart" width="30px" height="30px" onmouseover="glowShoppingCart()" onmouseout="dullShoppingCart()" />
+                </a>
             </div>
         </form>
 
-        <h1 id = "banner"><img src="139445b54cff2c49b771af5487f60d78.png" alt="pcforyou logo" width="100" height="100"><br>Budget Builds</h1>
+        <h1 id="banner"><img src="139445b54cff2c49b771af5487f60d78.png" alt="pcforyou logo" width="100" height="100"><br>Budget Builds</h1>
     </body>
 </html>
