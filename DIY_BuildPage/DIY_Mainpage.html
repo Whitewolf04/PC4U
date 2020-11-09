@@ -6,32 +6,43 @@
     <title>PC4U</title>
     <link rel="stylesheet" type="text/css" href="DIY_Mainpage.css" />
     <link rel="stylesheet" type="text/css" href="menu.css" />
-    <script type = "text/javascript" src = "menu.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
 </head>
 
 <body>
-    <form id = "menu">
-        <div id = buttonGroup>
-            <a href="index.html">Main Page</a>
-            <a href="newsletter.html">Newsletter</a>
-            <a href="tutorial.html">Tutorial</a>
-            <a href="DIY_Mainpage.html">DIY</a>
+    <form id="menu" onsubmit="return false">
+        <div id="buttonGroup">
+            <table border="0" id="buttonGroup"><tr>
+                <td><img src="../logo.png" width="50" height="50" id="logo"/></td>
+                <td><a class="menuButton" href="index.html">Main Page</a></td>
+                <td><a class="menuButton" href="newsletter.html">Newsletter</a></td>
+                <td><a class="menuButton" href="tutorial.html">Tutorial</a></td>
+                <td><a class="menuButton" href="DIY_Mainpage.html">DIY</a></td>
+            </tr></table>
         </div>
-        <div id = "buttonGroup">
-            <button id = "accountButton" onmouseover="displayAccountOptions()">Account</button>
+
+        <div id="buttonGroup">
+            <button id="accountButton" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Account</button>
+            <div id="accountOptions">
+                <a class="menuButton" href="login.html" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Login</a>
+                <a class="menuButton" href="register.html" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Register</a>
+            </div>
+            <a href="#">
+                <img id="shoppingCart" src="shopping_cart_nohover.png" alt="Shopping Cart" width="30px" height="30px" onmouseover="glowShoppingCart()" onmouseout="dullShoppingCart()" />
+            </a>
         </div>
     </form>
-    <h1>Do-It-Yourself PC</h1>
+    <h1 id="banner">Do-It-Yourself PC</h1>
     <div>
-        <table cellspacing="0">
+        <table cellspacing="0"  id="pricerange">
             <tr>
-                <td id="budget"><a href="Budget_DIY.html">Budget</a></td>
+                <td id="budget"><a href="Budget_DIY.html"></a>Budget</a></td>
                 <td id="mid"><a href="Midrange.html">Mid-Range</a></td>
                 <td id="high"><a href="Highend.html">High-End</a></td>
             </tr>
 
             <tr>
-                <td id="budgetRange"><a href="Budget_DIY.html"></a>(< $1000)</td>
+                <td id="budgetRange">(< $1000)</td>
                 <td id="midRange">($1000 - $2000)</td>
                 <td id="highRange">(> $2000)</td>
             </tr>
