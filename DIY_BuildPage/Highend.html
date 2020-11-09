@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>PC4U</title>
-		<link rel="stylesheet" type="text/css" href="Budget_DIY.css"/>
+		<link rel="stylesheet" type="text/css" href="Buildpage.css"/>
 		<link rel="stylesheet" type="text/css" href="menu.css"/>
 		<script type = "text/javascript" src = "menu.js"></script>
     </head>
@@ -19,11 +19,17 @@
                 <button id = "accountButton" onmouseover="displayAccountOptions()">Account</button>
             </div>
         </form>
+<<<<<<< Updated upstream
     	<h1><img src="139445b54cff2c49b771af5487f60d78.png" alt="pcforyou logo" width="100" height="100"><br>Budget Builds</h1>
+=======
+    	<h1 id="banner">High End Builds</h1>
+>>>>>>> Stashed changes
         <!--Might do a form to ask what are the needs of the customer!-->
         <h2>PCs from $2000+ of the month</h2>
-        <p><a href="BudgetSort.html">Sort from Low to High</a></p>
-        <table border ="2" style="float: left">
+		<p><a href="BudgetSort.html">Sort from Low to High</a></p>
+		
+		<div id="even">
+        <table border ="2" rules="none" id="spec">
         	<caption>(AMD)</caption>
         	<tr>
         		<td>Component:</td>
@@ -128,11 +134,14 @@
                 <td>Rainbow Six Siege</td>
                 <td>Ultra Quality</td>
                 <td>324.0</td>
-            </tr
+			</tr>
         	
-        </table>
+		</table>
+		</div>
+
+		<div id="odd">
         <p></p>
-        <table border="2" style="float: left">
+        <table border="2" rules="none" id="spec">
         	<caption>(AMD)</caption>
         	<tr>
         		<td>Component:</td>
@@ -239,7 +248,8 @@
             </tr>
         	
         </table>
-        <p></p>
+		<p></p>
+		</div>
     
         <footer>Note: All prices are in Canadian Dollar, and peripherals are not included</footer>
     </body>
