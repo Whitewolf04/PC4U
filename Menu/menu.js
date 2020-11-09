@@ -10,10 +10,10 @@ function hideAccountOptions()
 
 function glowShoppingCart()
 {
-    document.getElementById("shoppingCart").src = "shopping_cart_hover.png";
+    document.getElementById("shoppingCart").src = "Images/shopping_cart_hover.png";
 }
 
 function dullShoppingCart()
 {
-    document.getElementById("shoppingCart").src = "shopping_cart_nohover.png";
+    document.getElementById("shoppingCart").src = "Images/shopping_cart_nohover.png";
 }
