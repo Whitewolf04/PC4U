@@ -5,7 +5,8 @@
     font-size: 300%;
     padding-top: 70px;
     padding-bottom: 70px;
-    border: solid;
+    border: 2px;
+    border-style: solid;
     border-color: grey;
 }
 
