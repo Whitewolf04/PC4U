@@ -19,6 +19,7 @@
 
 #logo
 {
+    pointer-events:none;
     padding:0;
 }
 
