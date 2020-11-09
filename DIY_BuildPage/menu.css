@@ -1,0 +1,41 @@
+#banner
+{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 300%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border: solid;
+    border-color: grey;
+}
+
+#menu
+{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:-20px;
+}
+
+#menu button, a
+{
+    text-decoration:none;
+    background-color: white;
+    border: none;
+    color: grey;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    outline:none;
+    font-family: 'Arial';
+}
+
+#menu button:hover, a:hover
+{
+    color: cornflowerblue;
+}
+
+#menu #buttonGroup
+{
+    display:inline-block;
+}
