@@ -1,0 +1,109 @@
+h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 300%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border: solid;
+    border-color: grey;
+}
+
+.item-table {
+    border-style:  solid none none none;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.item-desc {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    font-size: 100%;
+
+}
+#img1 {
+
+    float: right;
+    width: 75%;
+}
+#img2 {
+    float: right;
+    width: 75%;
+}
+#img3{
+    float: right;
+    width: 75%;
+}
+a:link {
+    color: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+a:visited {
+    color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+    
+}
+a:hover {
+    box-shadow: 0 0 2px 1px grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Fomating the Subscribe form */
+.main-div-subs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#button-subs-open{
+    background-color: #369705;
+    border-color: #183f05;
+    padding:10px;
+    border-radius: 50%;
+    cursor: pointer;
+    bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    
+}
+/* The subscribe form is hidden onload*/
+#pop-subscribe {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    border: 3px solid #f1f1f1;
+    background-color: rgb(219, 226, 217);
+    padding: 25px;
+}
+.form-container {
+    max-width: 200;
+    background-color: white;
+    background-color: rgb(219, 226, 217);
+    justify-content: center;
+    position: relative;
+    
+}
+.form-container input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #d0f8da;
+}
+
+#button-subs {
+    background-color: #369705;
+    border-color: #183f05;
+    padding:10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+#button-close {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
