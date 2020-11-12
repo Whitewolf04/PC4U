@@ -2,13 +2,13 @@ var CPU_Type_Data = {
     'cpuType': { //name of associated select box
 
         intel: {
-            text: ['Intel Core i9', 'Intel Core i7', 'Intel Core i5', 'Intel Core i3', 'Intel Pentium Gold'],
-            value: ['i9', 'i7', 'i5', 'i3', 'pentium'],
+            text: ['Select a CPU Type', 'Intel Core i9', 'Intel Core i7', 'Intel Core i5', 'Intel Core i3', 'Intel Pentium Gold'],
+            value: ['none', 'i9', 'i7', 'i5', 'i3', 'pentium'],
         },
 
         amd: {
-            text: ['AMD Ryzen 9', 'AMD Ryzen 7', 'AMD Ryzen 5', 'AMD Ryzen 3', 'AMD Athlon'],
-            value: ['r9', 'r7', 'r5', 'r3', 'athlon'],
+            text: ['Select a CPU Type', 'AMD Ryzen 9', 'AMD Ryzen 7', 'AMD Ryzen 5', 'AMD Ryzen 3', 'AMD Athlon'],
+            value: ['none', 'r9', 'r7', 'r5', 'r3', 'athlon'],
         }
     }
 };
@@ -17,56 +17,56 @@ var CPU_Data = {
     'cpu': {
 
         i9: {
-            text: ['Intel Core i9 10900K', 'Intel Core i9 10900KF', 'Intel Core i9 10850K', 'Intel Core i9 10900', 'Intel Core i9 10900F', 'Intel Core i9 9900K',
+            text: ['Select a CPU', 'Intel Core i9 10900K', 'Intel Core i9 10900KF', 'Intel Core i9 10850K', 'Intel Core i9 10900', 'Intel Core i9 10900F', 'Intel Core i9 9900K',
                 'Intel Core i9 9900KF', 'Intel Core i9 9900'],
-            value: ['10900K', '10900KF', '10850K', '10900', '10900F', '9900K', '9900KF', '9900'],
+            value: ['none', '10900K', '10900KF', '10850K', '10900', '10900F', '9900K', '9900KF', '9900'],
         },
 
         i7: {
-            text: ['Intel Core i7 10700K', 'Intel Core i7 10700KF', 'Intel Core i7 10700', 'Intel Core i7 9700K', 'Intel Core i7 9700KF', 'Intel Core i7 9700',
+            text: ['Select a CPU', 'Intel Core i7 10700K', 'Intel Core i7 10700KF', 'Intel Core i7 10700', 'Intel Core i7 9700K', 'Intel Core i7 9700KF', 'Intel Core i7 9700',
                 'Intel Core i7 9700F'],
-            value: ['10700K', '10700KF', '10700', '9700K', '9700KF', '9700', '9700F'],
+            value: ['none', '10700K', '10700KF', '10700', '9700K', '9700KF', '9700', '9700F'],
         },
 
         i5: {
-            text: ['Intel Core i5 10600K', 'Intel Core i5 10600KF', 'Intel Core i5 10600', 'Intel Core i5 10400', 'Intel Core i5 10400F', 'Intel Core i5 9600K',
+            text: ['Select a CPU', 'Intel Core i5 10600K', 'Intel Core i5 10600KF', 'Intel Core i5 10600', 'Intel Core i5 10400', 'Intel Core i5 10400F', 'Intel Core i5 9600K',
                 'Intel Core i5 9600KF', 'Intel Core i5 9400', 'Intel Core i5 9400F'],
-            value: ['10600K', '10600KF', '10600', '10400', '10400F', '9600K', '9600KF', '9400', '9400F'],
+            value: ['none', '10600K', '10600KF', '10600', '10400', '10400F', '9600K', '9600KF', '9400', '9400F'],
         },
 
         i3: {
-            text: ['Intel Core i3 10300', 'Intel Core i3 10100', 'Intel Core i3 10100F', 'Intel Core i3 9100', 'Intel Core i3 9100F'],
-            value: ['10300', '10100', '10100F', '9100', '9100F'],
+            text: ['Select a CPU', 'Intel Core i3 10300', 'Intel Core i3 10100', 'Intel Core i3 10100F', 'Intel Core i3 9100', 'Intel Core i3 9100F'],
+            value: ['none', '10300', '10100', '10100F', '9100', '9100F'],
         },
 
         pentium: {
-            text: ['Intel Pentium Gold G5500', 'Intel Pentium Gold G6400', 'Intel Pentium Gold G5400'],
-            value: ['G5500', 'G6400', 'G5400'],
+            text: ['Select a CPU', 'Intel Pentium Gold G5500', 'Intel Pentium Gold G6400', 'Intel Pentium Gold G5400'],
+            value: ['none', 'G5500', 'G6400', 'G5400'],
         },
 
         r9: {
-            text: ['AMD Ryzen 9 5950X', 'AMD Ryzen 9 5900X', 'AMD Ryzen 9 3950X', 'AMD Ryzen 9 3900XT', 'AMD Ryzen 9 3900X'],
-            value: ['5950X', '5900X', '3950X', '3900XT', '3900X'],
+            text: ['Select a CPU', 'AMD Ryzen 9 5950X', 'AMD Ryzen 9 5900X', 'AMD Ryzen 9 3950X', 'AMD Ryzen 9 3900XT', 'AMD Ryzen 9 3900X'],
+            value: ['none', '5950X', '5900X', '3950X', '3900XT', '3900X'],
         },
 
         r7: {
-            text: ['AMD Ryzen 7 5800X', 'AMD Ryzen 7 3800XT', 'AMD Ryzen 7 3800X', 'AMD Ryzen 7 3700X', 'AMD Ryzen 7 2700X'],
-            value: ['5800X', '3800XT', '3800X', '3700X', '2700X'],
+            text: ['Select a CPU', 'AMD Ryzen 7 5800X', 'AMD Ryzen 7 3800XT', 'AMD Ryzen 7 3800X', 'AMD Ryzen 7 3700X', 'AMD Ryzen 7 2700X'],
+            value: ['none', '5800X', '3800XT', '3800X', '3700X', '2700X'],
         },
 
         r5: {
-            text: ['AMD Ryzen 5 5600X', 'AMD Ryzen 5 3600XT', 'AMD Ryzen 5 3600X', 'AMD Ryzen 5 3600', 'AMD Ryzen 5 3400G', 'AMD Ryzen 5 2600X'],
-            value: ['5600X', '3600XT', '3600X', '3600', '3400G', '2600X'],
+            text: ['Select a CPU', 'AMD Ryzen 5 5600X', 'AMD Ryzen 5 3600XT', 'AMD Ryzen 5 3600X', 'AMD Ryzen 5 3600', 'AMD Ryzen 5 3400G', 'AMD Ryzen 5 2600X'],
+            value: ['none', '5600X', '3600XT', '3600X', '3600', '3400G', '2600X'],
         },
 
         r3: {
-            text: ['AMD Ryzen 3 3300X', 'AMD Ryzen 3 3100', 'AMD Ryzen 3 3200G'],
-            value: ['3300X', '3100', '3200G'],
+            text: ['Select a CPU', 'AMD Ryzen 3 3300X', 'AMD Ryzen 3 3100', 'AMD Ryzen 3 3200G'],
+            value: ['none', '3300X', '3100', '3200G'],
         },
 
         athlon: {
-            text: ['AMD Athlon 220GE', 'AMD Athlon 200GE'],
-            value: ['220GE', '200GE'],
+            text: ['Select a CPU', 'AMD Athlon 220GE', 'AMD Athlon 200GE'],
+            value: ['none', '220GE', '200GE'],
         },
     }
 };
@@ -74,13 +74,13 @@ var CPU_Data = {
 var Mobo_Chipset_Data = {
     'moboChipset': {
         intel: {
-            text: ['Z490', 'H470', 'H410', 'B460', 'Z390', 'H310', 'B365'],
-            value: ['Z490', 'H470', 'H410', 'B460', 'Z390', 'H310', 'B365'],
+            text: ['Select a motherboard chipset', 'Z490', 'H470', 'H410', 'B460', 'Z390', 'H310', 'B365'],
+            value: ['none', 'Z490', 'H470', 'H410', 'B460', 'Z390', 'H310', 'B365'],
         },
 
         amd: {
-            text: ['X570', 'B550', 'B450', 'A520', 'A320'],
-            value: ['X570', 'B550', 'B450', 'A520', 'A320'],
+            text: ['Select a motherboard chipset', 'X570', 'B550', 'B450', 'A520', 'A320'],
+            value: ['none', 'X570', 'B550', 'B450', 'A520', 'A320'],
         },
     }
 };
@@ -88,66 +88,104 @@ var Mobo_Chipset_Data = {
 var Mobo_Data = {
     'mobo': {
         Z490: {
-            text: ['Asrock Z490M Pro4', 'MSI MAG Z490 TOMAHAWK', 'Asus ROG MAXIMUS XII EXTREME'],
-            value: ['asrockZ490', 'msiTomahawkZ490', 'asusMaximus'],
+            text: ['Select a motherboard', 'Asrock Z490M Pro4', 'MSI MAG Z490 TOMAHAWK', 'Asus ROG MAXIMUS XII EXTREME'],
+            value: ['none', 'asrockZ490', 'msiTomahawkZ490', 'asusMaximus'],
         },
         
         H470: {
-            text: ['Asrock H470M Pro4', 'Gigabyte H470M DS3H', 'Asus ROG Strix H470-I Gaming'],
-            value: ['asrockH470', 'gigabyteH470', 'asusH470']
+            text: ['Select a motherboard', 'Asrock H470M Pro4', 'Gigabyte H470M DS3H', 'Asus ROG Strix H470-I Gaming'],
+            value: ['none', 'asrockH470', 'gigabyteH470', 'asusH470']
         },
 
         H410: {
-            text: ['MSI H410M Pro', 'Asrock H410M-HDV/M.2'],
-            value: ['msiH410', 'asrockH410'],
+            text: ['Select a motherboard', 'MSI H410M Pro', 'Asrock H410M-HDV/M.2'],
+            value: ['none', 'msiH410', 'asrockH410'],
         },
 
         B460: {
-            text: ['Asrock B460M Pro4', 'MSI MAG B460M Tomahawk', 'Gigabyte B460 AORUS PRO AC'],
-            value: ['asrockB460', 'msiB460', 'gigabyteB460'],
+            text: ['Select a motherboard', 'Asrock B460M Pro4', 'MSI MAG B460M Tomahawk', 'Gigabyte B460 AORUS PRO AC'],
+            value: ['none', 'asrockB460', 'msiB460', 'gigabyteB460'],
         },
 
         Z390: {
-            text: ['MSI Z390-A PRO', 'Asus Prime Z390-A', 'Gigabyte Z390 AORUS ULTRA'],
-            value: ['msiZ390', 'asusZ390', 'gigabyteZ390'],
+            text: ['Select a motherboard', 'MSI Z390-A PRO', 'Asus Prime Z390-A', 'Gigabyte Z390 AORUS ULTRA'],
+            value: ['none', 'msiZ390', 'asusZ390', 'gigabyteZ390'],
         },
 
         H310: {
-            text: ['Asus Prime H310M-E R2.0', 'Gigabyte H310M S2P', 'Asrock H310CM-HDV'],
-            value: ['asusH310', 'gigabyteH310', 'asrockH310'],
+            text: ['Select a motherboard', 'Asus Prime H310M-E R2.0', 'Gigabyte H310M S2P', 'Asrock H310CM-HDV'],
+            value: ['none', 'asusH310', 'gigabyteH310', 'asrockH310'],
         },
 
         B365: {
-            text: ['Gigabyte B365M DS3H', 'Asrock B365M Pro4', 'MSI MAG B365M Mortar'],
-            value: ['gigabyteB365', 'asrockB365', 'msiB365'],
+            text: ['Select a motherboard', 'Gigabyte B365M DS3H', 'Asrock B365M Pro4', 'MSI MAG B365M Mortar'],
+            value: ['none', 'gigabyteB365', 'asrockB365', 'msiB365'],
         },
 
         X570: {
-            text: ['Asus Prime X570-P', 'MSI MAG X570 Tomahawk WIFI', 'Asus ROG Crosshair VIII Hero'],
-            value: ['asusX570P', 'msiX570Tomahawk', 'asusCrosshair'],
+            text: ['Select a motherboard', 'Asus Prime X570-P', 'MSI MAG X570 Tomahawk WIFI', 'Asus ROG Crosshair VIII Hero'],
+            value: ['none', 'asusX570P', 'msiX570Tomahawk', 'asusCrosshair'],
         },
 
         B550: {
-            text: ['Asrock B550M Pro4', 'MSI MPG B550 Gaming PLUS', 'Gigabyte B550 AORUS Master'],
-            value: ['asrockB550', 'msiB550', 'gigabyteB550'],
+            text: ['Select a motherboard', 'Asrock B550M Pro4', 'MSI MPG B550 Gaming PLUS', 'Gigabyte B550 AORUS Master'],
+            value: ['none', 'asrockB550', 'msiB550', 'gigabyteB550'],
         },
 
         B450: {
-            text: ['Asrock B450M Pro4', 'MSI B450 Tomahawk MAX', 'Asus ROG Strix B450-I Gaming'],
-            value: ['asrockB450', 'msiB450Tomahawk', 'asusB450'],
+            text: ['Select a motherboard', 'Asrock B450M Pro4', 'MSI B450 Tomahawk MAX', 'Asus ROG Strix B450-I Gaming'],
+            value: ['none', 'asrockB450', 'msiB450Tomahawk', 'asusB450'],
         },
 
         A520: {
-            text: ['Asrock A520M-HVS', 'MSI MAG A520M VECTOR Wifi'],
-            value: ['asrockA520', 'msiA520'],
+            text: ['Select a motherboard', 'Asrock A520M-HVS', 'MSI MAG A520M VECTOR Wifi'],
+            value: ['none', 'asrockA520', 'msiA520'],
         },
 
         A320: {
-            text: ['Gigabyte GA-A320M-S2H', 'Asus Prime A320I-K'],
-            value: ['gigabyteA320', 'asusA320'],
+            text: ['Select a motherboard', 'Gigabyte GA-A320M-S2H', 'Asus Prime A320I-K'],
+            value: ['none', 'gigabyteA320', 'asusA320'],
         },
     }
 };
+
+var GPU_Data = {
+    'gpu': {
+        nvidia3000s: {
+            text: ['Select a GPU', 'Nvidia RTX 3090', 'Nvidia RTX 3080', 'Nvidia RTX 3070'],
+            value: ['none', '3090', '3080', '3070'],
+        },
+
+        nvidia2000s: {
+            text: ['Select a GPU', 'Nvidia RTX 2080Ti', 'Nvidia RTX 2080 Super', 'Nvidia RTX 2080', 'Nvidia RTX 2070 Super', 'Nvidia RTX 2070', 'Nvidia RTX 2060 Super',
+             'Nvidia RTX 2060'],
+            value: ['none', '2080Ti', '2080S', '2080', '2070S', '2070', '2060S', '2060'],
+        },
+
+        nvidia1600s: {
+            text: ['Select a GPU', 'Nvidia GTX 1660Ti', 'Nvidia GTX 1660 Super', 'Nvidia GTX 1660', 'Nvidia GTX 1650 Super', 'Nvidia GTX 1650'],
+            value: ['none', '1660Ti', '1660S', '1660', '1650S', '1650'],
+        },
+
+        amdRx5000s: {
+            text: ['Select a GPU', 'AMD RX 5700XT', 'AMD RX 5700', 'AMD RX 5600XT', 'AMD RX 5500XT'],
+            value: ['none', '5700XT', '5700', '5600XT', '5500XT'],
+        },
+    }, 
+
+    'gpuType': {
+        nvidia: {
+            text: ['Select a GPU Type', 'Nvidia RTX 3000 Series', 'Nvidia RTX 2000 Series', 'Nvidia GTX 1600 Series'],
+            value: ['none', 'nvidia3000s', 'nvidia2000s', 'nvidia1600s'],
+        },
+
+        amd: {
+            text: ['Select a GPU Type', 'AMD RX 5000 Series'],
+            value: ['none', 'amdRx5000s'],
+        },
+    }
+};
+
 function removeAllOptions(sel, removeGrp) {
     var len, groups, par;
     if (removeGrp) {
@@ -241,4 +279,23 @@ document.forms['mainCompForm'].elements['moboChipset'].onchange = function(g) {
 
     removeAllOptions(moboMenu, true);
     appendDataToSelect(moboMenu, mobo);
+};
+
+//Dynamic Select Box for GPU Type
+document.forms['mainCompForm'].elements['gpuBrand'].onchange = function(s) {
+    var gpuTypeMenu = this.form.elements['gpuType'];
+    var gpuMenu = this.form.elements['gpu'];
+    var gpuType = GPU_Data['gpuType'][this.value];
+    
+    removeAllOptions(gpuTypeMenu, true);
+    removeAllOptions(gpuMenu, true);
+    appendDataToSelect(gpuTypeMenu, gpuType);
+};
+
+document.forms['mainCompForm'].elements['gpuType'].onchange = function(s) {
+    var gpuMenu = this.form.elements['gpu'];
+    var gpu = GPU_Data['gpu'][this.value];
+    
+    removeAllOptions(gpuMenu, true);
+    appendDataToSelect(gpuMenu, gpu);
 };

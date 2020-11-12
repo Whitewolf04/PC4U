@@ -46,7 +46,7 @@
             <form id="mainCompForm">
                 <label for="cpuBrand">CPU Brand</label>
                 <select id="cpuBrand" name="cpuBrand">
-                    <option value="none" selected disabled hidden>Select an Option</option>
+                    <option value="none" selected disabled hidden>Select a CPU Brand</option>
                     <option value="intel">Intel</option>
                     <option value="amd">AMD</option>
                 </select>
@@ -75,6 +75,51 @@
                 <select id="mobo" name="mobo">
                     <!--Populated by JavaScript-->
                 </select>
+                <br/>
+                <br/>
+
+                <label for="gpuBrand">GPU Brand</label>
+                <select id="gpuBrand" name="gpuBrand">
+                    <option value="none" selected disabled hidden>Select a GPU Brand</option>
+                    <option value="nvidia">Nvidia</option>
+                    <option value="amd">AMD</option>
+                </select>
+                <br/>
+
+                <label for="gpuType">GPU Type</label>
+                <select id="gpuType" name="gpuType">
+                    <!--Populated by JavaScript-->
+                </select>
+                <br/>
+
+                <label for="gpu">Graphics Card</label>
+                <select id="gpu" name="gpu">
+                    <!--Populated by JavaScript-->
+                </select>
+                <br/>
+                <br/>
+
+                <label for="ramConfig">Memory Configuration</label>
+                <select id="ramConfig" name="ramConfig">
+                    <option value="none" selected disabled hidden>Select a RAM configuration</option>
+                    <option value="2x8">2 x 8GB (Recommended)</option>
+                    <option value="2x16">2 x 16GB</option>
+                    <option value="1x16">1 x 16GB</option>
+                    <option value="2x4">2 x 4GB</option>
+                    <option value="1x8">1 x 8GB</option>
+                </select>
+                <br/>
+
+                <label for="ram">Memory Configuration</label>
+                <select id="ram" name="ram">
+                    <option value="none" selected disabled hidden>Select a RAM Speed</option>
+                    <option value="4000mhz">4000mhz</option>
+                    <option value="3600mhz">3600mhz</option>
+                    <option value="3200mhz">3200mhz</option>
+                    <option value="3000mhz">3000mhz</option>
+                    <option value="2666mhz">2666mhz</option>
+                </select>
+                <br/>
             </form>
         </fieldset>
     </div>
