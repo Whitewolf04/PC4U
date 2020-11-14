@@ -186,6 +186,59 @@ var GPU_Data = {
     }
 };
 
+var Cooler_Data = {
+
+    'coolerSize': {
+        fan: {
+            text: ['Select a cpu fan cooler size', '80mm fan size', '92mm fan size', '120mm fan size', '140mm fan size'],
+            value: ['none', '80mm', '92mm', '120mm','140mm'],
+        },
+
+        liquid: {
+            text: ['Select a liquid cpu cooler radiator size (fans included)', '240mm radiator size','280mm radiator size',],
+            value: ['none', '240mm','280mm'],
+        },
+    }
+};
+
+var Case_Data = {
+
+    'caseSize': {
+        mid: {
+            text: ['Select a computer case', 'Lian Li Lancool II Mesh', 'Corsair 4000D Airflow', 'MetallicGear Neo Air', 'Cooler Master H500','NZXT H510 Elite','Corsair Obsidian Series 500D RGB SE','Fractal Design Define 7','Phanteks Eclipse P500A'],
+            value: ['none', 'lianlilancooliimesh', 'corsair4000dairflow', 'metallicgearneoair','coolermasterh500','nzxth510elite','corsairobsidianseries500drgbse','fractaldesigndefine7','phantekseclipsep500a'],
+        },
+
+        full: {
+            text: ['Select a computer case', 'Corsair 1000D','Cooler Master Cosmos C700P','be quiet! Dark Base Pro 900','Thermaltake View 71','Phanteks Enthoo Pro'],
+            value: ['none', 'corsair1000d','coolermastercosmosc700p','bequietdarkbasepro900','thermaltakeview71','phanteksenthoopro'],
+        },
+    }
+};
+var Power_Data = {
+
+    'powerWatt': {
+        evgaPower: {
+            text: ['Select a power supply efficiency', '500 W', '750 W', '1000 W'],
+            value: ['none', '500w', '750w', '1000w'],
+        },
+
+        corsairPower: {
+            text: ['Select a power supply efficiency', '500 W', '750 W', '1000 W'],
+            value: ['none', '500w', '750w', '1000w'],
+        },
+        coolermasterPower: {
+            text: ['Select a power supply efficiency', '500 W', '750 W', '1000 W'],
+            value: ['none', '500w', '750w', '1000w'],
+        },
+        thermaltakePower: {
+            text: ['Select a power supply efficiency', '500 W', '750 W', '1000 W'],
+            value: ['none', '500w', '750w', '1000w'],
+        },
+
+    },
+
+};
 function removeAllOptions(sel, removeGrp) {
     var len, groups, par;
     if (removeGrp) {
@@ -254,12 +307,17 @@ document.forms['mainCompForm'].elements['cpuBrand'].onchange = function (e) {
     var cpuType = CPU_Type_Data['cpuType'][this.value];
     var moboChipset = Mobo_Chipset_Data['moboChipset'][this.value];
 
+  
+
     removeAllOptions(cpuTypeMenu, true);
     removeAllOptions(cpuMenu, true);
     removeAllOptions(moboChipsetMenu, true);
     removeAllOptions(moboMenu, true);
+   
+    
     appendDataToSelect(cpuTypeMenu, cpuType);
     appendDataToSelect(moboChipsetMenu, moboChipset);
+    
 };
 
 //Dynamic Select Box for CPU
@@ -298,4 +356,28 @@ document.forms['mainCompForm'].elements['gpuType'].onchange = function(s) {
     
     removeAllOptions(gpuMenu, true);
     appendDataToSelect(gpuMenu, gpu);
+};
+document.forms['mainCompForm'].elements['coolerType'].onchange = function(s) {
+    var coolerSizeMenu = this.form.elements['coolerSize'];
+    var coolerSize = Cooler_Data['coolerSize'][this.value];
+    
+    removeAllOptions(coolerSizeMenu, true);
+    appendDataToSelect(coolerSizeMenu, coolerSize);
+};
+document.forms['mainCompForm'].elements['case'].onchange = function(s) {
+    var caseSizeMenu = this.form.elements['caseSize'];
+    var caseSize = Case_Data['caseSize'][this.value];
+    
+    removeAllOptions(caseSizeMenu, true);
+    appendDataToSelect(caseSizeMenu, caseSize);
+};
+document.forms['mainCompForm'].elements['powerBrand'].onchange = function(s) {
+    var powerWattMenu = this.form.elements['powerWatt'];
+    var powerWatt = Power_Data['powerWatt'][this.value];
+   
+    
+    removeAllOptions(powerWattMenu, true);
+    
+    
+    appendDataToSelect(powerWattMenu, powerWatt);
 };
