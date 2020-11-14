@@ -45,7 +45,7 @@
             <legend>Main Component</legend>
             <form id="mainCompForm">
                 <label for="cpuBrand">CPU Brand</label>
-                <select id="cpuBrand" name="cpuBrand">
+                <select id="cpuBrand" name="cpuBrand" class="selectStyle">
                     <option value="none" selected disabled hidden>Select a CPU Brand</option>
                     <option value="intel">Intel</option>
                     <option value="amd">AMD</option>
@@ -120,6 +120,77 @@
                     <option value="2666mhz">2666mhz</option>
                 </select>
                 <br/>
+                <br/>
+
+                <label for="storageType">Storage Type </label>
+                <select id="storageType" name="storageType">
+                    <option value="none">Select Storage Type</option>
+                    <option value="sataSsd">Sata SSD</option>
+                    <option value="M2NvmeSsd">M.2 NVMe SSD</option>
+                </select>
+                <br/> 
+
+                <label for="storageAmount"> Storage Amount</label>
+                <select id="storageAmount" name="storageAmount">
+                    <option value="none" selected disabled hidden> Select Amount of Storage </option>
+                    <option value="256gb">256 GB</option>
+                    <option value="500gb">500 GB (Recommended)</option>
+                    <option value="1tb">1 TB</option>
+                    <option value="2tb">2 TB</option>
+                    <option value="4tb">4 TB</option>
+                </select>
+                 <br/>
+                <br/>
+
+                <label for="coolerType">CPU Cooler Type </label>
+                <select id="coolerType" name="coolerType">
+                    <option value="none" selected disabled hidden> Select CPU Cooler Type</option>
+                    <option value="fan"> Fan </option>
+                    <option value="liquid">Liquid</option>
+                    
+                </select>
+                <br/>
+                <label for="coolerSize">CPU Cooler Size </label>
+                <select id="coolerSize" name="coolerSize">
+                    <!--Populated by JavaScript-->
+                    
+                </select>
+                <br/>
+                <br/>
+
+                <label for="case">Computer Case </label>
+                <select id="case" name="case">
+                    <option value="none" selected disabled hidden> Select a Computer Case</option>
+                    <option value="mid"> Mid Tower </option>
+                    <option value="full">Full Tower</option>
+                    
+                </select>
+                <br/>
+                <label for="caseSize">Computer Case Size </label>
+                <select id="caseSize" name="caseSize">
+                    <!--Populated by JavaScript-->
+                    
+                </select>
+                <br/>
+                <br/>
+                <label for="powerBrand">Power Supply Brand </label>
+                <select id="powerBrand" name="powerBrand">
+                    <option value="none" selected disabled hidden> Select a Power Supply Brand</option>
+                    <option value="evgaPower"> EVGA </option>
+                    <option value="corsairPower"> Corsair </option>
+                    <option value="coolermasterPower"> Cooler Master </option>
+                    <option value="thermaltakePower"> Thermaltake </option>
+                    
+                </select>
+                <br/>
+                <label for="powerWatt">Power Supply Wattage</label>
+                <select id="powerWatt" name="powerWatt">
+                    <!--Populated by JavaScript-->
+                    
+                </select>
+                <br/>
+                <br/>
+                
             </form>
         </fieldset>
     </div>
