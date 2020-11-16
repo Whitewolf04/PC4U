@@ -1,0 +1,32 @@
+.wrap {
+	padding-left: 200px;
+	padding-right: 200px;
+}
+.content {
+	width: 800px;
+	background-color: #efb6c9;
+}
+.article{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	font-size: 1.4em;
+}
+iframe{
+	margin-left: 50px;
+}
+span{
+	color: red;
+	font-weight: bold;
+}
+h1{
+	font-size: 3em;
+	width: 800px;
+	padding-left: 10px;
+}
+body{
+	background-color: #f4eae3;
+}
+h2{
+	font-size: 2em;
+}
