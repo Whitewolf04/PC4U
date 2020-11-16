@@ -1,16 +1,25 @@
 .wrap {
-	padding-left: 200px;
-	padding-right: 200px;
+	padding-left: 100px;
+}
+.sidebar{
+	float: left;
+	padding-top: 50px;
+	padding-right: 50px;
+	font-size: 1.3em;
 }
 .content {
 	width: 800px;
 	background-color: #efb6c9;
+	float: left;
 }
 .article{
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 10px;
 	font-size: 1.4em;
+}
+.footer{
+	clear: both;
 }
 iframe{
 	margin-left: 50px;
