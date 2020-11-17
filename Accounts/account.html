@@ -1,0 +1,32 @@
+<html>
+    <head>
+		<meta charset="UTF-8" />
+		<title>PC4U</title>
+		<link rel="stylesheet" type="text/css" href="Buildpage.css" />
+		<link rel="stylesheet" type="text/css" href="../Menu/menu.css" />
+		<script type="text/javascript" src="../Menu/menu.js"></script>
+	</head>
+    <body>
+        <form id="menu" onsubmit="return false">
+            <div id="buttonGroup">
+                <table border="0" id="buttonGroup"><tr>
+                    <td><img src="../logo.png" width="50" height="50" id="logo"/></td>
+                    <td><a class="menuButton" href="DIY_Mainpage.html">Main Page</a></td>
+                    <td><a class="menuButton" href="../Newsletter/Newsletter.html">Newsletter</a></td>
+                    <td><a class="menuButton" href="DIY_GUIDE_PAGE.html">Tutorial</a></td>
+                </tr></table>
+            </div>
+
+            <div id="buttonGroup">
+                <button id="accountButton" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Account</button>
+                <div id="accountOptions">
+                    <a class="menuButton" href="../Menu/login.html" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Login</a>
+                    <a class="menuButton" href="../Menu/register.html" onmouseover="displayAccountOptions()" onmouseout="hideAccountOptions()">Register</a>
+                </div>
+                <a href="#">
+                    <img id="shoppingCart" src="../Menu/Images/shopping_cart_nohover.png" alt="Shopping Cart" width="30px" height="30px" onmouseover="glowShoppingCart()" onmouseout="dullShoppingCart()" />
+                </a>
+            </div>
+        </form>
+    </body>
+</html>
