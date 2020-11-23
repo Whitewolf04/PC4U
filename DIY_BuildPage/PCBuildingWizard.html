@@ -6,13 +6,14 @@
     <title>PC4U</title>
     <link rel="stylesheet" type="text/css" href="Buildpage.css" />
     <link rel="stylesheet" type="text/css" href="../Menu/menu.css" />
+    <script src="https://kit.fontawesome.com/676270b385.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../Menu/menu.js"></script>
 </head>
 
 <body>
     <form id="menu" onsubmit="return false">
         <div id="buttonGroup">
-            <table border="0" id="buttonGroup">
+            <table border="0" id="buttonGroup" class="topbar">
                 <tr>
                     <td><img src="../logo.png" width="50" height="50" id="logo" /></td>
                     <td><a class="menuButton" href="DIY_Mainpage.html">Main Page</a></td>
@@ -40,66 +41,75 @@
 
     <h1 id="banner">DIY Part Picking</h1>
 
-    <div id="partPicking">
+    <div id="partPicking" class="box">
         <fieldset id="mainComp">
             <legend>Main Component</legend>
             <form id="mainCompForm">
-                <label for="cpuBrand">CPU Brand</label>
+                <label for="cpuBrand">CPU Brand&nbsp;&nbsp;&nbsp;&nbsp;</label>
+
                 <select id="cpuBrand" name="cpuBrand" class="selectStyle">
                     <option value="none" selected disabled hidden>Select a CPU Brand</option>
                     <option value="intel">Intel</option>
                     <option value="amd">AMD</option>
                 </select>
                 <br/>
+                <br/>
 
-                <label for="cpuType">CPU Type</label>
+                <label for="cpuType">CPU Type&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="cpuType" name="cpuType">
                     <!--Populated by JavaScript-->
                 </select>
                 <br/>
+                <br/>
 
-                <label for="cpu">CPU</label>
+                <label for="cpu">CPU&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="cpu" name="cpu">
                     <!--Populated by JavaScript-->
                 </select>
                 <br/>
                 <br/>
+                <br/>
 
-                <label for="moboChipset">Motherboard Chipset</label>
+                <label for="moboChipset">Motherboard Chipset&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="moboChipset" name="moboChipset">
                     <!--Populated by JavaSript-->
                 </select>
                 <br/>
+                <br/>
 
-                <label for="mobo">Motherboard</label>
+                <label for="mobo">Motherboard&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="mobo" name="mobo">
                     <!--Populated by JavaScript-->
                 </select>
                 <br/>
                 <br/>
+                <br/>
 
-                <label for="gpuBrand">GPU Brand</label>
+                <label for="gpuBrand">GPU Brand&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="gpuBrand" name="gpuBrand">
                     <option value="none" selected disabled hidden>Select a GPU Brand</option>
                     <option value="nvidia">Nvidia</option>
                     <option value="amd">AMD</option>
                 </select>
                 <br/>
+                <br/>
 
-                <label for="gpuType">GPU Type</label>
+                <label for="gpuType">GPU Type&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="gpuType" name="gpuType">
                     <!--Populated by JavaScript-->
                 </select>
                 <br/>
+                <br/>
 
-                <label for="gpu">Graphics Card</label>
+                <label for="gpu">Graphics Card&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="gpu" name="gpu">
                     <!--Populated by JavaScript-->
                 </select>
                 <br/>
                 <br/>
+                <br/>
 
-                <label for="ramConfig">Memory Configuration</label>
+                <label for="ramConfig">Memory Configuration&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="ramConfig" name="ramConfig">
                     <option value="none" selected disabled hidden>Select a RAM configuration</option>
                     <option value="2x8">2 x 8GB (Recommended)</option>
@@ -109,8 +119,9 @@
                     <option value="1x8">1 x 8GB</option>
                 </select>
                 <br/>
+                <br/>
 
-                <label for="ram">Memory Configuration</label>
+                <label for="ram">Memory Configuration&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="ram" name="ram">
                     <option value="none" selected disabled hidden>Select a RAM Speed</option>
                     <option value="4000mhz">4000mhz</option>
@@ -121,16 +132,18 @@
                 </select>
                 <br/>
                 <br/>
+                <br/>
 
-                <label for="storageType">Storage Type </label>
+                <label for="storageType">Storage Type &nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="storageType" name="storageType">
                     <option value="none">Select Storage Type</option>
                     <option value="sataSsd">Sata SSD</option>
                     <option value="M2NvmeSsd">M.2 NVMe SSD</option>
                 </select>
                 <br/> 
+                <br/>
 
-                <label for="storageAmount"> Storage Amount</label>
+                <label for="storageAmount"> Storage Amount&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="storageAmount" name="storageAmount">
                     <option value="none" selected disabled hidden> Select Amount of Storage </option>
                     <option value="256gb">256 GB</option>
@@ -141,8 +154,9 @@
                 </select>
                  <br/>
                 <br/>
+                <br/>
 
-                <label for="coolerType">CPU Cooler Type </label>
+                <label for="coolerType">CPU Cooler Type &nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="coolerType" name="coolerType">
                     <option value="none" selected disabled hidden> Select CPU Cooler Type</option>
                     <option value="fan"> Fan </option>
@@ -150,15 +164,17 @@
                     
                 </select>
                 <br/>
-                <label for="coolerSize">CPU Cooler Size </label>
+                <br/>
+                <label for="coolerSize">CPU Cooler Size &nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="coolerSize" name="coolerSize">
                     <!--Populated by JavaScript-->
                     
                 </select>
                 <br/>
                 <br/>
+                <br/>
 
-                <label for="case">Computer Case </label>
+                <label for="case">Computer Case &nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="case" name="case">
                     <option value="none" selected disabled hidden> Select a Computer Case</option>
                     <option value="mid"> Mid Tower </option>
@@ -166,14 +182,16 @@
                     
                 </select>
                 <br/>
-                <label for="caseSize">Computer Case Size </label>
+                <br/>
+                <label for="caseSize">Computer Case Size &nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="caseSize" name="caseSize">
                     <!--Populated by JavaScript-->
                     
                 </select>
                 <br/>
                 <br/>
-                <label for="powerBrand">Power Supply Brand </label>
+                <br/>
+                <label for="powerBrand">Power Supply Brand &nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="powerBrand" name="powerBrand">
                     <option value="none" selected disabled hidden> Select a Power Supply Brand</option>
                     <option value="evgaPower"> EVGA </option>
@@ -183,14 +201,16 @@
                     
                 </select>
                 <br/>
-                <label for="powerWatt">Power Supply Wattage</label>
+                <br/>
+                <label for="powerWatt">Power Supply Wattage&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select id="powerWatt" name="powerWatt">
                     <!--Populated by JavaScript-->
                     
                 </select>
                 <br/>
                 <br/>
-                
+                <br/>
+                </div>
             </form>
         </fieldset>
     </div>
