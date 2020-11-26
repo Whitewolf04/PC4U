@@ -15,14 +15,24 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:-20px;
-    /*background-color:white;*/
+    margin:0px 0px;
+    background-color:white;
+    padding:-10px 0px;
+}
+
+#menu li
+{
+    list-style:none;
+    box-sizing:border-box;
+    float:left;
+    margin-left:10px;
+    margin-right:10px;
 }
 
 #menu #logo
 {
     pointer-events:none;
-    padding:0px 0px 0px 15px;
+    margin-left:-30px;
 }
 
 #menu button, a.menuButton
@@ -33,7 +43,7 @@
     color:grey;
     padding:16px 32px;
     text-align:center;
-    display:inline-block;
+    display:block;
     font-size:16px;
     font-weight:bold;
     outline:none;
@@ -51,7 +61,7 @@
 {
     position:relative;
     float:right;
-    padding:0px 50px 30px 10px;
+    margin:9px 60px 0px 0px;
 }
 
 #menu #shoppingCart img
@@ -63,7 +73,6 @@
 #menu #accountMenu
 {
     position:relative;
-    border:solid;
 }
 
 #menu #accountMenu #accountOptions
@@ -82,6 +91,6 @@
 {
     display:block;
     position:absolute;
-    top:0%;
-    left:100%;
+    top:100%;
+    left:0%;
 }
