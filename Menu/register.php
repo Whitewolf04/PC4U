@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="loginregister.css" />
         <link rel="stylesheet" type="text/css" href="menu.css" />
-        <script type="text/javascript" src="menu.js"></script>
+        <script type="text/javascript" src="register.js"></script>
     </head>
     <body>
         <h1 id="banner">PC4U</h1>
@@ -15,17 +15,14 @@
             <h1>Register</h1>
 
             <div id="formRow">
-                <label for="registerEmail">Email Address:</label>
                 <input type="text" id="registerEmail" name="registerEmail" placeholder="Email Address" />
             </div>
 
             <div id="formRow">
-                <label for="registerUsername">Username:</label>
                 <input type="text" id="registerUsername" name="registerUsername" placeholder="Username" />
             </div>
 
             <div id="formRow">
-                <label for="registerPassword">Password:</label>
                 <input type="password" id="registerPassword" name="registerPassword" placeholder="Password" />
             </div>
 

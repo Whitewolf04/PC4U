@@ -1,3 +1,8 @@
+<!--
+    Can be added to other php pages using <?php require_once "menu.php" ?>, see account.php for example.
+    To do: Convert all html pages to php.
+-->
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />

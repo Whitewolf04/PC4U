@@ -6,16 +6,6 @@ document.addEventListener("DOMContentLoaded", function()
     shoppingCart.addEventListener("mouseout", dullShoppingCart);
 });
 
-function displayAccountOptions()
-{
-    document.getElementById("accountOptions").style.display = "block";
-}
-
-function hideAccountOptions()
-{
-    document.getElementById("accountOptions").style.display = "none";
-}
-
 function glowShoppingCart()
 {
     document.getElementById("shoppingCartTop").style.opacity = "0";
