@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function()
+{
+    var shoppingCart = document.getElementById("shoppingCart");
+
+    shoppingCart.addEventListener("mouseover", glowShoppingCart);
+    shoppingCart.addEventListener("mouseout", dullShoppingCart);
+});
+
 function displayAccountOptions()
 {
     document.getElementById("accountOptions").style.display = "block";
