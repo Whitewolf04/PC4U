@@ -14,15 +14,16 @@
             </tr></table>
 
             <table id="buttonGroup"><tr>
-                <div>
-                    <td><a class="menuButton" href="#">Account</a></td>
+                <div id="accountMenu">
+                    <td><a id="accountButton" class="menuButton" href="#">Account</a></td>
                     <div id="accountOptions">
-                        <a class="menuButton" href="../Menu/login.php">Login</a>
-                        <a class="menuButton" href="../Menu/register.php">Register</a>
+                        <a id="loginButton" class="menuButton" href="../Menu/login.php">Login</a>
+                        <a id="registerButton" class="menuButton" href="../Menu/register.php">Register</a>
                     </div>
                 </div>
-                <td><a href="#">
-                    <img id="shoppingCart" src="../Menu/Images/shopping_cart_nohover.png" width="30px" height="30px" />
+                <td><a id="shoppingCart" href="#">
+                    <img id="shoppingCartBot" src="../Menu/Images/shopping_cart_hover.png" width="30px" height="30px" />
+                    <img id="shoppingCartTop" src="../Menu/Images/shopping_cart_nohover.png" width="30px" height="30px" />
                 </a></td>
             </tr></table>
         </form>

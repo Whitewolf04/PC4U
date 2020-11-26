@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="../Menu/menu.js"></script>
 	</head>
     <body>
-        <?php require_once "menu.html" ?>
+        <?php require_once "menu.php" ?>
         <div class="main">
             <div class="wrap">
                 <div class="content"></div>
