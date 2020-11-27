@@ -7,7 +7,7 @@
     padding-bottom:70px;
     border:2px;
     border-style:solid;
-    border-color:grey;
+    border-color:#2F2F2F;
 }
 
 #menu
@@ -40,7 +40,7 @@
     text-decoration:none;
     background-color:white;
     border:none;
-    color:grey;
+    color:#2F2F2F;
     padding:16px 32px;
     text-align:center;
     display:block;
@@ -54,7 +54,7 @@
 #menu button:hover, a:hover
 {
     cursor:pointer;
-    color:cornflowerblue;
+    color:#0299E3;
 }
 
 #menu #shoppingCart

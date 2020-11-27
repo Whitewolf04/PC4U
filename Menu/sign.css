@@ -1,0 +1,279 @@
+.block
+{
+    font-family:Calibri;
+
+    border:solid;
+    border-radius:5px;
+    border-width:1px;
+    border-color:#DADCE0;
+    box-shadow:0px 0px 10px #DADCE0;
+
+    width:max-content;
+    text-align:center;
+
+    padding:20px 40px;
+    margin:150px auto;
+}
+
+.block .col
+{
+    border:none;
+
+    margin:10px;
+    padding:10px;
+    
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.block .col.l
+{
+    padding-right:20px;
+}
+
+.block .col.r
+{
+    padding-left:20px;
+}
+
+.block #formlogo
+{
+    pointer-events:none;
+    margin-top:50px;
+}
+
+.block h1
+{
+    color:#2F2F2F;
+    font-size:28px;
+    margin-bottom:50px;
+}
+
+.block label
+{
+    display:block;
+    text-align:left;
+    padding-left:3px;
+    margin-bottom:0px;
+    margin-top:20px;
+    color:#2F2F2F;
+}
+
+.block input:not([id="visibility"])
+{
+    display:block;
+    width:300px;
+    padding:10px;
+    font-size:13px;
+    margin-top:5px;
+    margin-bottom:5px;
+    border:solid;
+    border-radius:5px;
+    border-width: 1px;
+    border-color:#DADCE0;
+    transition:0.5s;
+    outline:none;
+}
+
+.block input#password
+{
+    width:250px;
+}
+
+.block #visibility
+{
+    display:none;
+}
+
+.block #visibility+label
+{
+    background:url("Images/invisible.png") no-repeat;
+    height:30px;
+    width:30px;
+    background-size:100%;
+    cursor:pointer;
+    position:relative;
+    margin-top:-40px;
+    margin-right:8px;
+    float:right;
+}
+
+.block #visibility:checked+label
+{
+    background:url("Images/visible.png") no-repeat;
+    height:30px;
+    width:30px;
+    background-size:100%;
+    cursor:pointer;
+    position:relative;
+    margin-top:-40px;
+    margin-right:8px;
+    float:right;
+}
+
+.block #passwordStrengthBox
+{
+    display:none;
+}
+
+.block #passwordStrengthBox p
+{
+    text-align:left;
+    padding-left:3px;
+    margin-bottom:-10px;
+    margin-top:20px;
+    color:#2F2F2F;
+}
+
+.block #passwordStrengthBox li
+{
+    color:#2F2F2F;
+    list-style:none;
+    text-align:left;
+}
+
+.block #passwordStrengthBox li img
+{
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+    margin-left:-30px;
+    margin-right:5px;
+}
+
+.block #strengthBar
+{
+    margin-top:5px;
+    position:relative;
+}
+
+.block #strengthBar #strength
+{
+    position:absolute;
+    border:solid;
+    width:0%;
+}
+
+.block #strengthBar #background
+{
+    position:absolute;
+    border:solid;
+    border-color:#2F2F2F;
+    width:100%;
+}
+
+.block p.condition
+{
+    display:none;
+    color:#D90016;
+    text-align:left;
+    padding-left:3px;
+    margin-top:0px;
+    margin-bottom:20px;
+}
+
+.flex
+{
+    display:flex;
+    justify-content:space-between;
+    text-align:left;
+    margin-top:60px;
+    margin-bottom:20px;
+    align-items:center;
+}
+
+.flex a
+{
+    font-size:16px;
+    font-weight:bold;
+    color:#2F2F2F;
+    text-decoration:none;
+}
+
+.flex a:hover
+{
+    color:#0299E3;
+}
+
+.flex a:active
+{
+    color:#28B5F5;
+}
+
+.flex button
+{
+    border:none;
+    border-radius:5px;
+    outline:none;
+    background:#2F2F2F;
+    padding:10px 40px;
+    color:white;
+}
+
+.flex button:hover
+{
+    cursor:pointer;
+    background:#0299E3;
+}
+
+.flex button:active
+{
+    background:#28B5F5;
+}
+
+.block div#success
+{
+    margin:50px 300px 50px 300px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.block div.loading
+{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    background-color:#2F2F2F;
+    display:inline-block;
+    margin:10px 10px 50px 10px;
+    animation:loading 2.5s ease-in-out infinite;
+}
+
+@keyframes loading
+{
+    0%, 100%
+    {
+        background-color:#2F2F2F;
+        transform:scale(1);
+    }
+    50%
+    {
+        background-color:#28B5F5;
+        transform:scale(0.5);
+    }
+}
+
+.block div div.loading:nth-child(1)
+{
+    animation-delay:0s;
+}
+
+.block div div.loading:nth-child(2)
+{
+    animation-delay:0.2s;
+}
+
+.block div div.loading:nth-child(3)
+{
+    animation-delay:0.4s;
+}
+
+.block div div.loading:nth-child(4)
+{
+    animation-delay:0.6s;
+}
+
+.block div div.loading:nth-child(5)
+{
+    animation-delay:0.8s;
+}

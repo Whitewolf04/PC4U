@@ -17,13 +17,13 @@
                 <li id="accountMenu">
                     <a id="accountButton" class="menuButton" href="#">Account</a>
                     <div id="accountOptions">
-                        <a id="loginButton" class="menuButton" href="../Menu/login.php">Login</a>
-                        <a id="registerButton" class="menuButton" href="../Menu/register.php">Register</a>
+                        <a id="signinButton" class="menuButton" href="../Menu/signin.php">Sign In</a>
+                        <a id="signupButton" class="menuButton" href="../Menu/signup.php">Sign Up</a>
                     </div>
                 </li>
                 <li><a id="shoppingCart" href="#">
-                    <img src="../Menu/Images/shopping_cart_hover.png" width="30px" height="30px" />
-                    <img id="shoppingCartTop" src="../Menu/Images/shopping_cart_nohover.png" width="30px" height="30px" />
+                    <img src="../Account/Images/shopping_cart_hover.png" width="30px" height="30px" />
+                    <img id="shoppingCartTop" src="../Account/Images/shopping_cart_nohover.png" width="30px" height="30px" />
                 </a></li>
             </ul>
         </div>
