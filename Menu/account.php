@@ -3,11 +3,9 @@
 		<meta charset="UTF-8" />
 		<title>PC4U</title>
 		<link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
-		<link rel="stylesheet" type="text/css" href="../Menu/menu.css" />
-		<script type="text/javascript" src="../Menu/menu.js"></script>
 	</head>
     <body>
-        <?php require_once "menu.php" ?>
+        <?php session_start(); require_once "../Menu/menu.php" ?>
         <div class="main">
             <div class="wrap">
                 <div class="content"></div>

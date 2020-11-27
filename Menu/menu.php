@@ -1,8 +1,3 @@
-<!--
-    Can be added to other php pages using <?php require_once "menu.php" ?>, see account.php for example.
-    To do: Convert all html pages to php.
--->
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -13,9 +8,9 @@
         <div id="menu">
             <ul id="buttonGroup">
                 <li><img src="../logo.png" width="50" height="50" id="logo"/></li>
-                <li><a class="menuButton" href="../DIY_BuildPage/DIY_Mainpage.html">Main Page</a></li>
-                <li><a class="menuButton" href="../Newsletter/Newsletter.html">Newsletter</a></li>
-                <li><a class="menuButton" href="../DIY_BuildPage/DIY_GUIDE_PAGE.html">Tutorial</a></li>
+                <li><a class="menuButton" href="../DIY_BuildPage/DIY_Mainpage.php">Main Page</a></li>
+                <li><a class="menuButton" href="../Newsletter/Newsletter.php">Newsletter</a></li>
+                <li><a class="menuButton" href="../DIY_BuildPage/DIY_GUIDE_PAGE.php">Tutorial</a></li>
             </ul>
 
             <ul id="accountGroup">
