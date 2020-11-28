@@ -45,7 +45,7 @@
                                 <div id="accountOptions">
                                     <a id="signinButton" class="menuButton" href="">Profile?</a>
                                     <a id="signupButton" class="menuButton" href="">Orders?</a>
-                                    <a id="signupButton" class="menuButton" href="../Menu/menuhandler.php?signout=true">Sign Out</a>
+                                    <a id="signupButton" class="menuButton" href="../Menu/navhandler.php?signout=true">Sign Out</a>
                                 </div>
                             </li>
                             <li><a id="shoppingCart" href="#">
