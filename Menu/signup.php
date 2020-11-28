@@ -39,7 +39,7 @@
             //If a signin form session is saved, clear it.
             if(isset($_SESSION['form']) && $_SESSION['form'] === "SIGNIN")
             {
-                unset($_SESSION['form']);
+                $_SESSION['form'] = "SIGNUP";
                 unset($_SESSION['state']);
                 unset($_SESSION['name']);
                 unset($_SESSION['email']);
@@ -48,15 +48,12 @@
                 unset($_SESSION['code']);
             }
 
-            //Declare the signup form session.
-            $_SESSION['form'] = "SIGNUP";
-
             //Step 1: Fetch name, email, password.
             if(!isset($_SESSION['state']) || $_SESSION['state'] === 1 || $_SESSION['state'] === 3)
             {
                 isset($_SESSION['state']) && $_SESSION['state'] === 3 ? $_SESSION['state'] = 4 : $_SESSION['state'] = 1;
                 echo '
-                    <form id="signup" method="POST" action="validatesignup.php">
+                    <form id="signup" method="POST" action="signuphandler.php">
                         <div class="block">
                             <div class="col l">
                                 <h1>Create Your Account</h1>
@@ -118,7 +115,7 @@
                 $_SESSION['state'] = 3;
 
                 echo '
-                    <form id="signup" method="POST" action="validatesignup.php">
+                    <form id="signup" method="POST" action="signuphandler.php">
                         <div class="block">
                             <div class="col l">
                                 <h1>Verify Your Email</h1>
