@@ -37,7 +37,7 @@
             }
 
             //If a signin form session is saved, clear it.
-            if(isset($_SESSION['form']) && $_SESSION['form'] === "SIGNIN")
+            if(!isset($_SESSION['form']) || $_SESSION['form'] === "SIGNIN")
             {
                 $_SESSION['form'] = "SIGNUP";
                 unset($_SESSION['state']);

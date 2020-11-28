@@ -9,8 +9,8 @@
 
     if($_SESSION['state'] === 1 || $_SESSION['state'] === 4)
     {
-        $_SESSION['name'] = $_POST['name'];
-        $_SESSION['email'] = strtolower($_POST['email']);
+        $_SESSION['name'] = trim($_POST['name']);
+        $_SESSION['email'] = strtolower(trim($_POST['email']));
         $_SESSION['password'] = $_POST['password'];
 
         $_SESSION['errors'] = array();
