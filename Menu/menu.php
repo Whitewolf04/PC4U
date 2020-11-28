@@ -8,6 +8,8 @@
     unset($_SESSION['password']);
     unset($_SESSION['errors']);
     unset($_SESSION['code']);
+    unset($_SESSION['subject']);
+    unset($_SESSION['body']);
 ?>
 
 <html lang="en">

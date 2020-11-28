@@ -1,23 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-    GLOBAL SESSION VARIABLES (Only unset when something specific happens)
-        signedin    Holds the access token of the user (their email address). If set, the user is signed in. If not, no one is. Sign out can be used to unset this.
-    LOCAL SESSION VARIABLES (These are manually unset when leaving the page)
-        form        Keeps track of which form all the currently saved session variables belong to.
-        name        Holds the full name of the user.
-        email       Holds the email of the user.
-        password    Holds the password of the user.
-        errors      Holds server-side validation errors.
-        code        Holds the server-generated email verification code.
-        state       Identifies the state (NOT STEP) of the form.
-                        1: Step 1 errored or user just started the form.
-                        2: Step 1 finished and the user is just entering step 2 for the first time or step 2 errored (send verification code).
-                        3: User is on step 2, backing to step 1 is allowed.
-                        4: User backed to step 1, await submission to enter step 2 without sending verification code.
-                        5: Form successfully submitted.
--->
-
 <html lang="en">
     <head>
         <title> PC4U - Signup </title>
@@ -46,6 +28,8 @@
                 unset($_SESSION['password']);
                 unset($_SESSION['errors']);
                 unset($_SESSION['code']);
+                unset($_SESSION['subject']);
+                unset($_SESSION['body']);
             }
 
             //Step 1: Fetch name, email, password.
@@ -109,6 +93,8 @@
                         $symbol = rand(0, strlen($alphabet)-1);
                         $_SESSION['code'] .= $alphabet[$symbol];
                     }
+                    $_SESSION['subject'] = "PC4U Account Verification Code";
+                    $_SESSION['body'] = "<p>Dear ".$_SESSION['name'].",</p><p>Your verification code is: ".$_SESSION['code']."</p><p>Beep Boop,<br/>PC4U MailBot</p>";
                     require_once "../PHPMailer/mailer.php";
                 }
 

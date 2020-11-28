@@ -19,8 +19,8 @@ $mail->addAddress($_SESSION['email']);
 
 $mail->isHTML(true);
 
-$mail->Subject = 'PC4U Account Verification Code';
-$mail->Body = "<p>Dear ".$_SESSION['name'].",</p><p>Your verification code is: ".$_SESSION['code']."</p><p>Beep Boop,<br/>PC4U MailBot</p>";
+$mail->Subject = $_SESSION['subject'];
+$mail->Body = $_SESSION['body'];
 
 if (!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;

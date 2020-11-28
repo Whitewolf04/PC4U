@@ -28,6 +28,8 @@
                 unset($_SESSION['password']);
                 unset($_SESSION['errors']);
                 unset($_SESSION['code']);
+                unset($_SESSION['subject']);
+                unset($_SESSION['body']);
             }
 
             //Step 1: Fetch email.
@@ -88,6 +90,8 @@
                     $symbol = rand(0, strlen($alphabet)-1);
                     $_SESSION['code'] .= $alphabet[$symbol];
                 }
+                $_SESSION['subject'] = "PC4U Account Verification Code";
+                $_SESSION['body'] = "<p>Beep Boop,</p><p>Your verification code is: ".$_SESSION['code']."</p><p>Beep Boop,<br/>PC4U MailBot</p>";
                 require_once "../PHPMailer/mailer.php";
 
                 $_SESSION['state'] = 5;
