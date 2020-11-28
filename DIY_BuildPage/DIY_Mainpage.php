@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <?php require_once "../Menu/menu.php" ?>
+        <?php require_once "../Menu/nav.php" ?>
 
         <h1 id="banner">PC4U</h1>
 

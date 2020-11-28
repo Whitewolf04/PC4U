@@ -10,6 +10,12 @@
     if(isset($_GET['forgotpassword']) && isset($_SESSION['state']) && $_SESSION['state'] === 3)
     {
         $_SESSION['state'] = 4;
+
+        if(in_array("password",$_SESSION['errors'],true))
+        {
+            unset($_SESSION['errors'][array_search("password", $_SESSION['errors'], true)]);
+        }
+
         header("Location: signin.php");
         exit;
     }

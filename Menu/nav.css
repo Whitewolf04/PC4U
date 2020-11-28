@@ -10,7 +10,7 @@
     border-color:#2F2F2F;
 }
 
-#menu
+#nav
 {
     display:flex;
     justify-content:space-between;
@@ -20,7 +20,7 @@
     padding:-10px 0px;
 }
 
-#menu li
+#nav li
 {
     list-style:none;
     box-sizing:border-box;
@@ -29,13 +29,13 @@
     margin-right:10px;
 }
 
-#menu #logo
+#nav #logo
 {
     pointer-events:none;
     margin-left:-30px;
 }
 
-#menu button, a.menuButton
+#nav button, a.menuButton
 {
     text-decoration:none;
     background-color:white;
@@ -51,43 +51,43 @@
     transition:0.3s;
 }
 
-#menu button:hover, a:hover
+#nav button:hover, a:hover
 {
     cursor:pointer;
     color:#0299E3;
 }
 
-#menu #shoppingCart
+#nav #shoppingCart
 {
     position:relative;
     float:right;
     margin:9px 60px 0px 0px;
 }
 
-#menu #shoppingCart img
+#nav #shoppingCart img
 {
     position:absolute;
     transition:0.3s;
 }
 
-#menu #accountMenu
+#nav #accountMenu
 {
     position:relative;
 }
 
-#menu #accountMenu #accountOptions
+#nav #accountMenu #accountOptions
 {
     display:none;
     position:absolute;
 }
 
-#menu #accountMenu #accountOptions a.menuButton
+#nav #accountMenu #accountOptions a.menuButton
 {
     width:64px;
     display:block;
 }
 
-#menu #accountMenu:hover #accountOptions
+#nav #accountMenu:hover #accountOptions
 {
     display:block;
     position:absolute;

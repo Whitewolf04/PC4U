@@ -7,7 +7,7 @@
 </head>
 <body id="page">
 	<header>	
-		<?php require_once "../Menu/menu.php" ?>
+		<?php require_once "../Menu/nav.php" ?>
 	</header>
 	<div class="main">
 		<div class="wrap">

@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="Buildpage.css"/>
     </head>
     <body>
-		<?php require_once "../Menu/menu.php" ?>
+		<?php require_once "../Menu/nav.php" ?>
 
     	<h1 id="banner">Mid-Range Builds</h1>
 
