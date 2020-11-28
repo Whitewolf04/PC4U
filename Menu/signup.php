@@ -17,9 +17,9 @@
                 exit;
             }
 
-            if(!isset($_SESSION['signupstep']) || isset($_SESSION['signupstep']) && ($_SESSION['signupstep'] === 1 || $_SESSION['signupstep'] === 3))
+            if(!isset($_SESSION['state']) || $_SESSION['state'] === 1 || $_SESSION['state'] === 3)
             {
-                $_SESSION['signupstep'] = 1;
+                isset($_SESSION['state']) && $_SESSION['state'] === 3 ? $_SESSION['state'] = 4 : $_SESSION['state'] = 1;
                 echo '
                     <form id="signup" method="POST" action="validatesignup.php">
                         <div class="block">
@@ -27,17 +27,18 @@
                                 <h1>Create Your Account</h1>
             
                                 <label>Full Name</label>
-                                <input class="valid" type="text" id="name" name="name" value="" autofocus />
-                                <p class="condition" id="nameCondition">Enter a valid first and last name.</p>
+                                <input class="valid" type="text" id="name" name="name" value="'.(isset($_SESSION['name']) ? $_SESSION['name'] : "").'" autofocus />
+                                <p class='.(isset($_SESSION['errors']) && in_array("name",$_SESSION['errors'],true) ? "servererror" : "condition").' id="nameCondition">Enter a valid first and last name.</p>
             
                                 <label>Email Address</label>
-                                <input class="valid" type="text" id="email" name="email" value="" />
-                                <p class="condition" id="emailCondition">Enter a valid email address.</p>
+                                <input class="valid" type="text" id="email" name="email" value="'.(isset($_SESSION['email']) ? $_SESSION['email'] : "").'" />
+                                <p class='.(isset($_SESSION['errors']) && in_array("email",$_SESSION['errors'],true) ? "servererror" : "condition").' id="emailCondition">Enter a valid email address.</p>
+                                '.(isset($_SESSION['errors']) && in_array("exists",$_SESSION['errors'],true) ? '<p class="servererror">An account is already signed up with that email.</p>' : '').'
             
                                 <label>Password</label>
-                                <input class="valid" type="password" id="password" name="password" value="" />
-                                <input type="checkbox" id="visibility" value="false" /><label for="visibility"></label>
-                                <p class="condition" id="passwordCondition">Enter a valid password.</p>
+                                <input class="valid" type="password" id="password" name="password" value="'.(isset($_SESSION['password']) ? $_SESSION['password'] : "").'" />
+                                <input type="checkbox" id="visibility" /><label for="visibility"></label>
+                                <p class='.(isset($_SESSION['errors']) && in_array("password",$_SESSION['errors'],true) ? "servererror" : "condition").' id="passwordCondition">Enter a valid password.</p>
             
                                 <div id="passwordStrengthBox">
                                     <label>Strength</label>
@@ -64,18 +65,21 @@
                 ';
             }
 
-            if($_SESSION['signupstep'] === 2)
+            else if($_SESSION['state'] === 2 || $_SESSION['state'] === 4)
             {
-                $_SESSION['signupstep'] = 3;
-
-                $alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-                $_SESSION['code'] = "";
-                for($i = 0; $i < 8; $i++)
+                if($_SESSION['state'] === 2)
                 {
-                    $symbol = rand(0, strlen($alphabet)-1);
-                    $_SESSION['code'] .= $alphabet[$symbol];
+                    $alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                    $_SESSION['code'] = "";
+                    for($i = 0; $i < 8; $i++)
+                    {
+                        $symbol = rand(0, strlen($alphabet)-1);
+                        $_SESSION['code'] .= $alphabet[$symbol];
+                    }
+                    require_once "../PHPMailer/mailer.php";
                 }
-                require_once "../PHPMailer/mailer.php";
+
+                $_SESSION['state'] = 3;
 
                 echo '
                     <form id="signup" method="POST" action="validatesignup.php">
@@ -86,7 +90,7 @@
             
                                 <label>Verification Code</label>
                                 <input class="valid" type="text" id="code" name="code" value="" autofocus />
-                                <p class="condition" id="codeCondition">Invalid verification code.</p>
+                                '.(isset($_SESSION['errors']) && in_array("unverified",$_SESSION['errors'],true) ? '<p class="servererror">Invalid code. We\'re resending a different one.</p>' : '').'
             
                                 <div class="flex">
                                     <div><a href="../Menu/signup.php">BACK</a></div>
@@ -102,7 +106,7 @@
                 ';
             }
 
-            if($_SESSION['signupstep'] === 4)
+            else if($_SESSION['state'] === 5)
             {
                 echo '
                     <div class="block">
@@ -112,7 +116,7 @@
                     </div>
                 ';
                 $_SESSION['signedin'] = $_SESSION['email'];
-                unset($_SESSION['signupstep']);
+                unset($_SESSION['state']);
                 unset($_SESSION['name']);
                 unset($_SESSION['email']);
                 unset($_SESSION['password']);

@@ -172,6 +172,15 @@
     margin-bottom:20px;
 }
 
+.block p.servererror
+{
+    color:#D90016;
+    text-align:left;
+    padding-left:3px;
+    margin-top:0px;
+    margin-bottom:20px;
+}
+
 .flex
 {
     display:flex;

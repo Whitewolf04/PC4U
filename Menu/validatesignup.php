@@ -7,7 +7,7 @@
         exit;
     }
 
-    if($_SESSION['signupstep'] === 1)
+    if($_SESSION['state'] === 1 || $_SESSION['state'] === 4)
     {
         $_SESSION['name'] = $_POST['name'];
         $_SESSION['email'] = strtolower($_POST['email']);
@@ -65,21 +65,22 @@
 
         if(!empty($_SESSION['errors']))
         {
+            $_SESSION['state'] = 1;
             header("Location: signup.php");
             exit;
         }
 
-        $_SESSION['signupstep'] = 2;
+        $_SESSION['state'] === 1 ? $_SESSION['state'] = 2 : "";
         header("Location: signup.php");
         exit;
     }
 
-    if($_SESSION['signupstep'] === 3)
+    if($_SESSION['state'] === 3)
     {
         if($_POST['code'] !== $_SESSION['code'])
         {
             !in_array("unverified",$_SESSION['errors'],true) ? array_push($_SESSION['errors'], "unverified") : "";
-            $_SESSION['signupstep'] = 2;
+            $_SESSION['state'] = 2;
             header("Location: signup.php");
             exit;
         }
@@ -93,7 +94,7 @@
         {
             file_put_contents("../Database/accounts.txt", $entry, FILE_APPEND);
 
-            $_SESSION['signupstep'] = 4;
+            $_SESSION['state'] = 5;
             header("Location: signup.php");
             exit;
         }
