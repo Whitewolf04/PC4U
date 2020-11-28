@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(isset($_SESSION['signedin']) || !isset($_POST['name']) && !isset($_SESSION['name']) || !isset($_POST['email']) && !isset($_SESSION['email']) || !isset($_POST['password']) && !isset($_SESSION['password']))
+    if(isset($_SESSION['signedin']) || !isset($_SESSION['form']) || $_SESSION['form'] !== "SIGNUP" || !isset($_POST['name']) && !isset($_SESSION['name']) || !isset($_POST['email']) && !isset($_SESSION['email']) || !isset($_POST['password']) && !isset($_SESSION['password']))
     {
         header("Location: ../DIY_BuildPage/DIY_Mainpage.php");
         exit;
