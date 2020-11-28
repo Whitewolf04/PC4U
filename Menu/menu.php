@@ -1,4 +1,15 @@
-<?php session_start(); ?>
+<?php
+    session_start();
+
+    unset($_SESSION['form']);
+    unset($_SESSION['state']);
+    unset($_SESSION['name']);
+    unset($_SESSION['email']);
+    unset($_SESSION['password']);
+    unset($_SESSION['errors']);
+    unset($_SESSION['code']);
+?>
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />

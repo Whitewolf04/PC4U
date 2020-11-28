@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 
+<!--
+    GLOBAL SESSION VARIABLES (Only unset when something specific happens)
+        signedin    Holds the access token of the user (their email address). If set, the user is signed in. If not, no one is. Sign out can be used to unset this.
+    LOCAL SESSION VARIABLES (These are manually unset when leaving the page)
+        form        Keeps track of which form all the currently saved session variables belong to.
+        name        Holds the full name of the user.
+        email       Holds the email of the user.
+        password    Holds the password of the user.
+        errors      Holds server-side validation errors.
+        code        Holds the server-generated email verification code.
+        state       Identifies the state (NOT STEP) of the form.
+                        1: Step 1 errored or user just started the form.
+                        2: Step 1 finished and the user is just entering step 2 for the first time or step 2 errored (send verification code).
+                        3: User is on step 2, backing to step 1 is allowed.
+                        4: User backed to step 1, await submission to enter step 2 without sending verification code.
+                        5: Form successfully submitted.
+-->
+
 <html lang="en">
     <head>
         <title> PC4U - Signup </title>
@@ -11,12 +29,29 @@
         <?php
             session_start();
 
+            //If signedin, signup redirects back to main page.
             if(isset($_SESSION['signedin']))
             {
                 header("Location: ../DIY_BuildPage/DIY_Mainpage.php");
                 exit;
             }
 
+            //If a signin form session is saved, clear it.
+            if(isset($_SESSION['form']) && $_SESSION['form'] === "SIGNIN")
+            {
+                unset($_SESSION['form']);
+                unset($_SESSION['state']);
+                unset($_SESSION['name']);
+                unset($_SESSION['email']);
+                unset($_SESSION['password']);
+                unset($_SESSION['errors']);
+                unset($_SESSION['code']);
+            }
+
+            //Declare the signup form session.
+            $_SESSION['form'] = "SIGNUP";
+
+            //Step 1: Fetch name, email, password.
             if(!isset($_SESSION['state']) || $_SESSION['state'] === 1 || $_SESSION['state'] === 3)
             {
                 isset($_SESSION['state']) && $_SESSION['state'] === 3 ? $_SESSION['state'] = 4 : $_SESSION['state'] = 1;
@@ -65,6 +100,7 @@
                 ';
             }
 
+            //Step 2: Verify email address.
             else if($_SESSION['state'] === 2 || $_SESSION['state'] === 4)
             {
                 if($_SESSION['state'] === 2)
@@ -106,6 +142,7 @@
                 ';
             }
 
+            //Step 3: Success.
             else if($_SESSION['state'] === 5)
             {
                 echo '
@@ -116,12 +153,6 @@
                     </div>
                 ';
                 $_SESSION['signedin'] = $_SESSION['email'];
-                unset($_SESSION['state']);
-                unset($_SESSION['name']);
-                unset($_SESSION['email']);
-                unset($_SESSION['password']);
-                unset($_SESSION['errors']);
-                unset($_SESSION['code']);
             }
         ?>
     </body>
