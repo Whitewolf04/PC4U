@@ -19,6 +19,8 @@
         $username = $_POST['loginUsername'];
         $password = $_POST['loginPassword'];
         if(checkUser($username, $password)){
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
             echo "hello";
             //header("Location: account.php");
         }else{
