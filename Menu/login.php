@@ -21,8 +21,7 @@
         if(checkUser($username, $password)){
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
-            echo "hello";
-            //header("Location: account.php");
+            header("Location: account.php");
         }else{
             echo "The username or password is incorrect";
         }
@@ -34,9 +33,10 @@
             while(($line=fgets($stream))!==false){
                 $username_check = substr($line, 0, strpos($line, ' '));
                 $password_check = substr($line, strpos($line, ' '), strpos($line,",")-strpos($line, ' '));
-                echo $password_check."<br>";
+                $password_check = trim($password_check);
+                //var_dump($password_check, $password);
+                //echo $password_check."<br>";
                 if($username_check==$username && $password_check==$password){
-                    echo "you win";
                     return true;
                 }
             }
