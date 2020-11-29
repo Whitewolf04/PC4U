@@ -1,70 +1,96 @@
 #banner
 {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 300%;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    border: 2px;
-    border-style: solid;
-    border-color: grey;
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:300%;
+    padding-top:70px;
+    padding-bottom:70px;
+    border:2px;
+    border-style:solid;
+    border-color:grey;
 }
 
 #menu
 {
     display:flex;
     justify-content:space-between;
-    margin-bottom:-20px;
+    align-items:center;
+    margin:0px 0px;
+    background-color:white;
+    padding:-10px 0px;
 }
 
-#logo
+#menu li
+{
+    list-style:none;
+    box-sizing:border-box;
+    float:left;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+#menu #logo
 {
     pointer-events:none;
-    padding:0;
+    margin-left:-30px;
 }
 
 #menu button, a.menuButton
 {
     text-decoration:none;
-    background-color: white;
-    border: none;
-    color: grey;
-    padding: 16px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
+    background-color:white;
+    border:none;
+    color:grey;
+    padding:16px 32px;
+    text-align:center;
+    display:block;
+    font-size:16px;
     font-weight:bold;
     outline:none;
-    font-family: 'Arial';
+    font-family:'Arial';
+    transition:0.3s;
 }
 
 #menu button:hover, a:hover
 {
     cursor:pointer;
-    color: cornflowerblue;
+    color:cornflowerblue;
 }
 
-#shoppingCart
+#menu #shoppingCart
 {
+    position:relative;
     float:right;
-    display:inline;
-    padding: 0px 30px 0px 8px;
-    margin-top:10px;
+    margin:9px 60px 0px 0px;
 }
 
-#accountOptions
+#menu #shoppingCart img
+{
+    position:absolute;
+    transition:0.3s;
+}
+
+#menu #accountMenu
+{
+    position:relative;
+}
+
+#menu #accountMenu #accountOptions
 {
     display:none;
     position:absolute;
-    z-index: 1;
-    background-color: #f1f1f1;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    min-width:122px;
 }
 
-#accountOptions a
+#menu #accountMenu #accountOptions a.menuButton
 {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+    width:64px;
+    display:block;
+}
+
+#menu #accountMenu:hover #accountOptions
+{
+    display:block;
+    position:absolute;
+    top:100%;
+    left:0%;
 }

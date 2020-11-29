@@ -1,19 +1,17 @@
-function displayAccountOptions()
+document.addEventListener("DOMContentLoaded", function()
 {
-    document.getElementById("accountOptions").style.display = "block";
-}
+    var shoppingCart = document.getElementById("shoppingCart");
 
-function hideAccountOptions()
-{
-    document.getElementById("accountOptions").style.display = "none";
-}
+    shoppingCart.addEventListener("mouseover", glowShoppingCart);
+    shoppingCart.addEventListener("mouseout", dullShoppingCart);
+});
 
 function glowShoppingCart()
 {
-    document.getElementById("shoppingCart").src = "../Menu/Images/shopping_cart_hover.png";
+    document.getElementById("shoppingCartTop").style.opacity = "0";
 }
 
 function dullShoppingCart()
 {
-    document.getElementById("shoppingCart").src = "../Menu/Images/shopping_cart_nohover.png";
+    document.getElementById("shoppingCartTop").style.opacity = "1";
 }
