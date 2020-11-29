@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php session_start(); ?>
 <html lang="en">
     <head>
         <title> PC4U - Login </title>
@@ -9,9 +9,42 @@
         <script type="text/javascript" src="menu.js"></script>
     </head>
     <body>
+    <?php 
+    $username = $password = "";
+    $file;
+    if(isset($_POST['login'])){
+        if(empty($_POST['loginUsername']) || empty($_POST['loginPassword'])){
+            echo "One of the fields is missing.";
+        }
+        $username = $_POST['loginUsername'];
+        $password = $_POST['loginPassword'];
+        if(checkUser($username, $password)){
+            echo "hello";
+            //header("Location: account.php");
+        }else{
+            echo "The username or password is incorrect";
+        }
+    }
+
+    function checkUser($username, $password){
+        if(file_exists("accounts.txt")){
+            $stream = fopen("accounts.txt", "r");
+            while(($line=fgets($stream))!==false){
+                $username_check = substr($line, 0, strpos($line, ' '));
+                $password_check = substr($line, strpos($line, ' '), strpos($line,",")-strpos($line, ' '));
+                echo $password_check."<br>";
+                if($username_check==$username && $password_check==$password){
+                    echo "you win";
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    ?>
         <h1 id="banner">PC4U</h1>
 
-        <form id="loginForm" class="loginRegisterForms">
+        <form id="loginForm" class="loginRegisterForms" method="post" action="">
             <h1>Login</h1>
 
             <div id="formRow">
@@ -25,7 +58,7 @@
             </div>
 
             <div id="formRow">
-                <button id="loginButton" onclick="verifyLoginInfo()">Login</button>
+                <input type="submit" name="login" value="Login">
             </div>
 
             <div id="formBlock">
