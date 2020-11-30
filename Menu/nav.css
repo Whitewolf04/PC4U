@@ -10,6 +10,12 @@
     border-color:#2F2F2F;
 }
 
+body
+{
+    background: #002424;
+    background: linear-gradient(90deg, #002424 0%, #38e4ee 0%, #009bff 100%);
+}
+
 #nav
 {
     display:flex;
