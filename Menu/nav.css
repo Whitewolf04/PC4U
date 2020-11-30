@@ -1,0 +1,96 @@
+#banner
+{
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:300%;
+    padding-top:70px;
+    padding-bottom:70px;
+    border:2px;
+    border-style:solid;
+    border-color:#2F2F2F;
+}
+
+#nav
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:-8px -8px -8px -8px;
+    background-color:white;
+    padding:-10px 0px;
+}
+
+#nav li
+{
+    list-style:none;
+    box-sizing:border-box;
+    float:left;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+#nav #logo
+{
+    pointer-events:none;
+    margin-left:-30px;
+}
+
+#nav button, a.menuButton
+{
+    text-decoration:none;
+    background-color:white;
+    border:none;
+    color:#2F2F2F;
+    padding:16px 32px;
+    text-align:center;
+    display:block;
+    font-size:16px;
+    font-weight:bold;
+    outline:none;
+    font-family:'Arial';
+    transition:0.3s;
+}
+
+#nav button:hover, a:hover
+{
+    cursor:pointer;
+    color:#0299E3;
+}
+
+#nav #shoppingCart
+{
+    position:relative;
+    float:right;
+    margin:9px 60px 0px 0px;
+}
+
+#nav #shoppingCart img
+{
+    position:absolute;
+    transition:0.3s;
+}
+
+#nav #accountMenu
+{
+    position:relative;
+}
+
+#nav #accountMenu #accountOptions
+{
+    display:none;
+    position:absolute;
+}
+
+#nav #accountMenu #accountOptions a.menuButton
+{
+    width:64px;
+    display:block;
+}
+
+#nav #accountMenu:hover #accountOptions
+{
+    display:block;
+    position:absolute;
+    top:100%;
+    left:0%;
+}
