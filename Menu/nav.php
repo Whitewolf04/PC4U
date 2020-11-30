@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="../Menu/nav.css" />
         <script type="text/javascript" src="../Menu/nav.js"></script>
     </head>
-    <body>
+    <body class="darkmode">
         <div id="nav">
             <ul id="buttonGroup">
                 <li><img src="../logo.png" width="50" height="50" id="logo"/></li>
@@ -46,10 +46,7 @@
                                     <a class="menuButton" href="../Menu/navhandler.php?signout=true">Sign Out</a>
                                 </div>
                             </li>
-                            <li><a id="shoppingCart" href="#">
-                                <img src="../Account/Images/shopping_cart_hover.png" width="30px" height="30px" />
-                                <img id="shoppingCartTop" src="../Account/Images/shopping_cart_nohover.png" width="30px" height="30px" />
-                            </a></li>
+                            <li><a href="#"><img id="shoppingCart" src="" width="30px" height="30px" /></a></li>
                         </ul>
                     ';
                 }

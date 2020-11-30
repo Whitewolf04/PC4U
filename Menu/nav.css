@@ -16,6 +16,12 @@ body
     background: linear-gradient(90deg, #002424 0%, #38e4ee 0%, #009bff 100%);
 }
 
+body.darkmode
+{
+    color: #a7b1c1;
+    background-image: linear-gradient(to bottom right,#31394e,#1d212d,#191e33,#141829,#101321);
+}
+
 #nav
 {
     display:flex;
@@ -24,6 +30,12 @@ body
     margin:-8px -8px -8px -8px;
     background-color:white;
     padding:-10px 0px;
+}
+
+.darkmode #nav
+{
+    background-color:#171A21;
+    box-shadow: 0px 0px 10px 3px #000000;
 }
 
 #nav li
@@ -57,7 +69,19 @@ body
     transition:0.3s;
 }
 
+.darkmode #nav a.menuButton
+{
+    background-color:#171A21;
+    color:#C5C3C0;
+}
+
 #nav a:hover
+{
+    cursor:pointer;
+    color:#0299E3;
+}
+
+.darkmode #nav a:hover
 {
     cursor:pointer;
     color:#0299E3;
@@ -73,7 +97,6 @@ body
 #nav #shoppingCart img
 {
     position:absolute;
-    transition:0.3s;
 }
 
 #nav .dropdownMenu

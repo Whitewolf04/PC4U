@@ -4,14 +4,28 @@ document.addEventListener("DOMContentLoaded", function()
 
     shoppingCart.addEventListener("mouseover", glowShoppingCart);
     shoppingCart.addEventListener("mouseout", dullShoppingCart);
+
+    if(document.body.classList.contains("darkmode"))
+    {
+        shoppingCart.src = "../Account/Images/shopping_cart_nohover_dark.png";
+    } else {
+        shoppingCart.src = "../Account/Images/shopping_cart_nohover_light.png";
+    }
 });
 
 function glowShoppingCart()
 {
-    document.getElementById("shoppingCartTop").style.opacity = "0";
+    document.getElementById("shoppingCart").src = "../Account/Images/shopping_cart_hover.png";
 }
 
 function dullShoppingCart()
 {
-    document.getElementById("shoppingCartTop").style.opacity = "1";
+    var shoppingCart = document.getElementById("shoppingCart");
+
+    if(document.body.classList.contains("darkmode"))
+    {
+        shoppingCart.src = "../Account/Images/shopping_cart_nohover_dark.png";
+    } else {
+        shoppingCart.src = "../Account/Images/shopping_cart_nohover_light.png";
+    }
 }
