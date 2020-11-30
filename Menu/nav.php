@@ -46,7 +46,7 @@
                                     <a class="menuButton" href="../Menu/navhandler.php?signout=true">Sign Out</a>
                                 </div>
                             </li>
-                            <li><a href="#"><img id="shoppingCart" src="" width="30px" height="30px" /></a></li>
+                            <li><a href="#"><img id="shoppingCart" src="../Account/Images/placeholder.png" width="30px" height="30px" /></a></li>
                         </ul>
                     ';
                 }
