@@ -31,21 +31,19 @@
                 if(!isset($_SESSION['signedin']))
                 {
                     echo '
-                        <ul id="accountGroup">
-                            <li id="accountMenu">
-                                <a id="accountButton" class="menuButton" href="../Menu/signin.php">Account</a>
-                            </li>
+                        <ul>
+                            <li><a class="menuButton" href="../Menu/signin.php">Account</a></li>
                         </ul>
                     ';
                 } else {
                     echo '
-                        <ul id="accountGroup">
-                            <li id="accountMenu">
-                                <a id="accountButton" class="menuButton" href="#">Account</a>
-                                <div id="accountOptions">
-                                    <a id="signinButton" class="menuButton" href="">Profile?</a>
-                                    <a id="signupButton" class="menuButton" href="">Orders?</a>
-                                    <a id="signupButton" class="menuButton" href="../Menu/navhandler.php?signout=true">Sign Out</a>
+                        <ul>
+                            <li class="dropdownMenu">
+                                <a class="menuButton" href="#">Account</a>
+                                <div id="dropdownOptions">
+                                    <a class="menuButton" href="">Profile?</a>
+                                    <a class="menuButton" href="">Orders?</a>
+                                    <a class="menuButton" href="../Menu/navhandler.php?signout=true">Sign Out</a>
                                 </div>
                             </li>
                             <li><a id="shoppingCart" href="#">

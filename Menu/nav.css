@@ -35,7 +35,7 @@
     margin-left:-30px;
 }
 
-#nav button, a.menuButton
+#nav a.menuButton
 {
     text-decoration:none;
     background-color:white;
@@ -51,7 +51,7 @@
     transition:0.3s;
 }
 
-#nav button:hover, a:hover
+#nav a:hover
 {
     cursor:pointer;
     color:#0299E3;
@@ -70,24 +70,24 @@
     transition:0.3s;
 }
 
-#nav #accountMenu
+#nav .dropdownMenu
 {
     position:relative;
 }
 
-#nav #accountMenu #accountOptions
+#nav .dropdownMenu .dropdownOptions
 {
     display:none;
     position:absolute;
 }
 
-#nav #accountMenu #accountOptions a.menuButton
+#nav .dropdownMenu .dropdownOptions a.menuButton
 {
     width:64px;
     display:block;
 }
 
-#nav #accountMenu:hover #accountOptions
+#nav .dropdownMenu:hover .dropdownOptions
 {
     display:block;
     position:absolute;
