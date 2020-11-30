@@ -21,7 +21,7 @@
     <body class="darkmode">
         <div id="nav">
             <ul id="buttonGroup">
-                <li><img src="" width="50" height="50" id="logo"/></li>
+                <li><img src="../placeholder.png" width="50" height="50" id="logo"/></li>
                 <li><a class="menuButton" href="../DIY_BuildPage/DIY_Mainpage.php">Main Page</a></li>
                 <li><a class="menuButton" href="../Newsletter/Newsletter.php">Newsletter</a></li>
                 <li><a class="menuButton" href="../DIY_BuildPage/DIY_GUIDE_PAGE.php">Tutorial</a></li>
