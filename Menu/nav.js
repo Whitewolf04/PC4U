@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function()
 {
     var shoppingCart = document.getElementById("shoppingCart");
+    var logo = document.getElementById("logo");
 
     shoppingCart.addEventListener("mouseover", glowShoppingCart);
     shoppingCart.addEventListener("mouseout", dullShoppingCart);
@@ -8,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function()
     if(document.body.classList.contains("darkmode"))
     {
         shoppingCart.src = "../Account/Images/shopping_cart_nohover_dark.png";
+        logo.src = "../logo_dark.png";
     } else {
         shoppingCart.src = "../Account/Images/shopping_cart_nohover_light.png";
+        logo.src = "../logo_light.png";
     }
 });
 
