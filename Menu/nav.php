@@ -22,9 +22,9 @@
         <div id="nav">
             <ul id="buttonGroup">
                 <li><img src="../placeholder.png" width="50" height="50" id="logo"/></li>
-                <li><a class="menuButton" href="../DIY_BuildPage/DIY_Mainpage.php">Main Page</a></li>
-                <li><a class="menuButton" href="../Newsletter/Newsletter.php">Newsletter</a></li>
-                <li><a class="menuButton" href="../DIY_BuildPage/DIY_GUIDE_PAGE.php">Tutorial</a></li>
+                <li><a class="menuButton" href="../DIY_BuildPage/DIY_Mainpage.php">Prebuilt</a></li>
+                <li><a class="menuButton" href="../Newsletter/Newsletter.php">Promotions</a></li>
+                <li><a class="menuButton" href="../DIY_BuildPage/DIY_GUIDE_PAGE.php">Guides</a></li>
             </ul>
 
             <?php
@@ -41,7 +41,7 @@
                             <li class="dropdownMenu">
                                 <a class="menuButton" href="#">Account</a>
                                 <div class="dropdownOptions">
-                                    <a class="menuButton" href="">Profile?</a>
+                                    <a class="menuButton" href="../Account/account.php">Profile</a>
                                     <a class="menuButton" href="">Orders?</a>
                                     <a class="menuButton" href="../Menu/navhandler.php?signout=true">Sign Out</a>
                                 </div>

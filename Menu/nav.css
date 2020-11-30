@@ -1,19 +1,11 @@
 #banner
 {
     text-align:center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:300%;
     padding-top:70px;
     padding-bottom:70px;
-    border:2px;
-    border-style:solid;
-    border-color:#2F2F2F;
-}
-
-body
-{
-    background: #002424;
-    background: linear-gradient(90deg, #002424 0%, #38e4ee 0%, #009bff 100%);
+    font-family:arial;
+    box-shadow: 0px 0px 10px 3px #000000;
 }
 
 body.darkmode

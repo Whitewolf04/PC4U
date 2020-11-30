@@ -9,8 +9,6 @@
     <body>
         <?php require_once "../Menu/nav.php" ?>
 
-        <h1 id="banner">PC4U</h1>
-
         <br/>
         <div id="builds">
             <h2>Pre-Configured Builds depending on price range</h2>
@@ -28,14 +26,6 @@
                 </tr>
             </table>
             <footer>Note: All prices are in Canadian Dollar, and peripherals are not included</footer>
-        </div>
-        <br/>
-
-        <div id="news">
-            <fieldset>
-                <legend>News</legend>
-                
-            </fieldset>
         </div>
     </body>
 </html>

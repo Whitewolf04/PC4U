@@ -11,8 +11,6 @@
 <body>
     <?php require_once "../Menu/nav.php" ?>
 
-    <h1 id="banner">Newsletter</h1>
-
     <!--List of newly released products-->
     <table class="item-table">
         <tr>
