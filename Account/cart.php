@@ -2,7 +2,7 @@
     <head>
 		<meta charset="UTF-8" />
 		<title>PC4U</title>
-		<link rel="stylesheet" type="text/css" href="Buildpage.css" />
+		<link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
 	</head>
     <body>
         <?php require_once "menu.php" ?>
