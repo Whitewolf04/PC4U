@@ -7,13 +7,21 @@
 		<link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
 	</head>
     <body>
-        <?php require_once "../Menu/nav.php" ?>
+        <?php require_once "../Menu/nav.php" 
+        $_SESSION['username'] = "Bob";
+        ?>
         <div class="main">
             <div class="wrap">
                 <div class="content">
-                    <?php echo "hello";?>
+                    <?php echo "<h3>". $_SESSION['username']. "'s profile</h3>";?>
+                    <div>
+                    <h3>Your recommendations</h3>
+                    <?php include "recommendations.php"?>
+                    </div>
                 </div>
-                <div class="sidebar"></div>
+                <div class="sidebar">
+                <a href="">Change your password</a>
+                </div>
             </div>
         </div>
         <footer>
