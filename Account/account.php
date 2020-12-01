@@ -10,7 +10,9 @@
         <?php require_once "../Menu/nav.php" ?>
         <div class="main">
             <div class="wrap">
-                <div class="content"></div>
+                <div class="content">
+                    <?php echo "hello";?>
+                </div>
                 <div class="sidebar"></div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,7 +8,28 @@
 	</head>
 
 	<body>
-		<?php require_once "../Menu/nav.php" ?>
+		<?php require_once "../Menu/nav.php"
+		if(isset($_POST['addToCart1'])){
+            $_SESSION['prebuild'] = "budget1";
+            header("Location: cart.php");
+        }
+        if(isset($_POST['addToCart2'])){
+            $_SESSION['prebuild'] = "budget2";
+            header("Location: cart.php");
+        }
+        if(isset($_POST['addToCart3'])){
+            $_SESSION['prebuild'] = "budget3";
+            header("Location: cart.php");
+        }
+        if(isset($_POST['addToCart4'])){
+            $_SESSION['prebuild'] = "budget4";
+            header("Location: cart.php");
+        }
+        if(isset($_POST['addToCart5'])){
+            $_SESSION['prebuild'] = "budget5";
+            header("Location: cart.php");
+        }
+		?>
 		
 		<h1 id="banner">Budget Builds</h1>
 
@@ -67,6 +89,7 @@
 					<td>$892.31</td>
 				</tr>
 			</table>
+            <form method="post" action=""><input type="submit" name="addToCart1" value="Add to Cart"></form>
 			<p></p>
 			<table border="2" id="perf">
 				<caption>Performance in Games at 1080p</caption>
@@ -171,6 +194,7 @@
 					<td>$711.99</td>
 				</tr>
 			</table>
+            <form method="post" action=""><input type="submit" name="addToCart2" value="Add to Cart"></form>
 			<table border="2" id="perf">
 				<caption>Performance in Games at 1080p</caption>
 				<tr>
@@ -274,6 +298,7 @@
 				<td>$699.50</td>
 			</tr>
 		</table>
+        <form method="post" action=""><input type="submit" name="addToCart3" value="Add to Cart"></form>
 		<table border="2"  id="perf">
 			<caption>Performance in Games at 1080p</caption>
 			<tr>
@@ -377,6 +402,7 @@
 				<td>$426.22</td>
 			</tr>
 		</table>
+        <form method="post" action=""><input type="submit" name="addToCart4" value="Add to Cart"></form>
 		<table border="2" id="perf">
 			<caption>Performance in Games at 1080p</caption>
 			<tr>
@@ -480,6 +506,7 @@
 				<td>$367.36</td>
 			</tr>
 		</table>
+        <form method="post" action=""><input type="submit" name="addToCart5" value="Add to Cart"></form>
 		<table border="2" id="perf">
 			<caption>Performance in Games at 1080p</caption>
 			<tr>
