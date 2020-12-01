@@ -16,6 +16,7 @@
                     <?php
                     $cart = array();
                     $prebuild = "";
+                    //checks if a prebuild was added to the cart
                     if($_SESSION['prebuild']!=null){
                         if(file_exists("prebuilds.txt")){
                             $stream = fopen("prebuilds.txt", "r");
@@ -24,7 +25,7 @@
                                     continue;
                                 }
                                 if(substr($line, 0, strpos($line, ':'))==$_SESSION['prebuild']){
-                                    $prebuild = substr($line, strpos($line, '{'), strpos($line,'}'));
+                                    $prebuild = substr($line, strpos($line, '{'), strpos($line,'}')-strpos($line, '{'));
                                 break;
                                 }
                             }
