@@ -1,0 +1,2 @@
+*Line k of carts.txt corresponds to line k of accounts.txt (user k has cart k). See line 145 of signinhandler.php for an example of how to search accounts.txt to find k.
+product1    product2    product3    <<<Each line can look like this maybe? Use \t for delimiters?
