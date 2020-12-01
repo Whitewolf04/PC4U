@@ -15,19 +15,20 @@
                     <div id="cart">
                     <?php
                     $cart = array();
-                    switch($_SESSION['prebuild']){
-                        case "budget1":
-                        break;
-                        case "budget2":
-                        break;
-                        case "budget3":
-                        break;
-                        case "budget4":
-                        break;
-                        case "budget5":
-                        break;
-                        default:
-                        break;
+                    $prebuild = "";
+                    if($_SESSION['prebuild']!=null){
+                        if(file_exists("prebuilds.txt")){
+                            $stream = fopen("prebuilds.txt", "r");
+                            while(($line=fgets($stream))!==false){
+                                if($line===null){
+                                    continue;
+                                }
+                                if(substr($line, 0, strpos($line, ':'))==$_SESSION['prebuild']){
+                                    $prebuild = substr($line, strpos($line, '{'), strpos($line,'}'));
+                                break;
+                                }
+                            }
+                        }
                     }
                     if(isset($_POST['puchaseNow'])){
                         $_SESSION['cart'] = $cart;

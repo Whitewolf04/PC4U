@@ -1,0 +1,11 @@
+examplebuildformat:{CPU, Motherboard, Memory, Storage, Video Card, Case, Power Supply}
+
+budget1:{AMD Ryzen 5 3600 3.6 GHz 6-Core Processor, SRock B550M-HDV Micro ATX AM4 Motherboard, Team T-FORCE VULCAN Z 16 GB (2 x 8 GB) DDR4-3200 CL16 Memory, Kingston A400 240 GB 2.5" Solid State Drive, Asus GeForce GTX 1660 6 GB TUF OC Video Card, Cooler Master N200 MicroATX Mini Tower Case, Thermaltake Smart 500 W 80+ Certified ATX Power Supply}
+
+budget2:{Intel Core i3-9100F 3.6 GHz Quad-Core Processor, MSI B365M PRO-VDH Micro ATX LGA1151 Motherboard, G.Skill Aegis 16 GB (2 x 8 GB) DDR4-2666 CL19 Memory, Team GX1 240 GB 2.5" Solid State Drive, Asus GeForce GTX 1660 6 GB TUF OC Video Card, Cooler Master N200 MicroATX Mini Tower Case, Thermaltake Smart Series 430 W 80+ Certified ATX Power Supply}
+
+budget3:{AMD Ryzen 3 3100 3.6 GHz Quad-Core Processor, ASRock A520M-HDV Micro ATX AM4 Motherboard, G.Skill Aegis 8 GB (1 x 8 GB) DDR4-3200 CL16 Memory, Team GX1 240 GB 2.5" Solid State Drive, Asus GeForce GTX 1660 6 GB TUF OC Video Card, Cooler Master N200 MicroATX Mini Tower Case, Cooler Master Elite V3 400 W 80+ Certified ATX Power Supply}
+
+budget4:{Intel Pentium Gold G5400 3.7 GHz Dual-Core Processor, Asus PRIME H310M-E R2.0 Micro ATX LGA1151 Motherboard, Corsair Vengeance LPX 8 GB (2 x 4 GB) DDR4-2133 CL15 Memory, Team GX1 240 GB 2.5" Solid State Drive, Asus GeForce GT 1030 2 GB Phoenix Fan OC Video Card, DIYPC MA08 MicroATX Mini Tower Case, Cooler Master Elite V3 400 W 80+ Certified ATX Power Supply}
+
+budget5:{AMD Ryzen 3 3200G 3.6 GHz Quad-Core Processor, MSI A320M-A PRO MAX Micro ATX AM4 Motherboard, G.Skill Aegis 8 GB (1 x 8 GB) DDR4-3000 CL16 Memory, Team GX1 240 GB 2.5" Solid State Drive, Asus GeForce GT 1030 2 GB Phoenix Fan OC Video Card, DIYPC MA08 MicroATX Mini Tower Case, Cooler Master Elite V3 400 W 80+ Certified ATX Power Supply}
