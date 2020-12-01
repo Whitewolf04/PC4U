@@ -18,21 +18,14 @@
     font-size: 150%;
 }
 
-
-body{
-    margin:0;
-    padding: 0;
-    background: rgb(0,36,36);
-background: linear-gradient(90deg, rgba(0,36,36,1) 0%, rgba(56,228,238,1) 0%, rgba(0,155,255,1) 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.box{
+.box {
     position: absolute;
     top: 70%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.box select{
+
+.box select {
     background:#99E8FD;
     color:#fff;
     padding:10px;

@@ -1,0 +1,117 @@
+#banner
+{
+    text-align:center;
+    font-size:300%;
+    padding-top:70px;
+    padding-bottom:70px;
+    font-family:arial;
+    box-shadow: 0px 0px 10px 3px #000000;
+}
+
+body.darkmode
+{
+    color: #a7b1c1;
+    background-image: linear-gradient(to bottom right,#31394e,#1d212d,#191e33,#141829,#101321);
+}
+
+#nav
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:-8px -8px -8px -8px;
+    background-color:white;
+    padding:-10px 0px;
+}
+
+.darkmode #nav
+{
+    background-color:#171A21;
+    box-shadow: 0px 0px 10px 3px #000000;
+}
+
+#nav li
+{
+    list-style:none;
+    box-sizing:border-box;
+    float:left;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+#nav #logo
+{
+    pointer-events:none;
+    margin-left:-30px;
+}
+
+#nav a.menuButton
+{
+    text-decoration:none;
+    background-color:white;
+    border:none;
+    color:#2F2F2F;
+    padding:16px 32px;
+    text-align:center;
+    display:block;
+    font-size:16px;
+    font-weight:bold;
+    outline:none;
+    font-family:'Arial';
+    transition:0.3s;
+}
+
+.darkmode #nav a.menuButton
+{
+    background-color:#171A21;
+    color:#C5C3C0;
+}
+
+#nav a:hover
+{
+    cursor:pointer;
+    color:#0299E3;
+}
+
+.darkmode #nav a:hover
+{
+    cursor:pointer;
+    color:#0299E3;
+}
+
+#nav #shoppingCart
+{
+    position:relative;
+    float:right;
+    margin:9px 60px 0px 0px;
+}
+
+#nav #shoppingCart img
+{
+    position:absolute;
+}
+
+#nav .dropdownMenu
+{
+    position:relative;
+}
+
+#nav .dropdownMenu .dropdownOptions
+{
+    display:none;
+    position:absolute;
+}
+
+#nav .dropdownMenu .dropdownOptions a.menuButton
+{
+    width:64px;
+    display:block;
+}
+
+#nav .dropdownMenu:hover .dropdownOptions
+{
+    display:block;
+    position:absolute;
+    top:100%;
+    left:0%;
+}
