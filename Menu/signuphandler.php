@@ -89,7 +89,7 @@
             unset($_SESSION['errors'][array_search("unverified", $_SESSION['errors'], true)]);
         }
 
-        $entry = $_SESSION['email']."\t".password_hash($_SESSION['password'], PASSWORD_DEFAULT)."\t".$_SESSION['name'];
+        $entry = $_SESSION['email']."\t".password_hash($_SESSION['password'], PASSWORD_DEFAULT)."\t".$_SESSION['name']."\n";
         if(file_exists("../Database/accounts.txt"))
         {
             file_put_contents("../Database/accounts.txt", $entry, FILE_APPEND);

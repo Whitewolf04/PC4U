@@ -1,8 +1,0 @@
-We're forced to use delimited strings to represent entries (delimiters represent partitions in the entries). Let's take accounts.txt as an example:
-* Each entry will have a form "email$hashed_password$first last".
-* Since password hashes can have any of the tangible symbols from the ASCII table, it's unsafe to use $ as a delimiter.
-* Since first and last names are separated by a space, it's unsafe to use space as a delimiter.
-* This doesn't just apply to account.txt, since even products can have these restrictions. But it's unlikely that any entry will contain a tab. So...
-* We'll opt to use \t (a single tab) as delimiter. If we have better ideas, we'll go with what's better, as long as we use the same for all the database files.
-* See line 92 of signuphandler.php for an idea of what a valid entry looks like. Notice that attributes are delimited with \t.
-* If you look at the products.txt file, you'll notice some of the tabs (see "CPU ") look like a space (because of the unfortunate way that tab works). But don't confuse them.
