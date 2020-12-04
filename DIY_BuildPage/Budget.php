@@ -4,7 +4,11 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>PC4U</title>
-	<!--<link rel="stylesheet" type="text/css" href="Buildpage.css" />-->
+	<link rel="stylesheet" type="text/css" href="Buildpage.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<style>
 		table#builds {
 			margin: auto;
@@ -18,21 +22,17 @@
 		td.fps {
 			padding-top: 20px;
 			padding-bottom: 20px;
+			text-align: center;
+		}
+
+		div.progress {
+			margin: auto;
 		}
 	</style>
 </head>
 
 <body>
 	<?php require_once "../Menu/nav.php" ?>
-	<?php
-	$products = fopen("../Database/products.txt", "r");
-	$contents = fread($products, filesize("../Database/products.txt"));
-	$lines = explode("\n", $contents);
-	$amdCPU = explode("\t", $lines[0]);
-	$key = array_search("3900X", $amdCPU);
-	echo "<h1>Testing: " . $amdCPU[$key + 1] . ", price: " . $amdCPU[$key + 2] . "</h1>";
-
-	?>
 
 	<h1 id="banner">Budget Builds</h1>
 
@@ -56,15 +56,24 @@
 		<tr class="fps">
 			<td class="fps">
 				<img src="Images/LeagueOfLegends.jpg" width="180" height="240" />
-				<span>High Settings: 97 fps</span>
+				<p>High Settings</p><br>
+				<div class="progress" style="width: 40%;">
+					<div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="200" style="width: 48.5%;">97 fps</div>
+				</div>
 			</td>
 			<td class="fps">
 				<img src="Images/csgo.png" width="230" height="240" />
-				<p>High Settings: 74.3 fps</p>
+				<p>High Settings</p><br>
+				<div class="progress" style="width: 40%;">
+					<div class="progress-bar" role="progressbar" aria-valuenow="74.3" aria-valuemin="0" aria-valuemax="200" style="width: 37.2%;">74.3 fps</div>
+				</div>
 			</td>
 			<td class="fps">
 				<img src="Images/fortnite.jpg" width="180" height="240" />
-				<p>Low Settings: 61.7 fps</p>
+				<p>Low Settings</p><br>
+				<div class="progress" style="width: 40%;">
+					<div class="progress-bar" role="progressbar" aria-valuenow="61.7" aria-valuemin="0" aria-valuemax="200" style="width: 31%;">61.7 fps</div>
+				</div>
 			</td>
 		</tr>
 		<tr class="build">
@@ -86,15 +95,24 @@
 		<tr class="fps">
 			<td class="fps">
 				<img src="Images/LeagueOfLegends.jpg" width="180" height="240" />
-				<p>Ultra Settings: 384.8 fps</p>
+				<p>Ultra Settings</p><br>
+				<div class="progress" style="width: 40%;">
+					<div class="progress-bar" role="progressbar" aria-valuenow="200" aria-valuemin="0" aria-valuemax="200" style="width: 100%;">384.8 fps</div>
+				</div>
 			</td>
 			<td class="fps">
 				<img src="Images/shadowOfTombRaider.jpg" width="180" height="240" />
-				<p>High Settings: 99 fps</p>
+				<p>High Settings</p><br>
+				<div class="progress" style="width: 40%;">
+					<div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="200" style="width: 49.5%;">99 fps</div>
+				</div>
 			</td>
 			<td class="fps">
 				<img src="Images/ACOdyssey.png" width="180" height="240" />
-				<p>Medium Settings: 90 fps</p>
+				<p>Medium Settings</p><br>
+				<div class="progress" style="width: 40%;">
+					<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="200" style="width: 45%;">90 fps</div>
+				</div>
 			</td>
 		</tr>
 		<tr class="build">
