@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>PC4U</title>
-    <link rel="stylesheet" type="text/css" href="Buildpage.css" />
+    <link rel="stylesheet" type="text/css" href="BWizard.css" />
     <script src="https://kit.fontawesome.com/676270b385.js" crossorigin="anonymous"></script>
 </head>
 

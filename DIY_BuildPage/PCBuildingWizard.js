@@ -40,8 +40,8 @@ var CPU_Data = {
         },
 
         pentium: {
-            text: ['Select a CPU', 'Intel Pentium Gold G5500', 'Intel Pentium Gold G6400', 'Intel Pentium Gold G5400'],
-            value: ['none', 'G5500', 'G6400', 'G5400'],
+            text: ['Select a CPU','Intel Pentium Gold G6400'],
+            value: ['none', 'G6400'],
         },
 
         r9: {
