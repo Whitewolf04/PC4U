@@ -7,9 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
 	</head>
     <body>
-        <?php require_once "../Menu/nav.php" 
-        $_SESSION['username'] = "Bob";
-        ?>
+        <?php require_once "../Menu/nav.php" ?>
         <div class="main">
             <div class="wrap">
                 <div class="content">
