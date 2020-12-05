@@ -3,36 +3,66 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="../pc_icon.png">
     <title>PC4U</title>
-    <link rel="stylesheet" type="text/css" href="Newsletter.css" />
-    <script type="text/javascript" src="Newsletter.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Newsletter/Newsletter.css" />
+    <script type="text/javascript" src="../Newsletter/Newsletter.js"></script>
 </head>
 
 <body>
     <?php require_once "../Menu/nav.php" ?>
-
+    <?php
+            if(file_exists("../Database/news.txt"))
+            {
+                $newsFile = fopen("../Database/news.txt", "r") or die("Unable to open news.txt file!");
+                $product1 = array();
+                $product2 = array();
+                $product3 = array();
+                $count = 0;
+                while(!feof($newsFile)){
+                    $line=fgets($newsFile);
+                    if(preg_match("/\*/",$line))
+                    {
+                        continue;
+                    }
+                    else if(preg_match("/={3}(New)={3}/",$line))
+                    {
+                        $count++;
+                        continue;
+                    } else {
+                        if($count === 1){
+                            array_push($product1, $line);
+                        }
+                        if($count === 2){
+                            array_push($product2, $line);
+                        }
+                        if($count === 3){
+                            array_push($product3, $line);
+                        }
+                    }
+                }
+                fclose($newsFile);
+            }
+        ?>
     <!--List of newly released products-->
     <table class="item-table">
         <tr>
             <td>
-                <h2>AMD Radeon RX 6900 XT Graphics</h2>
+                <h2><?php if(isset($product1)) { echo $product1[0]; } ?></h2>
             </td>
         </tr>
         <tr>
             <td>
-                <p class="item-desc">The AMD Radeon™ RX 6900 XT graphics card, powered by AMD RDNA™ 2 architecture,
-                    featuring 80 powerful enhanced Compute Units, 128 MB of all new AMD Infinity
-                    Cache and 16GB of dedicated GDDR6 memory, is engineered to deliver ultra-high
-                    frame rates and serious 4K resolution gaming.</p>
-                <a target="_blank" href="https://www.amd.com/en/products/graphics/amd-radeon-rx-6900-xt"> See product
+                <p class="item-desc"> <?php if(isset($product1)) { echo $product1[1]; }?></p>
+                <a target="_blank" href="<?php if(isset($product1)) { echo $product1[2]; }?>"> See product
                     details</a>
             </td>
             <td rowspan="3">
                 <a target="_blank"
-                    href="https://www.amd.com/system/files/styles/992px/private/2020-10/579976-radeon-rx-6000xt-left-angle-1260x709_0.png?itok=RUfGBx_T">
+                    href="<?php if(isset($product1)) { echo $product1[3]; }?>">
                     <img id="img1" onmouseover="overImage(this)" onmouseout="outImage(this)"
-                        src="https://www.amd.com/system/files/styles/992px/private/2020-10/579976-radeon-rx-6000xt-left-angle-1260x709_0.png?itok=RUfGBx_T"
-                        alt="Image of AMD Radeon RX 6900 XT Graphics" />
+                        src="<?php if(isset($product1)) { echo $product1[3]; }?>"
+                        alt="Image  of <?php if(isset($product1)) { echo $product1[0]; } ?>" />
                 </a>
             </td>
         </tr>
@@ -40,22 +70,21 @@
     <table class="item-table">
         <tr>
             <td>
-                <h2>Ryzen™ 5 5600X Desktop Processors</h2>
+                <h2><?php if(isset($product2)) { echo $product1[0]; } ?></h2>
             </td>
         </tr>
         <tr>
             <td>
-                <p class="item-desc">Encode faster. Render faster. Iterate faster2. Create more, faster with AMD Ryzen™
-                    processors.</p>
-                <a target="_blank" href=https://www.amd.com/en/products/cpu/amd-ryzen-5-5600x>See product details</a>
+                <p class="item-desc"><?php if(isset($product2)) { echo $product2[1]; } ?></p>
+                <a target="_blank" href="<?php if(isset($product2)) { echo $product2[2]; } ?>">See product details</a>
 
             </td>
             <td rowspan="3">
                 <a target="_blank"
-                    href="https://www.amd.com/system/files/styles/992px/private/2020-09/616656-amd-ryzen-5-5000-series-PIB-fan-1260x709.png?itok=g0FNgeyd">
+                    href="<?php if(isset($product2)) { echo $product2[3]; } ?>">
                     <img id="img2" onmouseover="overImage(this)" onmouseout="outImage(this)"
-                        src="https://www.amd.com/system/files/styles/992px/private/2020-09/616656-amd-ryzen-5-5000-series-PIB-fan-1260x709.png?itok=g0FNgeyd"
-                        alt="Image of fRyzen™ 5 5600X Desktop Processors" />
+                        src="<?php if(isset($product2)) { echo $product2[3]; } ?>"
+                        alt="Image of <?php if(isset($product2)) { echo $product2[0]; } ?>" />
                 </a>
             </td>
         </tr>
@@ -63,26 +92,21 @@
     <table class="item-table">
         <tr>
             <td>
-                <h2>ROG SWIFT PG35VQ</h2>
+                <h2><?php if(isset($product3)) { echo $product3[0]; } ?></h2>
             </td>
         </tr>
         <tr>
             <td>
-                <p class="item-desc">
-                    ROG Swift PG35VQ Ultra-Wide HDR Gaming Monitor – 35” 21:9 (3440 x 1440),
-                    FALD 512 Zones, Peak Brightness 1000nits, Overclockable 200Hz, 2ms, G-SYNC Ultimate,
-                    DisplayHDR1000 ™, Quantum-dot, Smart Fan Control, Aura Sync, Hi-fi-grade ESS Amplifier.
+                <p class="item-desc"><?php if(isset($product3)) { echo $product3[1]; } ?>
                 </p>
-                <a target="_blank" href=https://rog.asus.com/ca-en/Monitors/Above-34-Inches/ROG-SWIFT-PG35VQ-Model>See
-                    product details</a>
-
+                <a target="_blank" href="<?php if(isset($product3)) { echo $product3[2]; } ?>">See product details</a>
             </td>
             <td rowspan="3">
                 <a target="_blank"
-                    href="https://dlcdnwebimgs.asus.com/gain/7EFC8E77-ED9D-4837-81F2-42124966C557/w717/h525">
+                    href="<?php if(isset($product3)) { echo $product3[3]; } ?>">
                     <img id="img3" onmouseover="overImage(this)" onmouseout="outImage(this)"
-                        src="https://dlcdnwebimgs.asus.com/gain/7EFC8E77-ED9D-4837-81F2-42124966C557/w717/h525"
-                        alt="Image of ROG Swift PG35VQ Ultra-Wide HDR Gaming Monitor" />
+                        src="<?php if(isset($product3)) { echo $product3[3]; } ?>"
+                        alt="Image of <?php if(isset($product3)) { echo $product3[3]; } ?>" />
                 </a>
             </td>
         </tr>
@@ -99,6 +123,7 @@
             <button type="button" id="button-close" onclick="closeSubs()">&#9932;</button>
         </div>
     </div>
+    </script>
 </body>
 
 </html>

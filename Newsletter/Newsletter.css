@@ -47,9 +47,6 @@ a:visited {
     
 }
 a:hover {
-    /*Is this intentional for the menu? If so, please apply this under line 26 in menu.css so it affects the entire website.
-    If not, please create specific class of 'a' so this applies only to certain cases*/
-    /*box-shadow: 0 0 2px 1px grey;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 /* Fomating the Subscribe form */
@@ -59,8 +56,8 @@ a:hover {
     align-items: center;
 }
 #button-subs-open{
-    background-color: #369705;
-    border-color: #183f05;
+    background-color: #0338a1;
+    border: none;
     padding:10px;
     border-radius: 50%;
     cursor: pointer;
@@ -79,7 +76,7 @@ a:hover {
     padding: 25px;
 }
 .form-container {
-    max-width: 200;
+    max-width: 200px;
     background-color: white;
     background-color: rgb(219, 226, 217);
     justify-content: center;
@@ -95,10 +92,11 @@ a:hover {
 }
 
 #button-subs {
-    background-color: #369705;
-    border-color: #183f05;
+    background-color: #0338a1;
+    border: none;
     padding:10px;
     border-radius: 50%;
+    color: white;
     cursor: pointer;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: large;
