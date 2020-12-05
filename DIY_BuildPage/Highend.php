@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        td {
+            width: 33.333333%;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,7 +25,7 @@
     <table class="builds" border="0" cellspacing="20px">
         <tr class="build">
             <td class="picture">
-                <img src="Images/corsairicue.jpg" width="300px" height="300px" />
+                <img src="Images/corsairicue.png" width="300px" height="300px" />
             </td>
             <td colspan="2" class="specs">
                 <p class="price">Price: $2856</p><br>
@@ -43,21 +48,21 @@
                 <img src="Images/shadowOfTombRaider.jpg" width="180" height="240" /><br><br>
                 <p>High Settings</p>
                 <div class="progress" style="width: 40%;">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="193.5" aria-valuemin="0" aria-valuemax="200" style="width: 75.6%;">193.5 fps</div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="193.5" aria-valuemin="0" aria-valuemax="200" style="width: 96.75%;">193.5 fps</div>
                 </div>
             </td>
             <td class="fps">
                 <img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
                 <p>High Settings</p>
-                <div class="progress" style="width: 50%;">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="107.0" aria-valuemin="0" aria-valuemax="200" style="width: 42.7%;">107.0 fps</div>
+                <div class="progress" style="width: 30%;">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="107.0" aria-valuemin="0" aria-valuemax="200" style="width: 53.5%;">107.0 fps</div>
                 </div>
             </td>
             <td class="fpsright">
                 <img src="Images/ACValhalla.jpg" width="180" height="240" /><br><br>
                 <p>High Settings</p>
                 <div class="progress" style="width: 40%;">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="136.0" aria-valuemin="0" aria-valuemax="200" style="width: 41.6%;">136.0 fps</div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="136.0" aria-valuemin="0" aria-valuemax="200" style="width: 68%;">136.0 fps</div>
                 </div>
             </td>
         </tr>
@@ -66,7 +71,7 @@
     <table class="builds" border="0" cellspacing="20px">
         <tr class="build">
             <td class="picture">
-                <img src="Images/lianli.jpg" width="300px" height="300px" />
+                <img src="Images/lianli.png" width="300px" height="300px" />
             </td>
             <td colspan="2" class="specs">
                 <p class="price">Price: $3120</p><br>
@@ -89,21 +94,21 @@
                 <img src="Images/shadowOfTombRaider.jpg" width="180" height="240" /><br><br>
                 <p>High Settings</p>
                 <div class="progress" style="width: 40%;">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="201.0" aria-valuemin="0" aria-valuemax="200" style="width: 84.6%;">201.0 fps</div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="201.0" aria-valuemin="0" aria-valuemax="200" style="width: 100%;">201.0 fps</div>
                 </div>
             </td>
             <td class="fps">
                 <img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
                 <p>High Settings</p>
-                <div class="progress" style="width: 50%;">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="110.0" aria-valuemin="0" aria-valuemax="200" style="width: 43%;">110.0 fps</div>
+                <div class="progress" style="width: 30%;">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="110.0" aria-valuemin="0" aria-valuemax="200" style="width: 55%;">110.0 fps</div>
                 </div>
             </td>
             <td class="fpsright">
                 <img src="Images/ACValhalla.jpg" width="180" height="240" /><br><br>
                 <p>High Settings</p>
                 <div class="progress" style="width: 40%;">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="130.0" aria-valuemin="0" aria-valuemax="200" style="width: 47.8%;">130.0 fps</div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="130.0" aria-valuemin="0" aria-valuemax="200" style="width: 65%;">130.0 fps</div>
                 </div>
             </td>
         </tr>

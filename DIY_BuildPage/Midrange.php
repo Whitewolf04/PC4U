@@ -9,6 +9,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style>
+		td {
+			width: 33.33333%;
+		}
+	</style>
 </head>
 
 <body>
@@ -34,7 +39,7 @@
 				<p>Case: Cooler Master MasterBox MB311L ARGB Micro ATX Mid Tower</p>
 				<p>Power Supply: SeaSonic S12III 500W 80+ Bronze Certified</p>
 				<br>
-				<button class="cart">Add to cart</button>
+				<button class="cart" value="1127">Add to cart</button>
 			</td>
 		</tr>
 		<tr class="fps">
@@ -48,7 +53,7 @@
 			<td class="fps">
 				<img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 50%;">
+				<div class="progress" style="width: 30%;">
 					<div class="progress-bar" role="progressbar" aria-valuenow="85.3" aria-valuemin="0" aria-valuemax="200" style="width: 42.7%;">85.3 fps</div>
 				</div>
 			</td>
@@ -80,7 +85,7 @@
 				<p>Case: Cooler Master MasterBox MB311L ARGB Micro ATX Mid Tower</p>
 				<p>Power Supply: Cooler Master Elite V3 600W 80+ Certified</p>
 				<br>
-				<button class="cart">Add to cart</button>
+				<button class="cart" value="1319">Add to cart</button>
 			</td>
 		</tr>
 		<tr class="fps">
@@ -94,7 +99,7 @@
 			<td class="fps">
 				<img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 50%;">
+				<div class="progress" style="width: 30%;">
 					<div class="progress-bar" role="progressbar" aria-valuenow="97.8" aria-valuemin="0" aria-valuemax="200" style="width: 43%;">97.8 fps</div>
 				</div>
 			</td>
@@ -114,7 +119,7 @@
 				<img src="Images/corsair275r.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
-				<p class="price">Price: $1685.47</p><br>
+				<p class="price">Price: $1686</p><br>
 				<p>Specification:</p>
 				<p>CPU: AMD Ryzen 7 3700X 3.6 GHz (Up to 4.4 GHz) 8-Core Processor</p>
 				<p>CPU Cooler: Cooler Master Hyper 212 RGB Black Edition</p>
@@ -125,7 +130,7 @@
 				<p>Case: Corsair 275R Airflow ATX Mid Tower</p>
 				<p>Power Supply: SeaSonic S12III 650W 80+ Bronze Certified</p>
 				<br>
-				<button class="cart">Add to cart</button>
+				<button class="cart" value="1686">Add to cart</button>
 			</td>
 		</tr>
 		<tr class="fps">
@@ -139,7 +144,7 @@
 			<td class="fps">
 				<img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 50%;">
+				<div class="progress" style="width: 30%;">
 					<div class="progress-bar" role="progressbar" aria-valuenow="117.2" aria-valuemin="0" aria-valuemax="200" style="width: 58.6%;">117.2 fps</div>
 				</div>
 			</td>
@@ -170,7 +175,7 @@
 				<p>Case: Corsair 275R Airflow ATX Mid Tower</p>
 				<p>Power Supply: SeaSonic S12III 650W 80+ Bronze Certified</p>
 				<br>
-				<button class="cart">Add to cart</button>
+				<button class="cart" value="1800">Add to cart</button>
 			</td>
 		</tr>
 		<tr class="fps">
@@ -184,7 +189,7 @@
 			<td class="fps">
 				<img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 50%;">
+				<div class="progress" style="width: 30%;">
 					<div class="progress-bar" role="progressbar" aria-valuenow="131.5" aria-valuemin="0" aria-valuemax="200" style="width: 65.8%;">131.5 fps</div>
 				</div>
 			</td>
