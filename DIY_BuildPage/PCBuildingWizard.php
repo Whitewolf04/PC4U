@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>PC4U</title>
-    <link rel="stylesheet" type="text/css" href="Wizard.css" />
+    <link rel="stylesheet" type="text/css" href="NewWizard.css" />
 </head>
 
 <body>
@@ -15,8 +15,8 @@
     </div>
 
 
-    <div id="partPicking">
-        <fieldset id="mainComp" class="box">
+    <div id="partPicking" class="box">
+        <fieldset id="mainComp">
             <legend>Main Component</legend>
             <form id="mainCompForm">
                 <label for="cpuBrand">CPU Brand&nbsp;&nbsp;&nbsp;&nbsp;</label>
