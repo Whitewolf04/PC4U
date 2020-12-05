@@ -82,6 +82,11 @@
     outline:none;
 }
 
+.block input:not([id="visibility"]):focus
+{
+	border-color:#0299E3;
+}
+
 .block input#password
 {
     width:250px;

@@ -4,19 +4,10 @@ document.addEventListener("DOMContentLoaded", function()
     {
         var visibility = document.getElementById("visibility");
         var signup = document.getElementById("signupButton");
-        var name = document.getElementById("name");
-        var email = document.getElementById("email");
         var password = document.getElementById("password");
 
         visibility.addEventListener("click", toggleVisibility);
         signup.addEventListener("click", attemptSignup);
-
-        name.addEventListener("focus", focusElement);
-        email.addEventListener("focus", focusElement);
-        password.addEventListener("focus", focusElement);
-        name.addEventListener("blur", blurElement);
-        email.addEventListener("blur", blurElement);
-        password.addEventListener("blur", blurElement);
 
         password.addEventListener("keyup", updatePasswordStrength);
     }
@@ -54,22 +45,6 @@ function attemptSignup()
     }
 }
 
-function focusElement()
-{
-    if(this.classList.contains("valid"))
-    {
-        this.style.borderColor = "#0299E3";
-    }
-}
-
-function blurElement()
-{
-    if(this.classList.contains("valid"))
-    {
-        this.style.borderColor = "#DADCE0";
-    }
-}
-
 function validateName()
 {
     var name = document.getElementById("name");
@@ -78,13 +53,11 @@ function validateName()
     {
         document.getElementById("nameCondition").style.display = "block";
         document.getElementById("name").style.borderColor = "#D90016";
-        document.getElementById("name").classList.remove("valid");
         return false;
     }
 
     document.getElementById("nameCondition").style.display = "none";
-    document.getElementById("name").style.borderColor = "#DADCE0";
-    document.getElementById("name").classList.add("valid");
+    document.getElementById("name").style.borderColor = null;
     return true;
 }
 
@@ -96,13 +69,11 @@ function validateEmail()
     {
         document.getElementById("emailCondition").style.display = "block";
         document.getElementById("email").style.borderColor = "#D90016";
-        document.getElementById("email").classList.remove("valid");
         return false;
     }
 
     document.getElementById("emailCondition").style.display = "none";
-    document.getElementById("email").style.borderColor = "#DADCE0";
-    document.getElementById("email").classList.add("valid");
+    document.getElementById("email").style.borderColor = null;
     return true;
 }
 
@@ -114,13 +85,11 @@ function validatePassword()
     {
         document.getElementById("passwordCondition").style.display = "block";
         document.getElementById("password").style.borderColor = "#D90016";
-        document.getElementById("password").classList.remove("valid");
         return false;
     }
 
     document.getElementById("passwordCondition").style.display = "none";
-    document.getElementById("password").style.borderColor = "#DADCE0";
-    document.getElementById("password").classList.add("valid");
+    document.getElementById("password").style.borderColor = null;
     return true;
 }
 

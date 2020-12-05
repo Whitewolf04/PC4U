@@ -1,16 +1,6 @@
-#banner
-{
-    text-align:center;
-    font-size:300%;
-    padding-top:70px;
-    padding-bottom:70px;
-    font-family:arial;
-    box-shadow: 0px 0px 10px 3px #000000;
-}
-
 body.darkmode
 {
-    color: #a7b1c1;
+    color:#a7b1c1;
     background-image: linear-gradient(to bottom right,#31394e,#1d212d,#191e33,#141829,#101321);
 }
 
@@ -27,7 +17,7 @@ body.darkmode
 .darkmode #nav
 {
     background-color:#171A21;
-    box-shadow: 0px 0px 10px 3px #000000;
+    box-shadow:0px 0px 10px 3px #000000;
 }
 
 #nav li

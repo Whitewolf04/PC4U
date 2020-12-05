@@ -4,11 +4,9 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>PC4U</title>
-	<link rel="stylesheet" type="text/css" href="NewBuildpage.css" />
+	<link rel="stylesheet" type="text/css" href="Buildpage.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<style>
 		td {
 			width: 33.3333333%;
@@ -88,6 +86,8 @@
 			<td class="fpsleft">
 				<img src="Images/LeagueOfLegends.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
+				<!--Edit WIDTH:PX to change bar size, edit WIDTH:% to change progress, deleteMe-->
+				<div class="progressbar" style="width:300px;"><div class="progress" style="width:20.5%;">97 fps</div></div> <!--NEW progress bar, deleteMe-->
 				<div class="progress" style="width: 40%;">
 					<div class="progress-bar" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="200" style="width: 48.5%;">97 fps</div>
 				</div>
