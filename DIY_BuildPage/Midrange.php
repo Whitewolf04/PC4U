@@ -15,7 +15,18 @@
 </head>
 
 <body>
-	<?php require_once "../Menu/nav.php" ?>
+	<?php
+	require_once "../Menu/nav.php";
+
+	function calculatePercentage($fps)
+	{
+		$ratio = (float) $fps * 100 / 200.0;
+		if ($fps >= 200) {
+			$ratio = 100;
+		}
+		return $ratio . "%";
+	}
+	?>
 
 	<h1 id="banner">Mid-Range Builds</h1>
 
@@ -44,22 +55,22 @@
 			<td class="fpsleft">
 				<img src="Images/shadowOfTombRaider.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 40%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="151.2" aria-valuemin="0" aria-valuemax="200" style="width: 75.6%;">151.2 fps</div>
+				<div class="progressbar" style="width:40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(151.2); ?>;">151.2 fps</div>
 				</div>
 			</td>
 			<td class="fps">
 				<img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 30%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="85.3" aria-valuemin="0" aria-valuemax="200" style="width: 42.7%;">85.3 fps</div>
+				<div class="progressbar" style="width:30%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(85.3); ?>;">85.3 fps</div>
 				</div>
 			</td>
 			<td class="fpsright">
 				<img src="Images/ACValhalla.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 40%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="83.2" aria-valuemin="0" aria-valuemax="200" style="width: 41.6%;">83.2 fps</div>
+				<div class="progressbar" style="width:40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(83.2); ?>;">83.2 fps</div>
 				</div>
 			</td>
 		</tr>
@@ -90,22 +101,22 @@
 			<td class="fpsleft">
 				<img src="Images/shadowOfTombRaider.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 40%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="169.1" aria-valuemin="0" aria-valuemax="200" style="width: 84.6%;">169.1 fps</div>
+				<div class="progressbar" style="width:40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(169.1); ?>;">169.1 fps</div>
 				</div>
 			</td>
 			<td class="fps">
 				<img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 30%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="97.8" aria-valuemin="0" aria-valuemax="200" style="width: 43%;">97.8 fps</div>
+				<div class="progressbar" style="width:30%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(97.8); ?>;">97.8 fps</div>
 				</div>
 			</td>
 			<td class="fpsright">
 				<img src="Images/ACValhalla.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 40%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="95.6" aria-valuemin="0" aria-valuemax="200" style="width: 47.8%;">95.6 fps</div>
+				<div class="progressbar" style="width:40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(95.6); ?>;">95.6 fps</div>
 				</div>
 			</td>
 		</tr>
@@ -135,22 +146,22 @@
 			<td class="fpsleft">
 				<img src="Images/shadowOfTombRaider.jpg" width="180" height="240" /><br><br>
 				<p>Ultra Settings</p>
-				<div class="progress" style="width: 40%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="124.5" aria-valuemin="0" aria-valuemax="200" style="width: 62.25%;">124.5 fps</div>
+				<div class="progressbar" style="width:40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(124.5); ?>;">124.5 fps</div>
 				</div>
 			</td>
 			<td class="fps">
 				<img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 30%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="117.2" aria-valuemin="0" aria-valuemax="200" style="width: 58.6%;">117.2 fps</div>
+				<div class="progressbar" style="width:30%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(117.2); ?>;">117.2 fps</div>
 				</div>
 			</td>
 			<td class="fpsright">
 				<img src="Images/ACValhalla.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 40%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="114.6" aria-valuemin="0" aria-valuemax="200" style="width: 57.3%;">114.6 fps</div>
+				<div class="progressbar" style="width:40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(114.6); ?>;">114.6 fps</div>
 				</div>
 			</td>
 		</tr>
@@ -180,22 +191,22 @@
 			<td class="fpsleft">
 				<img src="Images/shadowOfTombRaider.jpg" width="180" height="240" /><br><br>
 				<p>Ultra Settings</p>
-				<div class="progress" style="width: 40%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="148" aria-valuemin="0" aria-valuemax="200" style="width: 74%;">148 fps</div>
+				<div class="progressbar" style="width: 40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(148); ?>;">148 fps</div>
 				</div>
 			</td>
 			<td class="fps">
 				<img src="Images/rdr2.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 30%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="131.5" aria-valuemin="0" aria-valuemax="200" style="width: 65.8%;">131.5 fps</div>
+				<div class="progressbar" style="width: 30%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(131.5); ?>;">131.5 fps</div>
 				</div>
 			</td>
 			<td class="fpsright">
 				<img src="Images/ACValhalla.jpg" width="180" height="240" /><br><br>
 				<p>High Settings</p>
-				<div class="progress" style="width: 40%;">
-					<div class="progress-bar" role="progressbar" aria-valuenow="129.5" aria-valuemin="0" aria-valuemax="200" style="width: 64.8%;">129.5 fps</div>
+				<div class="progressbar" style="width: 40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(129.5); ?>;">129.5 fps</div>
 				</div>
 			</td>
 		</tr>
