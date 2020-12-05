@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <html>
     <head>
 		<meta charset="UTF-8" />
@@ -6,7 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
 	</head>
     <body>
-        <?php //require_once "menu.php" ?>
+        <?php require_once "../Menu/nav.php" ?>
         <br>
         <div class="main">
             <div class="wrap">
