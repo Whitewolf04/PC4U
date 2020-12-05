@@ -58,7 +58,7 @@
                             }
                         }
                     }
-                    print_r($cart);
+                    //print_r($cart);
                     if(isset($_POST['puchaseNow'])){
                         $_SESSION['cart'] = $cart;
                     }
@@ -67,6 +67,16 @@
                         header("Location: Budget.php");
                     }
                     ?>
+                    <table border = "1">
+                        <?php
+                        $totalPrice = 0;
+                        foreach($cart as $name=>$price){
+                            echo "<tr><td>".$name."</td><td>".$price."$</td></tr>";
+                            $totalPrice += $price;
+                        }
+                        echo "<tr><td>Total Price : </td><td>".$totalPrice."$</td></tr>";
+                        ?>
+                    </table>
                     </div>
                     <form method="post" action="">
                     <input type="submit" name="purchaseNow" value="Purchase now">
