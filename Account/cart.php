@@ -3,6 +3,7 @@
 		<meta charset="UTF-8" />
 		<title>PC4U</title>
 		<link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
+        <link rel="stylesheet" type="text/css" href="cart.css" />
 	</head>
     <body>
         <?php require_once "../Menu/nav.php" ?>
@@ -50,7 +51,7 @@
                                 $cart[$parts[$x]] = "";
                             }
                             //adds the final price at the end of components list
-                            $cart["Total price of prebuild ". $i] = trim($price);
+                            $cart["Total price of prebuild ". $i."<form method='POST' action=''><input type=hidden name=item value='". $title." ".$key."~'><input type=submit name=remove value='Remove Item'></form>"] = trim($price);
                         }else if($title === "PCwizard"){
                             $key = substr_replace($cookie_cart[$i], "", 0, 9);
                             //print_r(json_decode($key));
@@ -100,6 +101,13 @@
                         $_SESSION['cart'] = $cart;
                         //header("Location: Budget.php");
                     }
+                    if(isset($_POST['remove'])){
+                        $cookievalue = $_COOKIE['cart'];
+                        $itemvalue = '/'.$_POST['item'].'/';
+                        $cookievalue = preg_replace($itemvalue, "", $cookievalue, 1);
+                        setcookie('cart', $cookievalue, false, "/");
+                        header("Location: cart.php");
+                    }
                     ?>
                     <table border = "1">
                         <?php
@@ -110,7 +118,7 @@
                                 echo "<tr><td>".$name."</td><td>".$price."$</td></tr>";
                                 $totalPrice += $price;
                             }else{
-                                echo "<tr><td>".$name."</td><td>".$price."</td></tr>";
+                                echo "<tr><td class=prebuild>".$name."</td><td class=prebuild>".$price."</td></tr>";
                             }
                         }
                         echo "<tr><td>Total Price : </td><td>".$totalPrice."$</td></tr>";
@@ -118,8 +126,8 @@
                     </table>
                     </div>
                     <form method="post" action="">
-                    <input type="submit" name="purchaseNow" value="Purchase now">
-                    <input type="submit" name="purchaseLater" value="Purchase later">
+                    <input type="submit" name="purchaseNow" value="Purchase now" class="button">
+                    <input type="submit" name="purchaseLater" value="Purchase later" class="button">
                     </form>
                 </div>
                 <div class="sidebar">
