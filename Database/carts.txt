@@ -1,0 +1,3 @@
+*Line k of carts.txt corresponds to line k of accounts.txt (user k has cart k).
+*We can search accounts.txt using $_SESSION['email'] to find k, then go to cart.txt line k to fetch the user's cart.
+product1	product2	product3	<<<Each line can look like this maybe? Use \t for delimiters?

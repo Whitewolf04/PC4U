@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <?php require_once "../Menu/nav.php" ?>
+    <?php require_once "../Menu/nav.php";
+    ob_start();
+    ?>
 
     <div>
         <h1 id="banner">DIY Part Picking</h1>
@@ -18,7 +20,7 @@
     <div id="partPicking">
         <fieldset id="mainComp" class="box">
             <legend>Main Component</legend>
-            <form id="mainCompForm">
+            <form id="mainCompForm" method="POST">
                 <label for="cpuBrand">CPU Brand&nbsp;&nbsp;&nbsp;&nbsp;</label>
 
                 <select id="cpuBrand" name="cpuBrand" class="selectStyle">
@@ -184,6 +186,10 @@
                 <br />
                 <br />
                 <br />
+                <?php
+                include "../Account/addToCart.php";
+                ob_flush();
+                ?>
     </div>
     </form>
     </fieldset>
