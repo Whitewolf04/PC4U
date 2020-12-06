@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	if(!isset($_SESSION['form']) || $_SESSION['form'] !== "PAYMENT" || !isset($_SESSION['state']))
 	{
 		header("Location: ../Account/cart.php");
