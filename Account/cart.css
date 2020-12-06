@@ -1,0 +1,32 @@
+.prebuild{
+    background-color: gainsboro;
+    color: navy;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table{
+    border: hidden;
+    padding-left: 10px;
+    font-size: 1.1em;
+}
+td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: orangered;
+    color: rgb(16, 4, 32);
+    padding-right: 50px;
+    font-weight: bolder;
+}
+h1{
+    padding-left: 20px;
+}
+.price td{
+    width: 10px;
+}
+.button{
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: thistle;
+    font-size: 200%;
+}
