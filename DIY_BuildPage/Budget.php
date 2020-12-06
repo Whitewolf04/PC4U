@@ -15,8 +15,9 @@
 </head>
 
 <body>
-	<?php
-	require_once "../Menu/nav.php";
+	<?php 
+		require_once "../Menu/nav.php";
+		ob_start();
 
 	function buildSearch($lines, $buildname)
 	{
@@ -90,6 +91,7 @@
 				<td colspan="2" class="specs">
 					<?php
 					readSpecs("budget5");
+          include "../Account/addToCart.php";
 					?>
 					<button type="submit" form="budget5" class="cart" value="budget5">Add to cart</button>
 				</td>
@@ -132,10 +134,14 @@
 				<img src="Images/CMN200.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
+			<form action="" method="POST">
+			<input type="hidden" name="prebuilt" value="budget3">
 				<?php
-				readSpecs("budget3");
+					readSpecs("budget3");
+					include "../Account/addToCart.php";
+
 				?>
-				<button class="cart" value="750">Add to cart</button>
+				</form>
 			</td>
 		</tr>
 		<tr class="fps">
@@ -169,10 +175,13 @@
 				<img src="Images/CMN200.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
+			<form action="" method="POST">
+			<input type="hidden" name="prebuilt" value="budget2">
 				<?php
-				readSpecs("budget2");
+					readSpecs("budget2");
+					include "../Account/addToCart.php";
 				?>
-				<button class="cart" value="730">Add to cart</button>
+				</form>
 			</td>
 		</tr>
 		<tr class="fps">
@@ -206,10 +215,14 @@
 				<img src="Images/CMN200.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
+			<form action="" method="POST">
+			<input type="hidden" name="prebuilt" value="budget1">
 				<?php
-				readSpecs("budget1");
+					readSpecs("budget1");
+					include "../Account/addToCart.php";
+					ob_end_flush();
 				?>
-				<button class="cart" value="950">Add to cart</button>
+				</form>
 			</td>
 		</tr>
 		<tr class="fps">

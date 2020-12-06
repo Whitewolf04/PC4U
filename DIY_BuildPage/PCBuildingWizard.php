@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <?php require_once "../Menu/nav.php" ?>
+    <?php require_once "../Menu/nav.php";
+    ob_start();
+    ?>
 
     <div>
         <h1 id="banner">DIY Part Picking</h1>
@@ -18,9 +20,10 @@
     <div id="partPicking" class="box">
         <fieldset id="mainComp">
             <legend>Main Component</legend>
+
             <table border="0">
-            <form id="mainCompForm">
-                
+            <form id="mainCompForm" method="POST">
+              <label for="cpuBrand">CPU Brand&nbsp;&nbsp;&nbsp;&nbsp;</label>
 
                 <tr>
                 <td class="td"><label for="cpuBrand">CPU Brand&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
@@ -167,10 +170,16 @@
                 <td><label for="powerWatt">Power Supply Wattage&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                 <td><select id="powerWatt" name="powerWatt">
                    
-
-                </select></td>
+                </select>
+                <br />
+                <br />
+                <br />
+                <?php
+                include "../Account/addToCart.php";
+                ob_flush();
+                ?>
+                </td>
                 </tr>
-            
     </div>
     </form>
     </table>

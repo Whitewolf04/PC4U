@@ -1,0 +1,33 @@
+.wrap {
+	padding-left: 100px;
+}
+.content {
+    position: relative;
+    padding-left: 100px;
+    margin-left: 50px;
+	width: 800px;
+    float:left;
+}
+.sidebar{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+	float: left;
+	padding-top: 100px;
+	padding-right: 40px;
+	font-size: 1.3em;
+    width: 250px;
+    margin-left: 10px;
+    
+}
+.sidebar a{
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+}
+.sidebar a:hover{
+    color: darkred;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
