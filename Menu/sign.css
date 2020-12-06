@@ -298,3 +298,58 @@
 {
     animation-delay:0.8s;
 }
+
+.summary
+{
+	text-align:right;
+	margin-bottom:-140px;
+	width:398px;
+}
+
+.summary p
+{
+	display:inline-block;
+}
+
+.summary p.bold
+{
+	float:left;
+	font-weight:bold;
+}
+
+.block h2
+{
+	text-align:left;
+}
+
+.block .flexline
+{
+	display:flex;
+	justify-content:space-between;
+}
+
+.block .inputline div, .block .inputline input
+{
+	display:inline-block;
+	text-align:left;
+}
+
+.block #CCnum
+{
+	width:150px;
+}
+
+.block #CCname
+{
+	width:200px;
+}
+
+.block #CCmm, .block #CCyy
+{
+	width:30px;
+}
+
+.block #CCvv
+{
+	width:30px;
+}

@@ -32,7 +32,8 @@
                 {
                     echo '
                         <ul>
-                            <li><a class="menuButton" href="../Menu/signin.php">Account</a></li>
+							<li><a class="menuButton" href="../Menu/signin.php">Account</a></li>
+							<li><a href="#"><img id="shoppingCart" src="../Account/Images/placeholder.png" width="30px" height="30px" /></a></li>
                         </ul>
                     ';
                 } else {
