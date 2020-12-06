@@ -27,6 +27,8 @@
 				if(isset($_SESSION['signedin']))
 				{
 					$_SESSION['state'] = 2;
+					header("Location: ../Account/payment.php");
+					exit;
 				} else {
 					$_SESSION['state'] = 1;
 					echo '
