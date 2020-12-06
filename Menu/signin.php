@@ -9,7 +9,12 @@
     </head>
     <body>
         <?php
-            session_start();
+			session_start();
+			
+			if(!isset($_SESSION['redirect']))
+			{
+				$_SESSION['redirect'] = "../DIY_BuildPage/DIY_Mainpage.php";
+			}
 
             //If signedin, signin redirects back to main page.
             if(isset($_SESSION['signedin']))
@@ -48,7 +53,7 @@
                             '.(isset($_SESSION['errors']) && in_array("notexists",$_SESSION['errors'],true) ? '<p class="servererror">No account exists with that email.</p>' : '').'
 
                             <div class="flex">
-                                <div><a href="../DIY_BuildPage/DIY_Mainpage.php">BACK</a> | <a href="../Menu/signup.php">SIGN UP</a></div>
+                                <div><a href='.$_SESSION['redirect'].'>BACK</a> | <a href="../Menu/signup.php">SIGN UP</a></div>
                                 <button type="button" id="signinButton">NEXT</button>
                             </div>
                         </div>

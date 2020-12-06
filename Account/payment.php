@@ -11,6 +11,8 @@
         <?php
 			session_start();
 
+			$_SESSION['redirect'] = "../Account/payment.php";
+
 			if(!isset($_SESSION['form']) || $_SESSION['form'] !== "PAYMENT")
             {
                 $_SESSION['form'] = "PAYMENT";
@@ -25,6 +27,8 @@
 				if(isset($_SESSION['signedin']))
 				{
 					$_SESSION['state'] = 2;
+					header("Location: ../Account/payment.php");
+					exit;
 				} else {
 					$_SESSION['state'] = 1;
 					echo '
