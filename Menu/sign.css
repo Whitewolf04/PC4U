@@ -322,6 +322,12 @@
 	text-align:left;
 }
 
+.block p.info
+{
+	text-align:left;
+	margin-right:50px;
+}
+
 .block .flexline
 {
 	display:flex;
