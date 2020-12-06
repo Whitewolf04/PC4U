@@ -26,6 +26,7 @@
 				{
 					$_SESSION['state'] = 2;
 				} else {
+					$_SESSION['state'] = 1;
 					echo '
 						<form id="payment" method="POST" action="paymenthandler.php">
 							<div class="block summary">
