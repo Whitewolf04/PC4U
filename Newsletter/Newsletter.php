@@ -8,10 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../Newsletter/Newsletter.css" />
     <script type="text/javascript" src="../Newsletter/Newsletter.js"></script>
 </head>
-
-<body>
-    <?php require_once "../Menu/nav.php" ?>
-    <?php
+<body onload="openSubs()">
+    <?php require_once ("../Menu/nav.php");
             if(file_exists("../Database/news.txt"))
             {
                 $newsFile = fopen("../Database/news.txt", "r") or die("Unable to open news.txt file!");
@@ -54,8 +52,7 @@
         <tr>
             <td>
                 <p class="item-desc"> <?php if(isset($product1)) { echo $product1[1]; }?></p>
-                <a target="_blank" href="<?php if(isset($product1)) { echo $product1[2]; }?>"> See product
-                    details</a>
+                <a class="details" target="_blank" href="<?php if(isset($product1)) { echo $product1[2]; }?>">See product details</a>
             </td>
             <td rowspan="3">
                 <a target="_blank"
@@ -76,7 +73,7 @@
         <tr>
             <td>
                 <p class="item-desc"><?php if(isset($product2)) { echo $product2[1]; } ?></p>
-                <a target="_blank" href="<?php if(isset($product2)) { echo $product2[2]; } ?>">See product details</a>
+                <a class="details" target="_blank" href="<?php if(isset($product2)) { echo $product2[2]; } ?>">See product details</a>
 
             </td>
             <td rowspan="3">
@@ -99,7 +96,7 @@
             <td>
                 <p class="item-desc"><?php if(isset($product3)) { echo $product3[1]; } ?>
                 </p>
-                <a target="_blank" href="<?php if(isset($product3)) { echo $product3[2]; } ?>">See product details</a>
+                <a class="details" target="_blank" href="<?php if(isset($product3)) { echo $product3[2]; } ?>">See product details</a>
             </td>
             <td rowspan="3">
                 <a target="_blank"
@@ -112,18 +109,49 @@
         </tr>
     </table>
     <br><br><br>
-    <div class="main-div-subs">
-        <button type="button" id="button-subs-open" onclick="openSubs()">Subscribe</button>
-        <div align="center" id="pop-subscribe">
-            <h3>Be the first to know about newly released products</h3>
-            <form class="form-container">
-                <input placeholder="Enter your email address"><br><br>
-                <button type="submit" id="button-subs">Subscribe</button><br>
-            </form>
+    <div id="main-div-subs">
+        <div id="pop-subscribe">
             <button type="button" id="button-close" onclick="closeSubs()">&#9932;</button>
+            <h3>Be the first to know about newly released products</h3>
+            <form class="form-container" action="" method="POST">
+                <input id="subsmail" name="emailsubs" placeholder="Enter your email address"><br><br>
+                <button type="submit" id="button-subs" name="subscribe">Subscribe</button><br>
+            </form>
         </div>
-    </div>
-    </script>
+        </div>
+    <?php 
+        if(isset($_POST['subscribe']) && !empty($_POST['emailsubs'])){
+            if(!isset($_SESSION)){
+                session_start();
+            }
+            $subsmail = $_POST['emailsubs'];
+            $subsfile = fopen("../Database/subscribers.txt", "a") or die("Unable to open file!");
+            fwrite($subsfile, $subsmail."\n");
+            fclose($subsfile);
+            $_SESSION['email'] = $subsmail;
+            $_SESSION['subject'] = "Thank you for subscribing to PC4U";
+            $newsFile = fopen("../Database/news.txt", "r") or die("Unable to open news.txt file!"); 
+            $count = 0;
+            $prodpromo = array();
+            while(!feof($newsFile)){
+                $line=fgets($newsFile);
+                if(preg_match("/\*/",$line))
+                {
+                    continue;
+                }
+                else if(preg_match("/={3}(Promo)={3}/",$line))
+                {
+                   $count++;
+                }
+                else if($count===1){
+                   array_push($prodpromo, $line);
+                }
+            }
+            fclose($newsFile);
+            $_SESSION['body'] = "<h2>Check out this promo item!</h2><br><br>".$prodpromo[0]."<br><br>".$prodpromo[1]." 
+            <a target='_blank' href=".$prodpromo[2]."><br><br>See product details</a>";
+            include("../PHPMailer/mailer.php");
+        }
+    ?>
 </body>
-
 </html>
