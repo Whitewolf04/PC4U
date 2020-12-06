@@ -1,0 +1,43 @@
+h1#banner {
+    text-align: center;
+    font-size: 400%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0px 0px 10px 3px #000000;
+}
+
+body {
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box {
+    position: relative;
+    top: 5%;
+}
+
+.box select {
+    background: #99E8FD;
+    color: #fff;
+    padding-left: 10px;
+    width: 300px;
+    height: 35px;
+    border: none;
+    font-size: medium;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    -webkit-appearance: none;
+    outline: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+th,
+td {
+  width: 200px;
+  text-align: left;
+  padding: 5px;
+}

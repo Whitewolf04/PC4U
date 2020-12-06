@@ -149,7 +149,7 @@ window.onload = function()
     {
         setTimeout(function()
         {
-            window.location.replace("../DIY_BuildPage/DIY_Mainpage.php");
+            window.location.replace("../Menu/signuphandler.php");
         }, 5000);
     }
 }

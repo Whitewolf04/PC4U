@@ -9,7 +9,7 @@
     <script type="text/javascript" src="../Newsletter/Newsletter.js"></script>
 </head>
 
-<body>
+<body onload="openSubs()">
     <?php require_once "../Menu/nav.php" ?>
     <?php
             if(file_exists("../Database/news.txt"))
@@ -113,14 +113,14 @@
     </table>
     <br><br><br>
     <div class="main-div-subs">
-        <button type="button" id="button-subs-open" onclick="openSubs()">Subscribe</button>
+        <!--<button type="button" id="button-subs-open" onclick="openSubs()">Subscribe</button>-->
         <div align="center" id="pop-subscribe">
+            <button type="button" id="button-close" onclick="closeSubs()">&#9932;</button>
             <h3>Be the first to know about newly released products</h3>
             <form class="form-container">
-                <input placeholder="Enter your email address"><br><br>
+                <input id="subsmail" placeholder="Enter your email address"><br><br>
                 <button type="submit" id="button-subs">Subscribe</button><br>
             </form>
-            <button type="button" id="button-close" onclick="closeSubs()">&#9932;</button>
         </div>
     </div>
     </script>

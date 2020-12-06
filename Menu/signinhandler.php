@@ -3,7 +3,7 @@
 
     if(isset($_SESSION['signedin']) || !isset($_SESSION['form']) || $_SESSION['form'] !== "SIGNIN" || !isset($_POST['email']) && !isset($_SESSION['email']))
     {
-        header("Location: ../DIY_BuildPage/DIY_Mainpage.php");
+        header("Location: ".$_SESSION['redirect']);
         exit;
     }
 

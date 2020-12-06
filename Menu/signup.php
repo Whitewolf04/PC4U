@@ -9,7 +9,12 @@
     </head>
     <body>
         <?php
-            session_start();
+			session_start();
+			
+			if(!isset($_SESSION['redirect']))
+			{
+				$_SESSION['redirect'] = "../DIY_BuildPage/DIY_Mainpage.php";
+			}
 
             //If signedin, signup redirects back to main page.
             if(isset($_SESSION['signedin']))
@@ -19,7 +24,7 @@
             }
 
             //If a signin form session is saved, clear it.
-            if(!isset($_SESSION['form']) || $_SESSION['form'] === "SIGNIN")
+            if(!isset($_SESSION['form']) || $_SESSION['form'] !== "SIGNUP")
             {
                 $_SESSION['form'] = "SIGNUP";
                 unset($_SESSION['state']);
@@ -43,16 +48,16 @@
                                 <h1>Create Your Account</h1>
             
                                 <label>Full Name</label>
-                                <input class="valid" type="text" id="name" name="name" value="'.(isset($_SESSION['name']) ? $_SESSION['name'] : "").'" autofocus />
+                                <input type="text" id="name" name="name" value="'.(isset($_SESSION['name']) ? $_SESSION['name'] : "").'" autofocus />
                                 <p class='.(isset($_SESSION['errors']) && in_array("name",$_SESSION['errors'],true) ? "servererror" : "condition").' id="nameCondition">Enter a valid first and last name.</p>
             
                                 <label>Email Address</label>
-                                <input class="valid" type="text" id="email" name="email" value="'.(isset($_SESSION['email']) ? $_SESSION['email'] : "").'" />
+                                <input type="text" id="email" name="email" value="'.(isset($_SESSION['email']) ? $_SESSION['email'] : "").'" />
                                 <p class='.(isset($_SESSION['errors']) && in_array("email",$_SESSION['errors'],true) ? "servererror" : "condition").' id="emailCondition">Enter a valid email address.</p>
                                 '.(isset($_SESSION['errors']) && in_array("exists",$_SESSION['errors'],true) ? '<p class="servererror">An account is already signed up with that email.</p>' : '').'
             
                                 <label>Password</label>
-                                <input class="valid" type="password" id="password" name="password" value="'.(isset($_SESSION['password']) ? $_SESSION['password'] : "").'" />
+                                <input type="password" id="password" name="password" value="'.(isset($_SESSION['password']) ? $_SESSION['password'] : "").'" />
                                 <input type="checkbox" id="visibility" /><label for="visibility"></label>
                                 <p class='.(isset($_SESSION['errors']) && in_array("password",$_SESSION['errors'],true) ? "servererror" : "condition").' id="passwordCondition">Enter a valid password.</p>
             
@@ -68,7 +73,7 @@
                                 </div>
             
                                 <div class="flex">
-                                    <div><a href="../DIY_BuildPage/DIY_Mainpage.php">BACK</a> | <a href="../Menu/signin.php">SIGN IN</a></div>
+                                    <div><a href='.$_SESSION['redirect'].'>BACK</a> | <a href="../Menu/signin.php">SIGN IN</a></div>
                                     <button type="button" id="signupButton">NEXT</button>
                                 </div>
                             </div>
@@ -108,7 +113,7 @@
                                 <p>Enter the verification code sent to your email address.</p>
             
                                 <label>Verification Code</label>
-                                <input class="valid" type="text" id="code" name="code" value="" autofocus />
+                                <input type="text" id="code" name="code" value="" autofocus />
                                 '.(isset($_SESSION['errors']) && in_array("unverified",$_SESSION['errors'],true) ? '<p class="servererror">Invalid code. We\'re resending a different one.</p>' : '').'
             
                                 <div class="flex">
