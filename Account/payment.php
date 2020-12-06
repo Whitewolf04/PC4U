@@ -11,6 +11,8 @@
         <?php
 			session_start();
 
+			$_SESSION['redirect'] = "../Account/payment.php";
+
 			if(!isset($_SESSION['form']) || $_SESSION['form'] !== "PAYMENT")
             {
                 $_SESSION['form'] = "PAYMENT";

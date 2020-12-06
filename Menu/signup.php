@@ -9,7 +9,12 @@
     </head>
     <body>
         <?php
-            session_start();
+			session_start();
+			
+			if(!isset($_SESSION['redirect']))
+			{
+				$_SESSION['redirect'] = "../DIY_BuildPage/DIY_Mainpage.php";
+			}
 
             //If signedin, signup redirects back to main page.
             if(isset($_SESSION['signedin']))
@@ -68,7 +73,7 @@
                                 </div>
             
                                 <div class="flex">
-                                    <div><a href="../DIY_BuildPage/DIY_Mainpage.php">BACK</a> | <a href="../Menu/signin.php">SIGN IN</a></div>
+                                    <div><a href='.$_SESSION['redirect'].'>BACK</a> | <a href="../Menu/signin.php">SIGN IN</a></div>
                                     <button type="button" id="signupButton">NEXT</button>
                                 </div>
                             </div>
