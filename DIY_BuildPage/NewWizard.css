@@ -29,3 +29,15 @@ body {
     -webkit-appearance: none;
     outline: none;
 }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+th,
+td {
+  width: 200px;
+  text-align: left;
+  padding: 5px;
+}
