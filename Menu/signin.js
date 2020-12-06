@@ -122,7 +122,7 @@ window.onload = function()
     {
         setTimeout(function()
         {
-            window.location.replace("../DIY_BuildPage/DIY_Mainpage.php");
+            window.location.replace("../Menu/signinhandler.php");
         }, 2000);
     }
 }
