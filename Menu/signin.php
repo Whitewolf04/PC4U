@@ -43,7 +43,7 @@
                             <h1>Sign In</h1>
         
                             <label>Email</label>
-                            <input class="valid" type="text" id="email" name="email" value="'.(isset($_SESSION['email']) ? $_SESSION['email'] : "").'" autofocus />
+                            <input type="text" id="email" name="email" value="'.(isset($_SESSION['email']) ? $_SESSION['email'] : "").'" autofocus />
                             <p class='.(isset($_SESSION['errors']) && in_array("email",$_SESSION['errors'],true) ? "servererror" : "condition").' id="emailCondition">Enter a valid email address.</p>
                             '.(isset($_SESSION['errors']) && in_array("notexists",$_SESSION['errors'],true) ? '<p class="servererror">No account exists with that email.</p>' : '').'
 
@@ -68,7 +68,7 @@
                             <p>'.$_SESSION['email'].'</p>
         
                             <label>Password</label>
-                            <input class="valid" type="password" id="password" name="password" value="'.(isset($_SESSION['password']) ? $_SESSION['password'] : "").'" autofocus />
+                            <input type="password" id="password" name="password" value="'.(isset($_SESSION['password']) ? $_SESSION['password'] : "").'" autofocus />
                             <input type="checkbox" id="visibility" /><label for="visibility"></label>
                             <p class='.(isset($_SESSION['errors']) && in_array("password",$_SESSION['errors'],true) ? "servererror" : "condition").' id="passwordCondition">Invalid password.</p>
 
@@ -104,7 +104,7 @@
                             <p>Enter the verification code sent to your email address.</p>
 
                             <label>Verification Code</label>
-                            <input class="valid" type="text" id="code" name="code" value="" autofocus />
+                            <input type="text" id="code" name="code" value="" autofocus />
                             '.(isset($_SESSION['errors']) && in_array("unverified",$_SESSION['errors'],true) ? '<p class="servererror">Invalid code. We\'re resending a different one.</p>' : '').'
 
                             <div class="flex">
@@ -126,10 +126,10 @@
                             <h1>Create New Password</h1>
         
                             <label>Password</label>
-                            <input class="valid" type="password" id="password" name="password" value="" autofocus />
+                            <input type="password" id="password" name="password" value="" autofocus />
                             <input type="checkbox" id="visibility" /><label for="visibility"></label>
                             <label>Confirm Password</label>
-                            <input class="valid" type="password" id="confirm" name="confirm" value="" />
+                            <input type="password" id="confirm" name="confirm" value="" />
                             <p class='.(isset($_SESSION['errors']) && in_array("password",$_SESSION['errors'],true) ? "servererror" : "condition").' id="confirmCondition">Invalid password or confirm doesn\'t match.</p>
 
                             <div class="flex">
