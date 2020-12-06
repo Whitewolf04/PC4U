@@ -55,8 +55,9 @@
 				}
 			}
 
-			else if($_SESSION['state'] === 2)
+			else if($_SESSION['state'] === 2 || $_SESSION['state'] === 4)
             {
+				$_SESSION['state'] = 2;
 				echo '
 					<form id="payment" method="POST" action="paymenthandler.php">
 						<div class="block summary">
@@ -91,6 +92,59 @@
 								</div>
 							</div>
 		
+							<div class="flex">
+								<div><a href="../Account/cart.php">CANCEL</a></div>
+								<button type="button" id="nextButton">NEXT</button>
+							</div>
+						</div>
+					</form>
+				';
+			}
+
+			else if($_SESSION['state'] === 3 || $_SESSION['state'] === 5)
+            {
+				$_SESSION['state'] = 4;
+				echo '
+					<form id="payment" method="POST" action="paymenthandler.php">
+						<div class="block summary">
+							<h2>Order Summary</h2>
+							<div><p class="bold">Amount:</p><p>test</p></div>
+						</div>
+						<div class="block">
+							<h2>Shipping Address</h2>
+
+							<label>Address Line 1</label>
+							<input type="text" id="addressl1" name="addressl1" value="'.(isset($_SESSION['addressl1']) ? $_SESSION['addressl1'] : "").'" placeholder="1234 Street Name" />
+							
+							<div class="inputline">
+								<div>
+									<label>Address Line 2</label>
+									<input type="text" id="addressl2" name="addressl2" value="'.(isset($_SESSION['addressl2']) ? $_SESSION['addressl2'] : "").'" placeholder="Apartment, Building, Suite (optional)" />
+								</div>
+								<div>
+									<label>Phone Number</label>
+									<input type="text" id="phone" name="phone" value="'.(isset($_SESSION['phone']) ? $_SESSION['phone'] : "").'" placeholder="123 456 7890 (optional)" maxlength="10" />
+								</div>
+							</div>
+
+							<div class="inputline">
+								<div>
+									<label>Postal Code</label>
+									<input type="text" id="postalcode" name="postalcode" value="'.(isset($_SESSION['postalcode']) ? $_SESSION['postalcode'] : "").'" placeholder="ABC123" maxlength="6" />
+								</div>
+								<div>
+									<label>City</label>
+									<input type="text" id="city" name="city" value="'.(isset($_SESSION['city']) ? $_SESSION['city'] : "").'" placeholder="City" />
+								</div>
+								<div>
+									<label>Province</label>
+									<select id="province" name="province">
+										<option value="" disabled hidden'.(isset($_SESSION['province']) ? "" : " selected").'>Select</option>
+										<option value="QC"'.(isset($_SESSION['province']) && $_SESSION['province'] === "QC" ? " selected" : "").'>Quebec</option>
+									</select>
+								</div>
+							</div>
+
 							<div class="flex">
 								<div><a href="../Account/cart.php">CANCEL</a></div>
 								<button type="button" id="nextButton">NEXT</button>

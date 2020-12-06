@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", function()
 
 		next.addEventListener("click", validateCreditcard);
 	}
+
+	if(document.getElementById("addressl1") != null)
+	{
+		var next = document.getElementById("nextButton");
+
+		next.addEventListener("click", validateShipping);
+	}
 });
 
 function validateEmail()
@@ -78,6 +85,52 @@ function validateCreditcard()
         valid = false;
 	} else {
         CCvv.style.borderColor = null;
+	}
+
+	if(valid)
+	{
+		document.getElementById("payment").submit();
+	}
+}
+
+function validateShipping()
+{
+	var addressl1 = document.getElementById("addressl1");
+	var postalcode = document.getElementById("postalcode");
+	var city = document.getElementById("city");
+	var province = document.getElementById("province");
+	var valid = true;
+
+	if(!addressl1.value.match(/[0-9]+/) || !addressl1.value.match(/[a-z]+/i))
+	{
+		addressl1.style.borderColor = "#D90016";
+		valid = false;
+	} else {
+		addressl1.style.borderColor = null;
+	}
+
+	if(!postalcode.value.match(/^[0-9a-z]{6}$/i))
+	{
+		postalcode.style.borderColor = "#D90016";
+		valid = false;
+	} else {
+		postalcode.style.borderColor = null;
+	}
+
+	if(!city.value.match(/^[a-z]+$/i))
+	{
+		city.style.borderColor = "#D90016";
+		valid = false;
+	} else {
+		city.style.borderColor = null;
+	}
+
+	if(!province.value.match(/^[A-Z]+$/))
+	{
+		province.style.borderColor = "#D90016";
+		valid = false;
+	} else {
+		province.style.borderColor = null;
 	}
 
 	if(valid)
