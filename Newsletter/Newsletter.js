@@ -7,11 +7,17 @@ function outImage(img){
     img.style.width = "75%"; 
 }
 
+var timeSubs;
 function openSubs() {
-    document.getElementById("pop-subscribe").style.display="block";
+    timeSubs = setInterval(function() {
+        document.getElementById("pop-subscribe").style.display='block';
+        poped = true;
+        
+    }, 3000); 
 }
 
 function closeSubs() {
+    clearInterval(timeSubs);
     document.getElementById("pop-subscribe").style.display="none";
 }
 
