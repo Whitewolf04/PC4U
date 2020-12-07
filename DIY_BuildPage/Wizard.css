@@ -30,6 +30,10 @@ body {
   outline: none;
 }
 
+p#message {
+  color: red;
+}
+
 table {
   border-collapse: separate;
   border-spacing: 0 15px;
