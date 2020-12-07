@@ -90,8 +90,8 @@
 				</td>
 				<td colspan="2" class="specs">
 					<?php
-					readSpecs("budget5");
-          include "../Account/addToCart.php";
+						readSpecs("budget5");
+          				include "../Account/addToCart.php";
 					?>
 				</td>
 			</tr>
