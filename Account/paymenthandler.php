@@ -47,4 +47,71 @@
 		header("Location: ../Account/payment.php");
 		exit;
 	}
+
+	else if($_SESSION['state'] === 4)
+	{
+		if(!isset($_POST['billingaddressl1']) || !isset($_POST['billingphone']) || !isset($_POST['billingpostalcode']) || !isset($_POST['billingcity']) || !isset($_POST['billingprovince']))
+		{
+			$_SESSION['state'] = 3;
+			header("Location: ../Account/payment.php");
+			exit;
+		}
+
+		$_SESSION['billingaddressl1'] = trim($_POST['billingaddressl1']);
+		$_SESSION['billingaddressl2'] = trim($_POST['billingaddressl2']);
+		$_SESSION['billingphone'] = trim($_POST['billingphone']);
+		$_SESSION['billingpostalcode'] = trim($_POST['billingpostalcode']);
+		$_SESSION['billingcity'] = trim($_POST['billingcity']);
+		$_SESSION['billingprovince'] = trim($_POST['billingprovince']);
+
+		if(preg_match("/[0-9]+/", $_SESSION['billingaddressl1']) && preg_match("/[a-zA-Z]+/", $_SESSION['billingaddressl1']) && preg_match("/^[0-9]{10}$/", $_SESSION['billingphone']) && preg_match("/^[a-zA-Z0-9]{6}$/", $_SESSION['billingpostalcode']) && preg_match("/^[a-zA-Z]+$/", $_SESSION['billingcity']) && preg_match("/^[A-Z]+$/", $_SESSION['billingprovince']))
+		{
+			if(isset($_POST['sameaddress']))
+			{
+				$_SESSION['sameaddress'] = $_POST['sameaddress'];
+				$_SESSION['shippingaddressl1'] = $_SESSION['billingaddressl1'];
+				$_SESSION['shippingaddressl2'] = $_SESSION['billingaddressl2'];
+				$_SESSION['shippingphone'] = $_SESSION['billingphone'];
+				$_SESSION['shippingpostalcode'] = $_SESSION['billingpostalcode'];
+				$_SESSION['shippingcity'] = $_SESSION['billingcity'];
+				$_SESSION['shippingprovince'] = $_SESSION['billingprovince'];
+				$_SESSION['state'] = 7;
+			} else {
+				unset($_SESSION['sameaddress']);
+				$_SESSION['state'] = 6;
+			}
+		}
+
+		header("Location: ../Account/payment.php");
+		exit;
+	}
+
+	else if($_SESSION['state'] === 5)
+	{
+		if(!isset($_POST['shippingaddressl1']) || !isset($_POST['shippingphone']) || !isset($_POST['shippingpostalcode']) || !isset($_POST['shippingcity']) || !isset($_POST['shippingprovince']))
+		{
+			$_SESSION['state'] = 6;
+			header("Location: ../Account/payment.php");
+			exit;
+		}
+
+		$_SESSION['shippingaddressl1'] = trim($_POST['shippingaddressl1']);
+		$_SESSION['shippingaddressl2'] = trim($_POST['shippingaddressl2']);
+		$_SESSION['shippingphone'] = trim($_POST['shippingphone']);
+		$_SESSION['shippingpostalcode'] = trim($_POST['shippingpostalcode']);
+		$_SESSION['shippingcity'] = trim($_POST['shippingcity']);
+		$_SESSION['shippingprovince'] = trim($_POST['shippingprovince']);
+
+		if(preg_match("/[0-9]+/", $_SESSION['shippingaddressl1']) && preg_match("/[a-zA-Z]+/", $_SESSION['shippingaddressl1']) && preg_match("/^[0-9]{10}$/", $_SESSION['shippingphone']) && preg_match("/^[a-zA-Z0-9]{6}$/", $_SESSION['shippingpostalcode']) && preg_match("/^[a-zA-Z]+$/", $_SESSION['shippingcity']) && preg_match("/^[A-Z]+$/", $_SESSION['shippingprovince']))
+		{
+			$_SESSION['state'] = 7;
+		}
+
+		header("Location: ../Account/payment.php");
+		exit;
+	}
+
+	else if($_SESSION['state'] === 7)
+	{
+	}
 ?>
