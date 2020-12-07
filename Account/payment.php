@@ -111,7 +111,7 @@
 				';
 			}
 
-			else if($_SESSION['state'] === 3 || $_SESSION['state'] === 5)
+			else if($_SESSION['state'] === 3 || $_SESSION['state'] === 5 || $_SESSION['state'] === 7)
             {
 				$_SESSION['state'] = 4;
 				echo '
@@ -162,7 +162,7 @@
 				';
 			}
 
-			else if($_SESSION['state'] === 6)
+			else if($_SESSION['state'] === 6 || $_SESSION['state'] === 8)
 			{
 				$_SESSION['state'] = 5;
 				echo '
@@ -211,14 +211,16 @@
 				';
 			}
 
-			else if($_SESSION['state'] === 7)
+			else if($_SESSION['state'] === 9)
 			{
 				if(isset($_SESSION['sameaddress']))
 				{
-					$_SESSION['state'] = 5;
+					$_SESSION['state'] = 7;
 				} else {
-					$_SESSION['state'] = 6;
+					$_SESSION['state'] = 8;
 				}
+
+				$_SESSION['parts'] = "";
 
 				$list = "";
 				$items = array_keys($_SESSION['cart']);
@@ -233,14 +235,17 @@
 						foreach($pieces as $piece)
 						{
 							$list .= "<li>".$piece."</li>";
+							$_SESSION['parts'] .= $piece."~";
 						}
 						$list .= "</ul>";
 					} else {
 						$list .= "<div class='flexlist'><p>".$items[$i]."</p><p>".$price."</p></div><ul>";
+						$_SESSION['parts'] .= $items[$i]."~";
 					}
 					$i++;
 				}
 
+				$_SESSION['parts'] = preg_replace("/~$/", "\n", $_SESSION['parts']);
 				$_SESSION['total'] = intval($_SESSION['subtotal'])*1.15;
 
 				echo '
