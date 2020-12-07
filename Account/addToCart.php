@@ -9,6 +9,7 @@
         if(isset($_POST['prebuilt'])){
             $cookievalue = $_COOKIE['cart']."Prebuilt ".$_POST['prebuilt']."~";
             setcookie("cart", $cookievalue, false, "/");
+            echo "Added to cart!";
         }else{
             $cpu = $motherboard = $gpu = $ram = $storage = $cooler = $case = $powerSupply = "";
             if(!(empty($_POST['cpu'])||empty($_POST['mobo'])||empty($_POST['gpu'])||empty($_POST['ram'])||empty($_POST['storageAmount'])||empty($_POST['coolerSize'])||empty($_POST['caseSize'])||empty($_POST['powerWatt']))){
@@ -27,11 +28,25 @@
                 $caseSize = ($_POST['case']==="full") ? "Full" : "Medium";
                 $case = "CASE ".$caseSize."\t".$_POST['caseSize'];
 
-                $powerBrand = substr($_POST['powerBrand'], 0, strpos($_POST['powerBrand'], "Power"));
+                $powerBrand = "";
+                switch($_POST['powerBrand']){
+                    case "evgaPower":
+                        $powerBrand = "EVGA";
+                    break;
+                    case "corsairPower":
+                        $powerBrand = "Corsair";
+                    break;
+                    case "coolermasterPower":
+                        $powerBrand = "CoolerMaster";
+                    break;
+                    case "thermaltakePower":
+                        $powerBrand = "ThermalTake";
+                    break;
+                }
                 $powerSupply = "POWER SUPPLY ".$powerBrand."\t".$_POST['powerWatt'];
 
                 $pcWizard = array($cpu, $motherboard, $gpu, $ram, $storage, $cooler, $case, $powerSupply);
-                $cookievalue = $_COOKIE['cart']."PCwizard ". json_encode($pcWizard).$_POST['ram']."~";
+                $cookievalue = $_COOKIE['cart']."PCwizard ". json_encode($pcWizard)."|".$_POST['ram']."~";
                 echo $cookievalue;
                 setcookie("cart", $cookievalue, false, "/");
                 echo "Added to cart!";
@@ -42,9 +57,4 @@
         }
     }
 ?>
-<button type="submit" name="cart" class="cart" value="cart" onclick="notification()">Add to Cart</button>
-<script type="text/javascript">
-    function notification(){
-        alert("Your item has been added to cart!");
-    }
-</script>
+<button type="submit" name="cart" class="cart" value="cart">Add to Cart</button>
