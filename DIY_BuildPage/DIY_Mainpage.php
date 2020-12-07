@@ -8,28 +8,24 @@
     </head>
 
     <body>
-        <?php 
-        require_once "../Menu/nav.php";
-        $_SESSION['redirect'] = "../DIY_BuildPage/DIY_Mainpage.php";
-        ?>
+        <?php require_once "../Menu/nav.php"; $_SESSION['redirect'] = "../DIY_BuildPage/DIY_Mainpage.php"; ?>
 
-        <br/>
-        <div id="builds">
-            <h2>Pre-Configured Builds depending on price range</h2>
-            <table cellspacing="0" id="pricerange">
-                <tr>
-                    <td id="budget"><a href="Budget.php">Budget</a></td>
-                    <td id="mid"><a href="Midrange.php">Mid-Range</a></td>
-                    <td id="high"><a href="Highend.php">High-End</a></td>
-                </tr>
+		<h1 id="banner">Preconfigured Builds</h1>
 
-                <tr>
-                    <td id="budgetRange">(< $1000)</td>
-                    <td id="midRange">($1000 - $2000)</td>
-                    <td id="highRange">(> $2000)</td>
-                </tr>
-            </table>
-            <footer>Note: All prices are in Canadian Dollar, and peripherals are not included</footer>
-        </div>
-    </body>
+        <table id="pricerange">
+			<tr>
+				<td id="budget">
+					<a href="Budget.php"><p>Budget</p>
+					<p>(< $1000)</p></a>
+				</td>
+				<td id="mid">
+					<a href="Midrange.php"><p>Mid-Range</p>
+					<p>($1000 - $2000)</p></a>
+				</td>
+				<td id="high">
+					<a href="Highend.php"><p>High-End</p>
+					<p>(> $2000)</p></a>
+				</td>
+			</tr>
+		</table>
 </html>
