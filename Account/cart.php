@@ -72,14 +72,14 @@
                                     $start = substr($pcParts[$x], 0, strpos($pcParts[$x], "\t"));
                                     $productCode = trim(substr($pcParts[$x], strpos($pcParts[$x], "\t")+1, strlen($pcParts[$x])-strpos($pcParts[$x], "\t")+1));
                                     $productCode .= "\t";
-                                    echo $start." ".$productCode."<br>";
+                                    //echo $start." ".$productCode."<br>";
                                     //goes through the file
                                     while(($line=fgets($stream))!==false){
                                         //checks to see if it has the title in the line
                                         if(strpos($line, $start) !== false){
                                             //echo "hello";
                                             //checks to see if the line has a productCode
-                                            if(preg_match('/^.*'.$productCode.'.*$/', $line)){
+                                            if(preg_match('/^.*'.$productCode.'.*$/i', $line)){
                                                 //removes all of the line before the product code
                                                 $line = trim(substr($line, strpos($line, $productCode) + strlen($productCode), strlen($line)-strpos($line, $productCode)+ strlen($productCode)));
                                                 //extracts the name from the line a \t after the product code
@@ -87,7 +87,9 @@
                                                 //removes the name from the line
                                                 $line = trim(substr($line, strpos($line, $name) + strlen($name), strlen($line)-strpos($line, $name) + strlen($name)));
                                                 //extracts the price from the line
-                                                $price = trim(substr($line, 0, strpos($line, "\t")));
+                                                //checks to see if the price is the last element of the line
+                                                $possiblePrice = trim(substr($line, 0, strpos($line, "\t")));
+                                                $price = ($possiblePrice==="") ? trim($line) : $possiblePrice;
                                                 //adds this as an element to the cart
                                                 $cart[$name] = $price;
                                                 $_SESSION['cart'][$name] = $price;

@@ -238,15 +238,14 @@
                         </select>
                     </td>
                 </tr>
-            </form>
         </table>
-    </div>
-
-    <div id="button">
-        <?php
-        include "../Account/addToCart.php";
-        ob_flush();
-        ?>
+        <div id="button">
+                <?php
+                include "../Account/addToCart.php";
+                ob_flush();
+                ?>
+        </div>
+        </form>
     </div>
 
     <script type="text/javascript">
