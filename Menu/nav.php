@@ -62,7 +62,6 @@
                                 <a class="menuButton" href="#">Account</a>
                                 <div class="dropdownOptions">
                                     <a class="menuButton" href="../Account/account.php">Profile</a>
-                                    <a class="menuButton" href="">Orders?</a>
                                     <a class="menuButton" href="../Menu/navhandler.php?signout=true">Sign Out</a>
                                 </div>
                             </li>
