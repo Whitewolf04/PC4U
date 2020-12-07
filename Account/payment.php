@@ -19,7 +19,24 @@
 				unset($_SESSION['state']);
 				unset($_SESSION['email']);
                 unset($_SESSION['subject']);
-                unset($_SESSION['body']);
+				unset($_SESSION['body']);
+				unset($_SESSION['CCnum']);
+				unset($_SESSION['CCname']);
+				unset($_SESSION['CCmm']);
+				unset($_SESSION['CCyy']);
+				unset($_SESSION['CCvv']);
+				unset($_SESSION['billingaddressl1']);
+				unset($_SESSION['billingaddressl2']);
+				unset($_SESSION['billingphone']);
+				unset($_SESSION['billingpostalcode']);
+				unset($_SESSION['billingcity']);
+				unset($_SESSION['billingprovince']);
+				unset($_SESSION['shippingaddressl1']);
+				unset($_SESSION['shippingaddressl2']);
+				unset($_SESSION['shippingphone']);
+				unset($_SESSION['shippingpostalcode']);
+				unset($_SESSION['shippingcity']);
+				unset($_SESSION['shippingprovince']);
 			}
 			
 			if(!isset($_SESSION['state']) || $_SESSION['state'] === 1)
