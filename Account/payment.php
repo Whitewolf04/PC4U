@@ -219,11 +219,38 @@
 				} else {
 					$_SESSION['state'] = 6;
 				}
+
+				$list = "";
+				$items = array_keys($_SESSION['cart']);
+				$i = 0;
+				foreach($_SESSION['cart'] as $price)
+				{
+					if(strpos($items[$i], ", ") !== false)
+					{
+						$list .= "<div class='flexlist'><p class='bold'>Prebuilt</p><p>".$price."</p></div><ul class='flexlist'>";
+						$items[$i] = str_replace(", ,", ",", $items[$i]);
+						$pieces = explode(", ", $items[$i]);
+						foreach($pieces as $piece)
+						{
+							$list .= "<li>".$piece."</li>";
+						}
+						$list .= "</ul>";
+					} else {
+						$list .= "<div class='flexlist'><p>".$items[$i]."</p><p>".$price."</p></div><ul>";
+					}
+					$i++;
+				}
+
+				$_SESSION['total'] = intval($_SESSION['subtotal'])*1.15;
+
 				echo '
 					<form id="payment" method="POST" action="paymenthandler.php">
 						<div class="block">
 							<h2>Order Summary</h2>
-							<div class="flex"><p>Amount:</p><p>test</p></div>
+							'.$list.'
+							<div class="flexlist"><p class="bold">Subtotal</p><p>'.$_SESSION['subtotal'].'</p></div>
+							<div class="flexlist"><p class="bold">Tax</p><p>'.intval($_SESSION['subtotal'])*0.15.'</p></div>
+							<div class="flexlist"><p class="bold">Total</p><p>'.$_SESSION['total'].'</p></div>
 							<div class="flex">
 								<div><a href="../Account/payment.php">BACK</a></div>
 								<button type="button" id="nextButton">PLACE ORDER</button>
