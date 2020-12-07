@@ -21,6 +21,7 @@
 	unset($_SESSION['billingpostalcode']);		//Used in payment
 	unset($_SESSION['billingcity']);			//Used in payment
 	unset($_SESSION['billingprovince']);		//Used in payment
+	unset($_SESSION['sameaddress']);			//Used in payment
 	unset($_SESSION['shippingaddressl1']);		//Used in payment
 	unset($_SESSION['shippingaddressl2']);		//Used in payment
 	unset($_SESSION['shippingphone']);			//Used in payment

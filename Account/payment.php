@@ -31,6 +31,7 @@
 				unset($_SESSION['billingpostalcode']);
 				unset($_SESSION['billingcity']);
 				unset($_SESSION['billingprovince']);
+				unset($_SESSION['sameaddress']);
 				unset($_SESSION['shippingaddressl1']);
 				unset($_SESSION['shippingaddressl2']);
 				unset($_SESSION['shippingphone']);
