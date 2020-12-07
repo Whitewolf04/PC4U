@@ -57,4 +57,4 @@
         }
     }
 ?>
-<button type="submit" name="cart" class="cart" value="cart">Add to Cart</button>
+<button type="submit" name="cart" class="cart" value="cart" onclick="alert('Your item has been added to cart!')">Add to Cart</button>
