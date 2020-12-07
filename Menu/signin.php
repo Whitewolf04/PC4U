@@ -28,7 +28,6 @@
             {
                 $_SESSION['form'] = "SIGNIN";
                 unset($_SESSION['state']);
-                unset($_SESSION['name']);
                 unset($_SESSION['email']);
                 unset($_SESSION['password']);
                 unset($_SESSION['errors']);
