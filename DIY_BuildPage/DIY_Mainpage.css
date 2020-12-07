@@ -1,9 +1,23 @@
+h1#banner
+{
+    text-align:center;
+    font-size:400%;
+    padding-top:70px;
+    padding-bottom:70px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow:0px 0px 10px 3px #000000;
+}
+
 table#pricerange {
     margin: auto;
+    width: 100%;
+	box-shadow: 0px 0px 10px 0px #38517a;
+	margin: auto;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 200%;
-    padding: 50px;
+	padding: 50px;
+	border-spacing:50px;
 }
 
 #pricerange a
@@ -13,7 +27,8 @@ table#pricerange {
     text-align:center;
     font-size:32px;
     font-weight:bold;
-    font-family:'Arial';
+	font-family:'Arial';
+	transition:0.3s;
 }
 
 .darkmode #pricerange a
@@ -27,76 +42,14 @@ table#pricerange {
     color:#0299E3;
 }
 
-#budget {
-    border-style: solid solid none solid;
-    padding-top: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
+#pricerange td {
+	box-shadow: 0px 0px 10px 0px #38517a;
+	padding: 50px;
+	transition:0.3s;
 }
 
-#mid {
-    border-style: solid none none none;
-    padding-top: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-#high {
-    border-style: solid solid none solid;
-    padding-top: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-#budgetRange {
-    border-style: none solid solid solid;
-    padding-bottom: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-#midRange {
-    border-style: none none solid none;
-    padding-bottom: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-#highRange {
-    border-style: none solid solid solid;
-    padding-bottom: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-#pricerange a {
-    font-size: 100%;
-}
-
-#builds {
-    border: 2px;
-    border-style: solid;
-    border-color: grey;
-}
-
-#builds h2 {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 200%;
-    padding-top: 50px;
-}
-
-#news {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#news fieldset {
-    border: 2px;
-    border-style: solid;
-    border-color: grey;
-}
-
-#news legend {
-    font-size: 150%;
-
+#pricerange td:hover {
+	box-shadow: 0px 0px 10px 0px #0299E3;
+	padding: 50px;
+	transition:0.3s;
 }
