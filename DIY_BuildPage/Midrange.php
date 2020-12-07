@@ -124,7 +124,7 @@
 
 
 	<table class="builds" border="0" cellspacing="20px">
-		<tr class="build">
+		<tr class="build" id="mid1"> <!-- id for reference from another page -->
 			<td class="picture">
 				<img src="Images/CMMB311L.png" width="300px" height="300px" />
 			</td>
