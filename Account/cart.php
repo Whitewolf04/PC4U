@@ -62,7 +62,7 @@
                             $ramSpeed = substr($key, strpos($key, "|"), strlen($key)-strpos($key, "|"));
                             $key = str_replace($ramSpeed, "", $key);
                             //print_r(json_decode($key));
-                            //echo $key;
+                            echo $key;
                             //checks to see if products.txt file exists
                             if(file_exists("../Database/products.txt")){
                                 //gets all the pc parts from the pcWizard array
@@ -98,8 +98,11 @@
                                                     $name = "RAM ". $name. " ".$ramSpeed;
                                                 }else if($start=== "STORAGE M2NvmeSsd" || $start === "STORAGE sataSsd"){
                                                     $name = ($start=== "STORAGE M2NvmeSsd") ? "M.2 NVMe SSD ".$name : "Sata SSD ". $name;
+                                                }else if($start==="POWER SUPPLY EVGA"||$start==="POWER SUPPLY Corsair"||$start==="POWER SUPPLY CoolerMaster"||$start==="POWER SUPPLY ThermalTake"){
+                                                    $brand = str_replace("POWER SUPPLY", "", $start);
+                                                    $name = $brand. " ". $name;
                                                 }
-                                                $cart[$name. "<form method='POST' action=''><input type=hidden name=item value='\"".$start."\\\\t".trim($productCode)."\",' id='".$i.$productCode."'><input type=submit name=remove value='Remove Item'></form>"] = $price;
+                                                $cart[$name. "<form method='POST' action=''><input type=hidden name=item value='\"".$start."\\\\t".trim($productCode)."\"' id='".$i.$productCode."'><input type=submit name=remove value='Remove Item'></form>"] = $price;
                                                 $_SESSION['cart'][$name] = $price;
                                             }
                                         }
@@ -112,10 +115,10 @@
                     //print_r($cart);
                     if(isset($_POST['remove'])){
                         $cookievalue = $_COOKIE['cart'];
-                        $itemvalue = '/'.$_POST['item'].'/';
+                        $itemvalue = '/,?'.$_POST['item'].',?/';
                         $cookievalue = preg_replace($itemvalue, "", $cookievalue, 1);
                         setcookie('cart', $cookievalue, false, "/");
-                        echo $itemvalue;
+                        //echo $itemvalue;
                         header("Location: cart.php");
                     }
                     ?>

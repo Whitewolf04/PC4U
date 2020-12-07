@@ -28,7 +28,21 @@
                 $caseSize = ($_POST['case']==="full") ? "Full" : "Medium";
                 $case = "CASE ".$caseSize."\t".$_POST['caseSize'];
 
-                $powerBrand = substr($_POST['powerBrand'], 0, strpos($_POST['powerBrand'], "Power"));
+                $powerBrand = "";
+                switch($_POST['powerBrand']){
+                    case "evgaPower":
+                        $powerBrand = "EVGA";
+                    break;
+                    case "corsairPower":
+                        $powerBrand = "Corsair";
+                    break;
+                    case "coolermasterPower":
+                        $powerBrand = "CoolerMaster";
+                    break;
+                    case "thermaltakePower":
+                        $powerBrand = "ThermalTake";
+                    break;
+                }
                 $powerSupply = "POWER SUPPLY ".$powerBrand."\t".$_POST['powerWatt'];
 
                 $pcWizard = array($cpu, $motherboard, $gpu, $ram, $storage, $cooler, $case, $powerSupply);
