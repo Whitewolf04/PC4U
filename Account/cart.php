@@ -11,6 +11,12 @@
 		<h1>Your Cart</h1>
 		<div id="cart">
 		<?php
+		if(!isset($_COOKIE['cart'])){
+			setcookie("cart","~", false, "/");
+		}else{
+			$cookievalue = $_COOKIE['cart'];
+			setcookie("cart", $cookievalue, false, "/");
+		}
 		$cookie_cart = explode("~", $_COOKIE['cart']);
 		//print_r($cookie_cart);
 		$cart = array();
@@ -124,7 +130,11 @@
 			$_SESSION['subtotal'] = 0;
 			foreach($cart as $name=>$price){
 				if($price!==""){
-					echo "<tr><td>".$name."</td><td>".$price."$</td></tr>";
+					if(strpos($name, "Total price")!==false){
+						echo "<tr><td>".$name."</td><td>".$price."$</td></tr>";
+					}else{
+						echo "<tr><td class=individualparts>".$name."</td><td class=individualparts>".$price."$</td></tr>";
+					}
 					$_SESSION['subtotal'] += $price;
 				}else{
 					echo "<tr><td class=prebuild>".$name."</td><td class=prebuild>".$price."</td></tr>";
