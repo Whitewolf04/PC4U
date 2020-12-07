@@ -4,6 +4,7 @@
 		<title>PC4U</title>
 		<link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
         <link rel="stylesheet" type="text/css" href="cart.css" />
+		<script type="text/javascript" src="cart.js"></script>
 	</head>
     <body>
         <?php require_once "../Menu/nav.php" ?>
@@ -46,11 +47,12 @@
                             }
                             //explode prebuild line into parts
                             $parts = explode(",",$prebuild);
+                            echo "<br>";
                             //starts cart of with prebuild entry to indicate the start of a prebuild.
-                            $cart["Prebuild ".$i] = "";
+                            $cart["Prebuild #".$i] = "";
                             //adds to the cart the parts with blank price entries
                             for($x=0; $x<count($parts); $x++){
-                                $cart[$parts[$x]] = "";
+                                $cart[$parts[$x]." <input type=hidden value=$i>"] = "";
                             }
                             //adds the final price at the end of components list
                             $cart["Total price of prebuild ". $i."<form method='POST' action=''><input type=hidden name=item value='". $title." ".$key."~'><input type=submit name=remove value='Remove Item'></form>"] = trim($price);
@@ -97,13 +99,6 @@
                         }
                     }
                     //print_r($cart);
-                    if(isset($_POST['puchaseNow'])){
-                        $_SESSION['cart'] = $cart;
-                    }
-                    if(isset($_POST['purchaseLater'])){
-                        $_SESSION['cart'] = $cart;
-                        //header("Location: Budget.php");
-                    }
                     if(isset($_POST['remove'])){
                         $cookievalue = $_COOKIE['cart'];
                         $itemvalue = '/'.$_POST['item'].'/';
@@ -115,22 +110,22 @@
                     <table border = "1">
                         <?php
                         //creates table elements for the parts and prebuilds
-                        $totalPrice = 0;
+                        $_SESSION['subtotal'] = 0;
                         foreach($cart as $name=>$price){
                             if($price!==""){
                                 echo "<tr><td>".$name."</td><td>".$price."$</td></tr>";
-                                $totalPrice += $price;
+                                $_SESSION['subtotal'] += $price;
                             }else{
                                 echo "<tr><td class=prebuild>".$name."</td><td class=prebuild>".$price."</td></tr>";
                             }
                         }
-                        echo "<tr><td>Total Price : </td><td>".$totalPrice."$</td></tr>";
+                        echo "<tr><td>Total Price : </td><td>".$_SESSION['subtotal']."$</td></tr>";
                         ?>
                     </table>
                     </div>
-                    <form method="post" action="">
-                    <input type="submit" name="purchaseNow" value="Purchase now" class="button">
-                    <input type="submit" name="purchaseLater" value="Purchase later" class="button">
+                    <form id="cartform" method="post" action="payment.php">
+						<input type="hidden" id="subtotal" name="subtotal" value="<?php echo $_SESSION['subtotal']; ?>">
+						<input type="button" id="purchase" name="purchase" class="button" value="Purchase Now">
                     </form>
                 </div>
                 <div class="sidebar">
