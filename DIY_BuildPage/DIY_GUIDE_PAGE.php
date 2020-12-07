@@ -12,21 +12,21 @@
 	</header>
 	<div class="main">
 		<div class="wrap">
-			<div class="sidebar">
-				<a href="#top">A Step by Step Guide to Build a PC</a>
+			<div class="outer"><div class="sidebar">
+				<a href="#top">Building a PC</a>
 				<ul>
-					<li><a href="#partsdefinition">What You'll Need</a><br></li>
-					<li><a href="#stepguide">How to Put it all Together</a><br></li>
+					<li><a href="#partsdefinition">What You'll Need</a></li>
+					<li><a href="#stepguide">Putting it Together</a></li>
 				</ul>
-				<a href="#buyingguide">Guide to Buying the Right PC Parts for You</a>
+				<a href="#buyingguide">Buying the Right Parts</a>
 				<ul>
 					<li><a href="#compatibility">Compatibility</a></li>
 					<li><a href="#picking">Picking the Parts</a></li>
 				</ul>
-			</div>
+			</div></div>
 			<div class="content">
 				<div class="header">
-					<h1 id="top">A Step by Step PC Build Guide</h1>	
+					<div id="top"><h1 id="banner">A Step by Step PC Build Guide</h1></div>
 				</div>
 				<div class="article">
 					<div class="video">
