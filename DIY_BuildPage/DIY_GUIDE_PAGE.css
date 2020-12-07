@@ -4,6 +4,7 @@
 	overflow:hidden;
 	display:inline-block;
 	vertical-align:top;
+	border-top:solid black 2px;
 }
 .sidebar{
 	float: left;
