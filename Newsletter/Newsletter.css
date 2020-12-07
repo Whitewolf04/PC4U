@@ -19,6 +19,9 @@ h3{
     margin-top:100px;
     
 }
+.promo{
+    width: 100px;
+}
 .item-desc {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: justify;
@@ -31,6 +34,10 @@ h3{
 
     float: right;
     width: 75%;
+}
+.img2{
+    float: right;
+    max-width: 45%;
 }
 .details  a:link {
     color: inherit;
