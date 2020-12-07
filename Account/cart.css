@@ -21,7 +21,8 @@ td {
     padding-bottom: 10px;
     background-color: #ff7a7a;
     color: rgb(16, 4, 32);
-    padding-right: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
     font-weight: bolder;
     width: 90%;
 }
