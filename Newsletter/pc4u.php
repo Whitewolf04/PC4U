@@ -7,6 +7,6 @@
         <meta charset="utf-8" />
 	</head>
 	<body>
-		<?php require_once "../Menu/nav.php"; ?>
+		<?php require_once "../Menu/nav.php"; $_SESSION['redirect'] = "../Newsletter/pc4u.php"; ?>
 	</body>
 </html>
