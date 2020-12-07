@@ -1,52 +1,5 @@
 <!DOCTYPE html>
 
-<?php
-
-function generateDatabase($item, $value)
-{
-    $products = fopen("../Database/products.txt", "r");
-    $contents = fread($products, filesize("../Database/products.txt"));
-    $lines = explode("\n", $contents);
-    $line = "";
-    $outputArr = array();
-
-    for ($i = 0; $i < count($lines); $i++) {
-        $line = explode("\t", $lines[$i]);
-        if (strcmp($item, $line[0]) == 0) {
-            break;
-        } else {
-            continue;
-        }
-    }
-
-    if (!empty($line)) {
-        if (strcmp($value, "text") == 0) {
-            array_push($outputArr, "Select");
-            for ($i = 0; $i < count($line); $i++) {
-                $countIndex = $i + 1;
-                if ($countIndex % 3 == 0) {
-                    array_push($outputArr, $line[$i]);
-                }
-            }
-            return $outputArr;
-        }
-
-        if (strcmp($value, "value") == 0) {
-            array_push($outputArr, "none");
-            for ($i = 0; $i < count($line); $i++) {
-                $countIndex = $i + 2;
-                if ($countIndex % 3 == 0) {
-                    array_push($outputArr, $line[$i]);
-                }
-            }
-            return $outputArr;
-        }
-    } else {
-        return false;
-    }
-}
-?>
-
 <html>
 
 <head>
@@ -58,7 +11,80 @@ function generateDatabase($item, $value)
 <body>
     <?php require_once "../Menu/nav.php";
     ob_start();
+
+
+    function sortDatabase($line)
+    {
+        $outputArr = array();
+
+        for ($i = 0; $i < count($line); $i++) {
+            $tempArr = array();
+            if ($i % 3 == 0 && $i != 0) {
+                array_push($tempArr, $line[$i - 2], $line[$i - 1], $line[$i]);
+            }
+            if (!empty($tempArr)) {
+                array_push($outputArr, $tempArr);
+            }
+        }
+
+        for ($i = 0; $i < (count($outputArr)-1); $i++) {
+            for ($j = $i + 1; $j < count($outputArr); $j++) {
+                if ($outputArr[$i][2] < $outputArr[$j][2]) {
+                    $tempArr = $outputArr[$i];
+                    $outputArr[$i] = $outputArr[$j];
+                    $outputArr[$j] = $tempArr;
+                }
+            }
+        }
+
+        return $outputArr;
+    }
+
+    function generateDatabase($item, $value)
+    {
+        $products = fopen("../Database/products.txt", "r");
+        $contents = fread($products, filesize("../Database/products.txt"));
+        $lines = explode("\n", $contents);
+        fclose($products);
+        $line = "";
+        $outputArr = array();
+
+        for ($i = 0; $i < count($lines); $i++) {
+            $line = explode("\t", $lines[$i]);
+            if (strcmp($item, $line[0]) == 0) {
+                break;
+            } else {
+                continue;
+            }
+        }
+
+        if (!empty($line)) {
+            $line = sortDatabase($line);
+            if (strcmp($value, "text") == 0) {
+                array_push($outputArr, "Select");
+                for ($i = 0; $i < count($line); $i++) {
+                    array_push($outputArr, $line[$i][1]);
+                }
+                return $outputArr;
+            }
+
+            if (strcmp($value, "value") == 0) {
+                array_push($outputArr, "none");
+                for ($i = 0; $i < count($line); $i++) {
+                    array_push($outputArr, $line[$i][0]);
+                }
+                return $outputArr;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    function checkCompatibility(){
+
+    }
     ?>
+
 
     <div>
         <h1 id="banner">DIY Part Picking</h1>
@@ -80,12 +106,6 @@ function generateDatabase($item, $value)
                             <option value="amd">AMD</option>
                         </select></td>
 
-                </tr>
-                <tr>
-                    <td class="label"><label for="cpuType">CPU Type&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
-                    <td><select id="cpuType" name="cpuType">
-                            <!--Populated by JavaScript-->
-                        </select></td>
                 </tr>
                 <tr>
                     <td class="label"><label for="cpu">CPU&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
@@ -231,60 +251,28 @@ function generateDatabase($item, $value)
     <script type="text/javascript">
         var CPU_Data = {
             'cpu': {
-                intel10th: {
-                    text: <?php echo json_encode(generateDatabase("CPU Intel 10th", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("CPU Intel 10th", "value")) ?>,
-                },
-
-                intel9th: {
-                    text: <?php echo json_encode(generateDatabase("CPU Intel 9th", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("CPU Intel 9th", "value")) ?>,
-                },
-
-                amd5000s: {
-                    text: <?php echo json_encode(generateDatabase("CPU AMD 5000s", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("CPU AMD 5000s", "value")) ?>,
-                },
-
-                amd3000s: {
-                    text: <?php echo json_encode(generateDatabase("CPU AMD 3000s", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("CPU AMD 3000s", "value")) ?>,
-                }
-            },
-
-            'cpuType': {
                 intel: {
-                    text: <?php echo json_encode(generateDatabase("Intel CPU Generation", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("Intel CPU Generation", "value")) ?>,
+                    text: <?php echo json_encode(generateDatabase("CPU Intel", "text")) ?>,
+                    value: <?php echo json_encode(generateDatabase("CPU Intel", "value")) ?>,
                 },
 
                 amd: {
-                    text: <?php echo json_encode(generateDatabase("AMD CPU Generation", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("AMD CPU Generation", "value")) ?>,
+                    text: <?php echo json_encode(generateDatabase("CPU AMD", "text")) ?>,
+                    value: <?php echo json_encode(generateDatabase("CPU AMD", "value")) ?>,
                 }
             }
         }
 
         var Mobo_Data = {
             'moboChipset': {
-                intel9th: {
-                    text: <?php echo json_encode(generateDatabase("Intel 9th Gen Motherboard Chipset", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("Intel 9th Gen Motherboard Chipset", "value")) ?>,
+                intel: {
+                    text: <?php echo json_encode(generateDatabase("Intel Motherboard Chipset", "text")) ?>,
+                    value: <?php echo json_encode(generateDatabase("Intel Motherboard Chipset", "value")) ?>,
                 },
 
-                intel10th: {
-                    text: <?php echo json_encode(generateDatabase("Intel 10th Gen Motherboard Chipset", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("Intel 10th Gen Motherboard Chipset", "value")) ?>,
-                },
-
-                amd3000s: {
-                    text: <?php echo json_encode(generateDatabase("AMD 3000s Motherboard Chipset", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("AMD 3000s Motherboard Chipset", "value")) ?>,
-                },
-
-                amd5000s: {
-                    text: <?php echo json_encode(generateDatabase("AMD 5000s Motherboard Chipset", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("AMD 5000s Motherboard Chipset", "value")) ?>,
+                amd: {
+                    text: <?php echo json_encode(generateDatabase("AMD Motherboard Chipset", "text")) ?>,
+                    value: <?php echo json_encode(generateDatabase("AMD Motherboard Chipset", "value")) ?>,
                 }
             },
 
@@ -334,11 +322,6 @@ function generateDatabase($item, $value)
                     value: <?php echo json_encode(generateDatabase("MOTHERBOARD B550", "value")) ?>,
                 },
 
-                X470: {
-                    text: <?php echo json_encode(generateDatabase("MOTHERBOARD X470", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("MOTHERBOARD X470", "value")) ?>,
-                },
-
                 B450: {
                     text: <?php echo json_encode(generateDatabase("MOTHERBOARD B450", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("MOTHERBOARD B450", "value")) ?>,
@@ -357,39 +340,17 @@ function generateDatabase($item, $value)
         }
 
         var GPU_Data = {
-            'gpuType': {
+            'gpu': {
                 nvidia: {
-                    text: <?php echo json_encode(generateDatabase("Nvidia GPU Series", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("Nvidia GPU Series", "value")) ?>,
+                    text: <?php echo json_encode(generateDatabase("GPU Nvidia", "text")) ?>,
+                    value: <?php echo json_encode(generateDatabase("GPU Nvidia", "value")) ?>,
                 },
 
                 amd: {
-                    text: <?php echo json_encode(generateDatabase("AMD GPU Series", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("AMD GPU Series", "value")) ?>,
+                    text: <?php echo json_encode(generateDatabase("GPU AMD", "text")) ?>,
+                    value: <?php echo json_encode(generateDatabase("GPU AMD", "value")) ?>,
                 }
             },
-
-            'gpu': {
-                nvidia3000s: {
-                    text: <?php echo json_encode(generateDatabase("GPU Nvidia 3000s", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("GPU Nvidia 3000s", "value")) ?>,
-                },
-
-                nvidia2000s: {
-                    text: <?php echo json_encode(generateDatabase("GPU Nvidia 2000s", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("GPU Nvidia 2000s", "value")) ?>,
-                },
-
-                nvidia1600s: {
-                    text: <?php echo json_encode(generateDatabase("GPU Nvidia 1600s", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("GPU Nvidia 1600s", "value")) ?>,
-                },
-
-                amdRx5000s: {
-                    text: <?php echo json_encode(generateDatabase("GPU AMD 5000s", "text")) ?>,
-                    value: <?php echo json_encode(generateDatabase("GPU AMD 5000s", "value")) ?>,
-                }
-            }
         }
 
         function removeAllOptions(sel, removeGrp) {
@@ -453,18 +414,6 @@ function generateDatabase($item, $value)
         }
 
         document.forms['mainCompForm'].elements['cpuBrand'].onchange = function(e) {
-            var cpuTypeMenu = this.form.elements['cpuType'];
-            var cpuMenu = this.form.elements['cpu'];
-            var cpuType = CPU_Data['cpuType'][this.value];
-
-            removeAllOptions(cpuTypeMenu, true);
-            removeAllOptions(cpuMenu, true);
-            appendDataToSelect(cpuTypeMenu, cpuType);
-
-        };
-
-        //Dynamic Select Box for CPU
-        document.forms['mainCompForm'].elements['cpuType'].onchange = function(f) {
             var cpuMenu = this.form.elements['cpu'];
             var cpu = CPU_Data['cpu'][this.value];
             var moboChipsetMenu = this.form.elements['moboChipset'];
@@ -476,6 +425,7 @@ function generateDatabase($item, $value)
 
             appendDataToSelect(cpuMenu, cpu);
             appendDataToSelect(moboChipsetMenu, moboChipset);
+
         };
 
         //Dynamic Select Box for Motherboard
@@ -487,20 +437,10 @@ function generateDatabase($item, $value)
             appendDataToSelect(moboMenu, mobo);
         };
 
-        //Dynamic Select Box for GPU Type
         document.forms['mainCompForm'].elements['gpuBrand'].onchange = function(s) {
-            var gpuTypeMenu = this.form.elements['gpuType'];
-            var gpuMenu = this.form.elements['gpu'];
-            var gpuType = GPU_Data['gpuType'][this.value];
-
-            removeAllOptions(gpuTypeMenu, true);
-            removeAllOptions(gpuMenu, true);
-            appendDataToSelect(gpuTypeMenu, gpuType);
-        };
-
-        document.forms['mainCompForm'].elements['gpuType'].onchange = function(s) {
             var gpuMenu = this.form.elements['gpu'];
             var gpu = GPU_Data['gpu'][this.value];
+            document.getElementById("debugMessage").innerHTML = this.value;
 
             removeAllOptions(gpuMenu, true);
             appendDataToSelect(gpuMenu, gpu);
