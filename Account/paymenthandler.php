@@ -119,7 +119,7 @@
 			$order .= file_get_contents('orders.txt');
 			file_put_contents("../Database/orders.txt", $order);
 			unset($_SESSION['cart']);
-			setcookie('cart', "", false, "/");
+			setcookie('cart', "~", false, "/");
             header("Location: cart.php");
             exit;
         }
