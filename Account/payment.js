@@ -96,6 +96,7 @@ function validateCreditcard()
 function validateShipping()
 {
 	var addressl1 = document.getElementById("addressl1");
+	var phone = document.getElementById("phone");
 	var postalcode = document.getElementById("postalcode");
 	var city = document.getElementById("city");
 	var province = document.getElementById("province");
@@ -107,6 +108,14 @@ function validateShipping()
 		valid = false;
 	} else {
 		addressl1.style.borderColor = null;
+	}
+
+	if(!phone.value.match(/^[0-9]{10}$/))
+	{
+		phone.style.borderColor = "#D90016";
+		valid = false;
+	} else {
+		phone.style.borderColor = null;
 	}
 
 	if(!postalcode.value.match(/^[0-9a-z]{6}$/i))

@@ -33,10 +33,6 @@
 					$_SESSION['state'] = 1;
 					echo '
 						<form id="payment" method="POST" action="paymenthandler.php">
-							<div class="block summary">
-								<h2>Order Summary</h2>
-								<div><p class="bold">Amount:</p><p>test</p></div>
-							</div>
 							<div class="block">
 								<h2>Order Confirmation</h2>
 								<p class="info">You must either provide your email address or sign in.</p>
@@ -60,10 +56,6 @@
 				$_SESSION['state'] = 2;
 				echo '
 					<form id="payment" method="POST" action="paymenthandler.php">
-						<div class="block summary">
-							<h2>Order Summary</h2>
-							<div><p class="bold">Amount:</p><p>test</p></div>
-						</div>
 						<div class="block">
 							<h2>Credit Card</h2>
 
@@ -106,48 +98,117 @@
 				$_SESSION['state'] = 4;
 				echo '
 					<form id="payment" method="POST" action="paymenthandler.php">
-						<div class="block summary">
-							<h2>Order Summary</h2>
-							<div><p class="bold">Amount:</p><p>test</p></div>
-						</div>
 						<div class="block">
-							<h2>Shipping Address</h2>
+							<h2>Billing Address</h2>
 
 							<label>Address Line 1</label>
-							<input type="text" id="addressl1" name="addressl1" value="'.(isset($_SESSION['addressl1']) ? $_SESSION['addressl1'] : "").'" placeholder="1234 Street Name" />
+							<input type="text" id="addressl1" name="billingaddressl1" value="'.(isset($_SESSION['billingaddressl1']) ? $_SESSION['billingaddressl1'] : "").'" placeholder="1234 Street Name" />
 							
 							<div class="inputline">
 								<div>
 									<label>Address Line 2</label>
-									<input type="text" id="addressl2" name="addressl2" value="'.(isset($_SESSION['addressl2']) ? $_SESSION['addressl2'] : "").'" placeholder="Apartment, Building, Suite (optional)" />
+									<input type="text" id="addressl2" name="billingaddressl2" value="'.(isset($_SESSION['billingaddressl2']) ? $_SESSION['billingaddressl2'] : "").'" placeholder="Apartment, Building, Suite (optional)" />
 								</div>
 								<div>
 									<label>Phone Number</label>
-									<input type="text" id="phone" name="phone" value="'.(isset($_SESSION['phone']) ? $_SESSION['phone'] : "").'" placeholder="123 456 7890 (optional)" maxlength="10" />
+									<input type="text" id="phone" name="billingphone" value="'.(isset($_SESSION['billingphone']) ? $_SESSION['billingphone'] : "").'" placeholder="123 456 7890" maxlength="10" />
 								</div>
 							</div>
 
 							<div class="inputline">
 								<div>
 									<label>Postal Code</label>
-									<input type="text" id="postalcode" name="postalcode" value="'.(isset($_SESSION['postalcode']) ? $_SESSION['postalcode'] : "").'" placeholder="ABC123" maxlength="6" />
+									<input type="text" id="postalcode" name="billingpostalcode" value="'.(isset($_SESSION['billingpostalcode']) ? $_SESSION['billingpostalcode'] : "").'" placeholder="ABC123" maxlength="6" />
 								</div>
 								<div>
 									<label>City</label>
-									<input type="text" id="city" name="city" value="'.(isset($_SESSION['city']) ? $_SESSION['city'] : "").'" placeholder="City" />
+									<input type="text" id="city" name="billingcity" value="'.(isset($_SESSION['billingcity']) ? $_SESSION['billingcity'] : "").'" placeholder="City" />
 								</div>
 								<div>
 									<label>Province</label>
-									<select id="province" name="province">
-										<option value="" disabled hidden'.(isset($_SESSION['province']) ? "" : " selected").'>Select</option>
-										<option value="QC"'.(isset($_SESSION['province']) && $_SESSION['province'] === "QC" ? " selected" : "").'>Quebec</option>
+									<select id="province" name="billingprovince">
+										<option value="" disabled hidden'.(isset($_SESSION['billingprovince']) ? "" : " selected").'>Select</option>
+										<option value="QC"'.(isset($_SESSION['billingprovince']) && $_SESSION['billingprovince'] === "QC" ? " selected" : "").'>Quebec</option>
+									</select>
+								</div>
+							</div>
+
+							<div><input type="checkbox" id="sameaddress" name="sameaddress" value="true"'.(isset($_SESSION['sameaddress']) ? " checked" : "").'><label>Shipping address is the same.</label></div>
+
+							<div class="flex">
+								<div><a href="../Account/payment.php">BACK</a></div>
+								<button type="button" id="nextButton">NEXT</button>
+							</div>
+						</div>
+					</form>
+				';
+			}
+
+			else if($_SESSION['state'] === 6)
+			{
+				$_SESSION['state'] = 5;
+				echo '
+					<form id="payment" method="POST" action="paymenthandler.php">
+						<div class="block">
+							<h2>Shipping Address</h2>
+
+							<label>Address Line 1</label>
+							<input type="text" id="addressl1" name="shippingaddressl1" value="'.(isset($_SESSION['shippingaddressl1']) ? $_SESSION['shippingaddressl1'] : "").'" placeholder="1234 Street Name" />
+							
+							<div class="inputline">
+								<div>
+									<label>Address Line 2</label>
+									<input type="text" id="addressl2" name="shippingaddressl2" value="'.(isset($_SESSION['shippingaddressl2']) ? $_SESSION['shippingaddressl2'] : "").'" placeholder="Apartment, Building, Suite (optional)" />
+								</div>
+								<div>
+									<label>Phone Number</label>
+									<input type="text" id="phone" name="shippingphone" value="'.(isset($_SESSION['shippingphone']) ? $_SESSION['shippingphone'] : "").'" placeholder="123 456 7890" maxlength="10" />
+								</div>
+							</div>
+
+							<div class="inputline">
+								<div>
+									<label>Postal Code</label>
+									<input type="text" id="postalcode" name="shippingpostalcode" value="'.(isset($_SESSION['shippingpostalcode']) ? $_SESSION['shippingpostalcode'] : "").'" placeholder="ABC123" maxlength="6" />
+								</div>
+								<div>
+									<label>City</label>
+									<input type="text" id="city" name="shippingcity" value="'.(isset($_SESSION['shippingcity']) ? $_SESSION['shippingcity'] : "").'" placeholder="City" />
+								</div>
+								<div>
+									<label>Province</label>
+									<select id="province" name="shippingprovince">
+										<option value="" disabled hidden'.(isset($_SESSION['shippingprovince']) ? "" : " selected").'>Select</option>
+										<option value="QC"'.(isset($_SESSION['shippingprovince']) && $_SESSION['shippingprovince'] === "QC" ? " selected" : "").'>Quebec</option>
 									</select>
 								</div>
 							</div>
 
 							<div class="flex">
-								<div><a href="../Account/cart.php">CANCEL</a></div>
+								<div><a href="../Account/payment.php">BACK</a></div>
 								<button type="button" id="nextButton">NEXT</button>
+							</div>
+						</div>
+					</form>
+				';
+			}
+
+			else if($_SESSION['state'] === 7)
+			{
+				if(isset($_SESSION['sameaddress']))
+				{
+					$_SESSION['state'] = 5;
+				} else {
+					$_SESSION['state'] = 6;
+				}
+				echo '
+					<form id="payment" method="POST" action="paymenthandler.php">
+						<div class="block">
+							<h2>Order Summary</h2>
+							<div class="flex"><p>Amount:</p><p>test</p></div>
+							<div class="flex">
+								<div><a href="../Account/payment.php">BACK</a></div>
+								<button type="button" id="nextButton">PLACE ORDER</button>
 							</div>
 						</div>
 					</form>
