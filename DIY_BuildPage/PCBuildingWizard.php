@@ -27,7 +27,7 @@
             }
         }
 
-        for ($i = 0; $i < (count($outputArr)-1); $i++) {
+        for ($i = 0; $i < (count($outputArr) - 1); $i++) {
             for ($j = $i + 1; $j < count($outputArr); $j++) {
                 if ($outputArr[$i][2] < $outputArr[$j][2]) {
                     $tempArr = $outputArr[$i];
@@ -80,9 +80,6 @@
         }
     }
 
-    function checkCompatibility(){
-
-    }
     ?>
 
 
@@ -350,62 +347,63 @@
                     text: <?php echo json_encode(generateDatabase("GPU AMD", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("GPU AMD", "value")) ?>,
                 }
-            },
+            }
         }
 
         var Cooler_Data = {
 
-    'coolerSize': {
-        fan: {
-            text: <?php echo json_encode(generateDatabase("Cooler size fan", "text")) ?>,
+            'coolerSize': {
+                fan: {
+                    text: <?php echo json_encode(generateDatabase("Cooler size fan", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("Cooler size fan", "value")) ?>,
-        },
+                },
 
-        liquid: {
+                liquid: {
                     text: <?php echo json_encode(generateDatabase("Cooler size liquid", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("Cooler size liquid", "value")) ?>,
-        },
-    }
-};
+                },
+            }
+        };
 
-var Case_Data = {
+        var Case_Data = {
 
-    'caseSize': {
-        mid: {
-            text: <?php echo json_encode(generateDatabase("CASE Medium", "text")) ?>,
+            'caseSize': {
+                mid: {
+                    text: <?php echo json_encode(generateDatabase("CASE Medium", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("CASE Medium", "value")) ?>,
-        },
+                },
 
-        full: {
-            text: <?php echo json_encode(generateDatabase("CASE Full", "text")) ?>,
+                full: {
+                    text: <?php echo json_encode(generateDatabase("CASE Full", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("CASE Full", "value")) ?>,
-        },
-    }
-};
-var Power_Data = {
+                },
+            }
+        };
+        var Power_Data = {
 
-    'powerWatt': {
-        evgaPower: {
-            text: <?php echo json_encode(generateDatabase("POWER SUPPLY EVGA", "text")) ?>,
+            'powerWatt': {
+                evgaPower: {
+                    text: <?php echo json_encode(generateDatabase("POWER SUPPLY EVGA", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("POWER SUPPLY EVGA", "value")) ?>,
-        },
+                },
 
-        corsairPower: {
-            text: <?php echo json_encode(generateDatabase("POWER SUPPLY Corsair", "text")) ?>,
+                corsairPower: {
+                    text: <?php echo json_encode(generateDatabase("POWER SUPPLY Corsair", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("POWER SUPPLY Corsair", "value")) ?>,
-        },
-        coolermasterPower: {
-            text: <?php echo json_encode(generateDatabase("POWER SUPPLY CoolerMaster", "text")) ?>,
+                },
+                coolermasterPower: {
+                    text: <?php echo json_encode(generateDatabase("POWER SUPPLY CoolerMaster", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("POWER SUPPLY CoolerMaster", "value")) ?>,
-        },
-        thermaltakePower: {
-            text: <?php echo json_encode(generateDatabase("POWER SUPPLY ThermalTakel", "text")) ?>,
+                },
+                thermaltakePower: {
+                    text: <?php echo json_encode(generateDatabase("POWER SUPPLY ThermalTakel", "text")) ?>,
                     value: <?php echo json_encode(generateDatabase("POWER SUPPLY ThermalTake", "value")) ?>,
-        },
+                },
 
-    },
+            },
 
-};
+        };
+
         function removeAllOptions(sel, removeGrp) {
             var len, groups, par;
             if (removeGrp) {
@@ -493,36 +491,35 @@ var Power_Data = {
         document.forms['mainCompForm'].elements['gpuBrand'].onchange = function(s) {
             var gpuMenu = this.form.elements['gpu'];
             var gpu = GPU_Data['gpu'][this.value];
-            document.getElementById("debugMessage").innerHTML = this.value;
 
             removeAllOptions(gpuMenu, true);
             appendDataToSelect(gpuMenu, gpu);
         };
 
         document.forms['mainCompForm'].elements['coolerType'].onchange = function(s) {
-    var coolerSizeMenu = this.form.elements['coolerSize'];
-    var coolerSize = Cooler_Data['coolerSize'][this.value];
-    
-    removeAllOptions(coolerSizeMenu, true);
-    appendDataToSelect(coolerSizeMenu, coolerSize);
-};
-document.forms['mainCompForm'].elements['case'].onchange = function(s) {
-    var caseSizeMenu = this.form.elements['caseSize'];
-    var caseSize = Case_Data['caseSize'][this.value];
-    
-    removeAllOptions(caseSizeMenu, true);
-    appendDataToSelect(caseSizeMenu, caseSize);
-};
-document.forms['mainCompForm'].elements['powerBrand'].onchange = function(s) {
-    var powerWattMenu = this.form.elements['powerWatt'];
-    var powerWatt = Power_Data['powerWatt'][this.value];
-   
-    
-    removeAllOptions(powerWattMenu, true);
-    
-    
-    appendDataToSelect(powerWattMenu, powerWatt);
-};
+            var coolerSizeMenu = this.form.elements['coolerSize'];
+            var coolerSize = Cooler_Data['coolerSize'][this.value];
+
+            removeAllOptions(coolerSizeMenu, true);
+            appendDataToSelect(coolerSizeMenu, coolerSize);
+        };
+        document.forms['mainCompForm'].elements['case'].onchange = function(s) {
+            var caseSizeMenu = this.form.elements['caseSize'];
+            var caseSize = Case_Data['caseSize'][this.value];
+
+            removeAllOptions(caseSizeMenu, true);
+            appendDataToSelect(caseSizeMenu, caseSize);
+        };
+        document.forms['mainCompForm'].elements['powerBrand'].onchange = function(s) {
+            var powerWattMenu = this.form.elements['powerWatt'];
+            var powerWatt = Power_Data['powerWatt'][this.value];
+
+
+            removeAllOptions(powerWattMenu, true);
+
+
+            appendDataToSelect(powerWattMenu, powerWatt);
+        };
     </script>
 </body>
 
