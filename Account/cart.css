@@ -4,7 +4,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align:center;
 }
 
 table {
@@ -26,7 +27,7 @@ td {
 }
 
 h1 {
-    padding-left: 20px;
+    padding-top:50px;
 }
 
 td.price {
@@ -34,7 +35,7 @@ td.price {
 }
 
 .button {
-    margin-top: 30px;
+    margin-top: 50px;
     font-size: 130%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 0px;
@@ -48,8 +49,4 @@ td.price {
     border: 3px solid;
     background-color: white;
     color: #0338a1;
-  }
-
-div#button {
-    text-align: center;
 }
