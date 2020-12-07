@@ -75,7 +75,7 @@
 				$_SESSION['shippingpostalcode'] = $_SESSION['billingpostalcode'];
 				$_SESSION['shippingcity'] = $_SESSION['billingcity'];
 				$_SESSION['shippingprovince'] = $_SESSION['billingprovince'];
-				$_SESSION['state'] = 7;
+				$_SESSION['state'] = 9;
 			} else {
 				unset($_SESSION['sameaddress']);
 				$_SESSION['state'] = 6;
