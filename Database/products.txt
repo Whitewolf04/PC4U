@@ -29,12 +29,12 @@ AMD GPU Series	amdRx5000s	AMD RX 5000 Series	0	amdRx6000s	AMD RX 6000 Series	0
 Nvidia GPU Series	nvidia3000s	Nvidia RTX 3000 Series	0	nvidia2000s	Nvidia RTX 2000 Series	0	nvidia1600s	Nvidia GTX 1600 Series	0
 COOLER fan Size	80mm	80mm fan size	69.68	92mm	92mm fan size	36.65	120mm	120mm fan size	118.00	140mm	140mm fan size	163.58
 COOLER liquid	240mm	240mm radiator size	149.99	280	280mm radiator size	193.99
-CASE Medium	lianlilancooliimesh	Lian Li Lancool II Mesh	124.00	corsair4000dairflow	Corsair 4000D Airflow	239.99	metallicgearneoair	MetallicGear Neo Air	77.15	coolermasterh500	Cooler Master H500	128.02	nzxth510elite	193.06	corsairobsidianseries500drgbse	Corsair Obsidian Series 500D RGB SE	329.99	fractaldesigndefine7	221.95	phantekseclipsep500a	Phanteks Eclipse P500A	167.17
+CASE mid	lianlilancooliimesh	Lian Li Lancool II Mesh	124.00	corsair4000dairflow	Corsair 4000D Airflow	239.99	metallicgearneoair	MetallicGear Neo Air	77.15	coolermasterh500	Cooler Master H500	128.02	nzxth510elite	193.06	corsairobsidianseries500drgbse	Corsair Obsidian Series 500D RGB SE	329.99	fractaldesigndefine7	221.95	phantekseclipsep500a	Phanteks Eclipse P500A	167.17
 POWER SUPPLY EVGA	500w	500W	84.50	750w	750W	178.75	1000w	1000W	299.99
 POWER SUPPLY Corsair	500w	500W	102.87	750w	750W	122.16	1000w	1000W	263.62
 POWER SUPPLY CoolerMaster	500w	500W	64.99	750w	750W	114.99	1000w	1000w	395.15
 POWER SUPPLY ThermalTake	500w	500W	61.72	750w	750W	128.59	1000w	1000W	469.99
- Ram 2x8	2x8	2x8GB	84.98	2x16	2x16GB	139.99	1x16	1x16GB	84.99	2x4	2x4GB	59.99	1x8	1x8GB	41.99
+RAM 2x8	2x8	2x8GB	84.98	2x16	2x16GB	139.99	1x16	1x16GB	84.99	2x4	2x4GB	59.99	1x8	1x8GB	41.99
 Ram Speed	4000mhz	4000mhz	0	3600mhz	3600mhz	0	3200mhz	3200mhz	0	3000mhz	3000mhz	0	2666mhz	2666mhz	0
 Storage Type	sataSSd	Sata SSD	0	M2NvmeSsd	M.2 NVMe SSD	0
 Storage Capacity	256gb	256 GB	64.98	500gb	500 GB	89.99	1tb	1 TB	179.99	2tb	2 TB	349.99	4tb	4 TB	1002.02
