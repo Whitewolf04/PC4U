@@ -4,9 +4,10 @@
 		<title>PC4U</title>
         <link rel="stylesheet" type="text/css" href="cart.css" />
 		<script type="text/javascript" src="cart.js"></script>
+		<link rel="icon" href="../pc_icon.png">
 	</head>
     <body>
-        <?php require_once "../Menu/nav.php" ?>
+        <?php require_once "../Menu/nav.php"; $_SESSION['redirect'] = "../Account/cart.php"; ?>
         <br>
         <div class="main">
             <div class="wrap">
