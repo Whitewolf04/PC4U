@@ -1,32 +1,55 @@
-.prebuild{
-    background-color: gainsboro;
+.prebuild {
+    background-color: whitesmoke;
     color: navy;
 }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-table{
+
+table {
     border: hidden;
     padding-left: 10px;
     font-size: 1.1em;
+    margin: auto;
+    width: 80%;
 }
-td{
+
+td {
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: orangered;
+    background-color: #ff7a7a;
     color: rgb(16, 4, 32);
     padding-right: 50px;
     font-weight: bolder;
+    width: 90%;
 }
-h1{
+
+h1 {
     padding-left: 20px;
 }
-.price td{
-    width: 10px;
+
+td.price {
+    width: 10%;
 }
-.button{
-    margin-left: 10px;
-    margin-top: 10px;
-    background-color: thistle;
-    font-size: 200%;
+
+.button {
+    margin-top: 30px;
+    font-size: 130%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 0px;
+    color: white;
+    background-color: #0338a1;
+    width: 20%;
+    height: 40px;
+}
+
+.button:hover {
+    border: 3px solid;
+    background-color: white;
+    color: #0338a1;
+  }
+
+div#button {
+    text-align: center;
 }
