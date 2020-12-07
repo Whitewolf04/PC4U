@@ -82,16 +82,17 @@
 	<h1 id="banner">Budget Builds</h1>
 
 	<!--Might do a form to ask what are the needs of the customer!-->
-	<form action="cart.php" method="POST" id="budget5">
+	<form action="" method="POST" id="budget5">
 		<table class="builds" border="0" cellspacing="20px">
 			<tr class="build">
 				<td class="picture">
 					<img src="Images/DIYPC_MA08.png" width="300px" height="300px" />
 				</td>
 				<td colspan="2" class="specs">
+				<input type="hidden" name="prebuilt" value="budget5">
 					<?php
-						readSpecs("budget5");
-          				include "../Account/addToCart.php";
+					readSpecs("budget5");
+          			include "../Account/addToCart.php";
 					?>
 				</td>
 			</tr>
@@ -138,6 +139,7 @@
 				<?php
 					readSpecs("budget3");
 					include "../Account/addToCart.php";
+
 				?>
 				</form>
 			</td>

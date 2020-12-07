@@ -1,15 +1,32 @@
 <?php
     session_start();
 
-    unset($_SESSION['form']);
-    unset($_SESSION['state']);
-    unset($_SESSION['name']);
-    unset($_SESSION['email']);
-    unset($_SESSION['password']);
-    unset($_SESSION['errors']);
-    unset($_SESSION['code']);
-    unset($_SESSION['subject']);
-    unset($_SESSION['body']);
+    unset($_SESSION['form']);					//Used in any form
+    unset($_SESSION['state']);					//Used in any form
+    unset($_SESSION['name']);					//Used in signup, signin
+    unset($_SESSION['email']);					//Used in signup, signin, payment
+    unset($_SESSION['password']);				//Used in signup, signin
+    unset($_SESSION['errors']);					//Used in signup, signin
+    unset($_SESSION['code']);					//Used in signup, signin
+    unset($_SESSION['subject']);				//Used in signup, signin, payment
+	unset($_SESSION['body']);					//Used in signup, signin, payment
+	unset($_SESSION['CCnum']);					//Used in payment
+	unset($_SESSION['CCname']);					//Used in payment
+	unset($_SESSION['CCmm']);					//Used in payment
+	unset($_SESSION['CCyy']);					//Used in payment
+	unset($_SESSION['CCvv']);					//Used in payment
+	unset($_SESSION['billingaddressl1']);		//Used in payment
+	unset($_SESSION['billingaddressl2']);		//Used in payment
+	unset($_SESSION['billingphone']);			//Used in payment
+	unset($_SESSION['billingpostalcode']);		//Used in payment
+	unset($_SESSION['billingcity']);			//Used in payment
+	unset($_SESSION['billingprovince']);		//Used in payment
+	unset($_SESSION['shippingaddressl1']);		//Used in payment
+	unset($_SESSION['shippingaddressl2']);		//Used in payment
+	unset($_SESSION['shippingphone']);			//Used in payment
+	unset($_SESSION['shippingpostalcode']);		//Used in payment
+	unset($_SESSION['shippingcity']);			//Used in payment
+	unset($_SESSION['shippingprovince']);		//Used in payment
 ?>
 
 <html lang="en">

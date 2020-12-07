@@ -1,24 +1,24 @@
 <html>
-
-<head>
-    <meta charset="UTF-8" />
-    <title>PC4U</title>
-    <link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
-    <link rel="stylesheet" type="text/css" href="cart.css" />
-</head>
-
-<body>
-    <?php require_once "../Menu/nav.php" ?>
-    <br>
-    <div class="main">
-        <div class="wrap">
-            <div class="content">
-                <h1>Your Cart</h1>
-                <div id="cart">
+    <head>
+		<meta charset="UTF-8" />
+		<title>PC4U</title>
+		<link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
+        <link rel="stylesheet" type="text/css" href="cart.css" />
+		<script type="text/javascript" src="cart.js"></script>
+	</head>
+    <body>
+        <?php require_once "../Menu/nav.php" ?>
+        <br>
+        <div class="main">
+            <div class="wrap">
+                <div class="content">
+                    <h1>Your Cart</h1>
+                    <div id="cart">
                     <?php
                     $cookie_cart = explode("~", $_COOKIE['cart']);
                     //print_r($cookie_cart);
                     $cart = array();
+                    $_SESSION['cart'] = array();
                     //checks if a prebuild was added to the cart
                     for ($i = 0; $i < count($cookie_cart); $i++) {
                         $title = substr($cookie_cart[$i], 0, strpos($cookie_cart[$i], " "));
@@ -39,7 +39,8 @@
                                         //extracts price from line
                                         $price = substr($line, strrpos($line, "\t"), strlen($line) - strrpos($line, "\t"));
                                         //removes price from prebuild string
-                                        $prebuild = substr($prebuild, 0, strrpos($prebuild, "\t"));
+                                        $prebuild = substr($prebuild, 0, strrpos($prebuild,"\t"));
+                                        $_SESSION['cart'][$prebuild." ".$i] = $price;
                                     }
                                 }
                                 fclose($stream);
@@ -87,6 +88,7 @@
                                                 $price = trim(substr($line, 0, strpos($line, "\t")));
                                                 //adds this as an element to the cart
                                                 $cart[$name] = $price;
+                                                $_SESSION['cart'][$name] = $price;
                                             }
                                         }
                                     }
@@ -96,14 +98,7 @@
                         }
                     }
                     //print_r($cart);
-                    if (isset($_POST['puchaseNow'])) {
-                        $_SESSION['cart'] = $cart;
-                    }
-                    if (isset($_POST['purchaseLater'])) {
-                        $_SESSION['cart'] = $cart;
-                        //header("Location: Budget.php");
-                    }
-                    if (isset($_POST['remove'])) {
+                    if(isset($_POST['remove'])){
                         $cookievalue = $_COOKIE['cart'];
                         $itemvalue = '/' . $_POST['item'] . '/';
                         $cookievalue = preg_replace($itemvalue, "", $cookievalue, 1);
@@ -114,23 +109,22 @@
                     <table border="1">
                         <?php
                         //creates table elements for the parts and prebuilds
-                        $totalPrice = 0;
-                        foreach ($cart as $name => $price) {
-                            if ($price !== "") {
+                        $_SESSION['subtotal'] = 0;
+                        foreach($cart as $name=>$price){
+                            if($price!==""){
                                 echo "<tr><td>" . $name . "</td><td class=\"price\">" . $price . "$</td></tr>";
-                                $totalPrice += $price;
-                            } else {
+                                $_SESSION['subtotal'] += $price;
+                            }else{
                                 echo "<tr><td class=\"prebuild\">" . $name . "</td><td class=\"prebuild\">" . $price . "</td></tr>";
                             }
                         }
-                        echo "<tr><td>Total Price : </td><td>" . $totalPrice . "$</td></tr>";
+                        echo "<tr><td>Total Price : </td><td>".$_SESSION['subtotal']."$</td></tr>";
                         ?>
                     </table>
-                </div>
-                <div id="button">
-                    <form method="post" action="">
-                        <input type="submit" name="purchaseNow" value="Purchase now" class="button">
-                        <input type="submit" name="purchaseLater" value="Purchase later" class="button">
+                    </div>
+                    <form id="cartform" method="post" action="payment.php">
+						<input type="hidden" id="subtotal" name="subtotal" value="<?php echo $_SESSION['subtotal']; ?>">
+						<input type="button" id="purchase" name="purchase" class="button" value="Purchase Now">
                     </form>
                 </div>
             </div>
