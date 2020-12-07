@@ -57,7 +57,10 @@
                             //adds the final price at the end of components list
                             $cart["Total price of prebuild ". $i."<form method='POST' action=''><input type=hidden name=item value='". $title." ".$key."~'><input type=submit name=remove value='Remove Item'></form>"] = trim($price);
                         }else if($title === "PCwizard"){
+                            //takes out the title from the key
                             $key = substr_replace($cookie_cart[$i], "", 0, 9);
+                            $ramSpeed = substr($key, strpos($key, "|"), strlen($key)-strpos($key, "|"));
+                            $key = str_replace($ramSpeed, "", $key);
                             //print_r(json_decode($key));
                             //echo $key;
                             //checks to see if products.txt file exists
@@ -90,7 +93,13 @@
                                                 $possiblePrice = trim(substr($line, 0, strpos($line, "\t")));
                                                 $price = ($possiblePrice==="") ? trim($line) : $possiblePrice;
                                                 //adds this as an element to the cart
-                                                $cart[$name] = $price;
+                                                if($start === "Ram"){
+                                                    $ramSpeed = substr($ramSpeed, 1, strlen($ramSpeed));
+                                                    $name = "RAM ". $name. " ".$ramSpeed;
+                                                }else if($start=== "STORAGE M2NvmeSsd" || $start === "STORAGE sataSsd"){
+                                                    $name = ($start=== "STORAGE M2NvmeSsd") ? "M.2 NVMe SSD ".$name : "Sata SSD ". $name;
+                                                }
+                                                $cart[$name. "<form method='POST' action=''><input type=hidden name=item value='\"".$start."\\\\t".trim($productCode)."\",' id='".$i.$productCode."'><input type=submit name=remove value='Remove Item'></form>"] = $price;
                                                 $_SESSION['cart'][$name] = $price;
                                             }
                                         }
@@ -106,6 +115,7 @@
                         $itemvalue = '/'.$_POST['item'].'/';
                         $cookievalue = preg_replace($itemvalue, "", $cookievalue, 1);
                         setcookie('cart', $cookievalue, false, "/");
+                        echo $itemvalue;
                         header("Location: cart.php");
                     }
                     ?>
@@ -125,13 +135,10 @@
                         ?>
                     </table>
                     </div>
-
-                    <div id="button">
-                        <form id="cartform" method="post" action="payment.php">
+                    <form id="cartform" method="post" action="payment.php">
 						<input type="hidden" id="subtotal" name="subtotal" value="<?php echo $_SESSION['subtotal']; ?>">
 						<input type="button" id="purchase" name="purchase" class="button" value="Purchase Now">
                     </form>
-                    </div>
                 </div>
                 <div class="sidebar">
                 </div>
