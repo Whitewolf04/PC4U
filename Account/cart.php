@@ -123,10 +123,13 @@
                         ?>
                     </table>
                     </div>
-                    <form id="cartform" method="post" action="payment.php">
+
+                    <div id="button">
+                        <form id="cartform" method="post" action="payment.php">
 						<input type="hidden" id="subtotal" name="subtotal" value="<?php echo $_SESSION['subtotal']; ?>">
 						<input type="button" id="purchase" name="purchase" class="button" value="Purchase Now">
                     </form>
+                    </div>
                 </div>
                 <div class="sidebar">
                 </div>

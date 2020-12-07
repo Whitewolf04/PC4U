@@ -15,9 +15,9 @@
 </head>
 
 <body>
-	<?php 
-		require_once "../Menu/nav.php";
-		ob_start();
+	<?php
+	require_once "../Menu/nav.php";
+	ob_start();
 
 	function buildSearch($lines, $buildname)
 	{
@@ -72,7 +72,7 @@
 	function calculatePercentage($fps)
 	{
 		$ratio = (float) $fps * 100 / 200.0;
-		if($fps >= 200){
+		if ($fps >= 200) {
 			$ratio = 100;
 		}
 		return $ratio . "%";
@@ -82,51 +82,52 @@
 	<h1 id="banner">Budget Builds</h1>
 
 	<!--Might do a form to ask what are the needs of the customer!-->
-	<form action="" method="POST" id="budget5">
-		<table class="builds" border="0" cellspacing="20px">
-			<tr class="build" id="bud1"> <!-- id for reference from another page -->
-				<td class="picture">
-					<img src="Images/DIYPC_MA08.png" width="300px" height="300px" />
-				</td>
-				<td colspan="2" class="specs">
-				<input type="hidden" name="prebuilt" value="budget5">
+	<table class="builds" border="0" cellspacing="20px">
+		<tr class="build" id="bud1">
+			<!-- id for reference from another page -->
+			<td class="picture">
+				<img src="Images/DIYPC_MA08.png" width="300px" height="300px" />
+			</td>
+			<td colspan="2" class="specs">
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="budget5">
 					<?php
 					readSpecs("budget5");
-          			include "../Account/addToCart.php";
+					include "../Account/addToCart.php";
 					?>
-				</td>
-			</tr>
-			<tr class="fps">
-				<td class="fpsleft">
-					<img src="Images/LeagueOfLegends.jpg" width="180" height="240" /><br><br>
-					<p>High Settings</p>
-					<!--Edit WIDTH:PX to change bar size, edit WIDTH:% to change progress, deleteMe-->
-					<div class="progressbar" style="width:40%;">
-						<div class="progress" style="width: <?php echo calculatePercentage(97); ?>;">97 fps</div>
-					</div>
-					<!--NEW progress bar, deleteMe-->
-				</td>
-				<td class="fps">
-					<img src="Images/csgo.png" width="230" height="240" /><br><br>
-					<p>High Settings</p>
-					<!--Edit WIDTH:PX to change bar size, edit WIDTH:% to change progress, deleteMe-->
-					<div class="progressbar" style="width:30%;">
-						<div class="progress" style="width: <?php echo calculatePercentage(74.3); ?>;">74.3 fps</div>
-					</div>
-					<!--NEW progress bar, deleteMe-->
-				</td>
-				<td class="fpsright">
-					<img src="Images/fortnite.jpg" width="180" height="240" /><br><br>
-					<p>Low Settings</p>
-					<!--Edit WIDTH:PX to change bar size, edit WIDTH:% to change progress, deleteMe-->
-					<div class="progressbar" style="width:40%;">
-						<div class="progress" style="width: <?php echo calculatePercentage(61.7); ?>;">61.7 fps</div>
-					</div>
-					<!--NEW progress bar, deleteMe-->
-				</td>
-			</tr>
-		</table>
-	</form>
+				</form>
+			</td>
+		</tr>
+		<tr class="fps">
+			<td class="fpsleft">
+				<img src="Images/LeagueOfLegends.jpg" width="180" height="240" /><br><br>
+				<p>High Settings</p>
+				<!--Edit WIDTH:PX to change bar size, edit WIDTH:% to change progress, deleteMe-->
+				<div class="progressbar" style="width:40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(97); ?>;">97 fps</div>
+				</div>
+				<!--NEW progress bar, deleteMe-->
+			</td>
+			<td class="fps">
+				<img src="Images/csgo.png" width="230" height="240" /><br><br>
+				<p>High Settings</p>
+				<!--Edit WIDTH:PX to change bar size, edit WIDTH:% to change progress, deleteMe-->
+				<div class="progressbar" style="width:30%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(74.3); ?>;">74.3 fps</div>
+				</div>
+				<!--NEW progress bar, deleteMe-->
+			</td>
+			<td class="fpsright">
+				<img src="Images/fortnite.jpg" width="180" height="240" /><br><br>
+				<p>Low Settings</p>
+				<!--Edit WIDTH:PX to change bar size, edit WIDTH:% to change progress, deleteMe-->
+				<div class="progressbar" style="width:40%;">
+					<div class="progress" style="width: <?php echo calculatePercentage(61.7); ?>;">61.7 fps</div>
+				</div>
+				<!--NEW progress bar, deleteMe-->
+			</td>
+		</tr>
+	</table>
 
 	<table class="builds" border="0" cellspacing="20px">
 		<tr class="build">
@@ -134,13 +135,13 @@
 				<img src="Images/CMN200.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
-			<form action="" method="POST">
-			<input type="hidden" name="prebuilt" value="budget3">
-				<?php
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="budget3">
+					<?php
 					readSpecs("budget3");
 					include "../Account/addToCart.php";
 
-				?>
+					?>
 				</form>
 			</td>
 		</tr>
@@ -175,12 +176,12 @@
 				<img src="Images/CMN200.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
-			<form action="" method="POST">
-			<input type="hidden" name="prebuilt" value="budget2">
-				<?php
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="budget2">
+					<?php
 					readSpecs("budget2");
 					include "../Account/addToCart.php";
-				?>
+					?>
 				</form>
 			</td>
 		</tr>
@@ -215,13 +216,13 @@
 				<img src="Images/CMN200.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
-			<form action="" method="POST">
-			<input type="hidden" name="prebuilt" value="budget1">
-				<?php
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="budget1">
+					<?php
 					readSpecs("budget1");
 					include "../Account/addToCart.php";
 					ob_end_flush();
-				?>
+					?>
 				</form>
 			</td>
 		</tr>
