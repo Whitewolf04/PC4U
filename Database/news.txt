@@ -21,15 +21,23 @@ ROG Swift PG35VQ Ultra-Wide HDR Gaming Monitor – 35” 21:9 (3440 x 1440), FAL
 https://rog.asus.com/ca-en/Monitors/Above-34-Inches/ROG-SWIFT-PG35VQ-Model
 https://dlcdnwebimgs.asus.com/gain/7EFC8E77-ED9D-4837-81F2-42124966C557/w717/h525
 ===Promo===
-ROG STRIX XG35VQ
-ROG Strix XG35VQ Curved Gaming Monitor – 35 inch UWQHD (3440x1440), 100Hz, Adaptive-Sync(FreeSync™), Extreme Low Motion Blur(1ms MPRT)
-https://rog.asus.com/monitors/above-34-inches/rog-strix-xg35vq-model/
-https://dlcdnwebimgs.asus.com/gain/08D0960B-D5F3-4411-B8C3-D6D875E40C54/w717/h525
+Prebuilt PC
+Price: $1127
+CPU: AMD Ryzen 5 3600 3.6 GHz (Up to 4.2 GHz) 6-Core Processor. Motherboard: MSI B450M Bazooka MAX Wifi Micro ATX AM4 Motherboard. RAM: Team T-Force Vulcan Z 16 GB (2 x 8 GB) DDR4-3200 CL16 Memory
+../DIY_BuildPage/Midrange.php#mid1
+../DIY_BuildPage/Images/CMMB311L.png
 ===New===
 GeForce RTX™ 3090 - The BFGPU
 The GeForce RTX™ 3090 is a big ferocious GPU (BFGPU) with TITAN class performance. It’s powered by Ampere—NVIDIA’s 2nd gen RTX architecture—doubling down on ray tracing and AI performance with enhanced Ray Tracing (RT) Cores, Tensor Cores, and new streaming multiprocessors. Plus, it features a staggering 24 GB of G6X memory, all to deliver the ultimate gaming experience.
 https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090/
 https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3090/geforce-rtx-3090-shop-630-d@2x.png
+===Promo===
+Prebuilt PC
+Price: $400
+CPU: AMD Ryzen 3 3200G 3.6 GHz (Up to 4.0 GHz) Quad-Core Processor. Motherboard: MSI A320M-A PRO MAX Micro ATX AM4 Motherboard. RAM: G.Skill Aegis 8 GB (1 x 8 GB) DDR4-3000 CL16 Memory
+../DIY_BuildPage/Budget.php#bud1
+../DIY_BuildPage/Images/DIYPC_MA08.png
+
 
 
 
