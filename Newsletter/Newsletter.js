@@ -20,4 +20,9 @@ function closeSubs() {
     clearInterval(timeSubs);
     document.getElementById("pop-subscribe").style.display="none";
 }
+function addNews(){
+    document.getElementById("more-items1").style.display= "block";
+    document.getElementById("more-items2").style.display= "block";
+
+}
 
