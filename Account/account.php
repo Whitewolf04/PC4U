@@ -15,7 +15,7 @@
                     <a href="changePassword.php">Change your password</a>
                 </div>
                 <div class="content">
-                    <?php echo "<h3>". $_SESSION['email']. "'s profile</h3>"?>
+                    <?php echo "<h3>". $_SESSION['signedin']. "'s profile</h3>"?>
                     <div>
                     <h3>Your recommendations</h3>
                     <?php //include "recommendations.php"?>

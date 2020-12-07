@@ -8,7 +8,7 @@ function outImage(img){
 }
 
 var timeSubs;
-function openSubs() {
+function openSubs(load) {
     timeSubs = setInterval(function() {
         document.getElementById("pop-subscribe").style.display='block';
         poped = true;
@@ -23,6 +23,7 @@ function closeSubs() {
 function addNews(){
     document.getElementById("more-items1").style.display= "block";
     document.getElementById("more-items2").style.display= "block";
+    document.getElementById("more-items3").style.display= "block";
 
 }
 

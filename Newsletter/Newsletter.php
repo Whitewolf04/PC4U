@@ -1,6 +1,10 @@
+<?php $_SESSION['redirect'] = "../Newsletter/Newsletter.php";
+    if(!isset($_SESSION['loadcount'])){
+        $_SESSION['loadcount']=1;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="../pc_icon.png">
@@ -53,7 +57,7 @@
                             array_push($promo1, $line);
                         }
                         if($countPromo === 2){
-                            array_push($promo1, $line);
+                            array_push($promo2, $line);
                         }
                         else{
                             continue;
@@ -63,7 +67,7 @@
                 fclose($newsFile);
             }
         ?>
-    <!--List of newly released products-->
+    <!--List of newly released products and Promos-->
     <table class="item-table">
         <tr>
             <td>
@@ -87,22 +91,26 @@
     </table>
     <table class="item-table">
         <tr>
+            <td colspan="2" style="width:35%; border-style: none; "><img  class="promo" src="../Newsletter/Images/promo.gif" alt="Promo gif"></td>
+        </tr>
+        <tr>
             <td>
                 <h2><?php if(isset($promo1)) { echo $promo1[0]; } ?></h2>
+                <p class="item-desc"> <?php if(isset($promo1)) { echo $promo1[1]; }?></p>
+            </td>
+            <td rowspan="4">
+                <a target="_blank"
+                    href="<?php if(isset($promo1)) { echo $promo1[4]; }?>">
+                    <img class="img2" onmouseover="overImage(this)" onmouseout="outImage(this)"
+                        src="<?php if(isset($promo1)) { echo $promo1[4]; }?>"
+                        alt="Image  of <?php if(isset($promo1)) { echo $promo1[0]; } ?>" />
+                </a>
             </td>
         </tr>
         <tr>
             <td>
-                <p class="item-desc"> <?php if(isset($promo1)) { echo $promo1[1]; }?></p>
-                <a class="details" target="_blank" href="<?php if(isset($promo1)) { echo $promo1[2]; }?>">See product details</a>
-            </td>
-            <td rowspan="3">
-                <a target="_blank"
-                    href="<?php if(isset($promo1)) { echo $promo1[3]; }?>">
-                    <img class="img" onmouseover="overImage(this)" onmouseout="outImage(this)"
-                        src="<?php if(isset($promo1)) { echo $promo1[3]; }?>"
-                        alt="Image  of <?php if(isset($promo1)) { echo $promo1[0]; } ?>" />
-                </a>
+                <p class="item-desc"> <?php if(isset($promo1)) { echo $promo1[2]; }?></p>
+                <a class="details" target="_blank" href="<?php if(isset($promo1)) { echo $promo1[3]; }?>">See product details</a>
             </td>
         </tr>
     </table>
@@ -150,7 +158,32 @@
             </td>
         </tr>
     </table>
-    <table style="display: none" class="item-table" id="more-items2">
+    <table class="item-table" tyle="display: none" id="more-items2">
+        <tr>
+            <td colspan="2" style="width:35%; border-style: none; "><img  class="promo" src="../Newsletter/Images/promo.gif" alt="Promo gif"></td>
+        </tr>
+        <tr>
+            <td>
+                <h2><?php if(isset($promo2)) { echo $promo2[0]; } ?></h2>
+                <p class="item-desc"> <?php if(isset($promo2)) { echo $promo2[1]; }?></p>
+            </td>
+            <td rowspan="4">
+                <a target="_blank"
+                    href="<?php if(isset($promo2)) { echo $promo2[4]; }?>">
+                    <img class="img2" onmouseover="overImage(this)" onmouseout="outImage(this)"
+                        src="<?php if(isset($promo2)) { echo $promo2[4]; }?>"
+                        alt="Image  of <?php if(isset($promo2)) { echo $promo2[0]; } ?>" />
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="item-desc"> <?php if(isset($promo1)) { echo $promo1[2]; }?></p>
+                <a class="details" target="_blank" href="<?php if(isset($promo1)) { echo $promo1[3]; }?>">See product details</a>
+            </td>
+        </tr>
+    </table>
+    <table style="display: none" class="item-table" id="more-items3">
         <tr>
             <td>
                 <h2><?php if(isset($product4)) { echo $product4[0]; } ?></h2>
@@ -180,15 +213,18 @@
             <h3>Be the first to know about newly released products</h3>
             <form class="form-container" action="" method="POST">
                 <input id="subsmail" name="emailsubs" placeholder="Enter your email address"><br><br>
+                <input type="hidden" id="subs" name="subscribed" value="1">
                 <button type="submit" id="button-subs" name="subscribe">Subscribe</button><br>
             </form>
         </div>
     </div>
     <?php 
-        if(isset($_POST['subscribe']) && !empty($_POST['emailsubs'])){
+        if(isset($_POST['subscribe']) && !empty($_POST['emailsubs']) && $_POST['subscribed']=="1"){
             if(!isset($_SESSION)){
                 session_start();
             }
+            $_POST['subscribed']=="2";
+            $_SESSION['loadcount']=2;
             $subsmail = $_POST['emailsubs'];
             $subsfile = fopen("../Database/subscribers.txt", "a") or die("Unable to open file!");
             fwrite($subsfile, $subsmail."\n");
@@ -197,24 +233,24 @@
             $_SESSION['subject'] = "Thank you for subscribing to PC4U";
             $newsFile = fopen("../Database/news.txt", "r") or die("Unable to open news.txt file!"); 
             $count = 0;
-            $prodpromo = array();
+            $prodnew= array();
             while(!feof($newsFile)){
                 $line=fgets($newsFile);
                 if(preg_match("/\*/",$line))
                 {
                     continue;
                 }
-                else if(preg_match("/={3}(Promo)={3}/",$line))
+                else if(preg_match("/={3}(New)={3}/",$line))
                 {
                    $count++;
                 }
-                else if($count===1){
-                   array_push($prodpromo, $line);
+                else if($count===2){
+                   array_push($prodnew, $line);
                 }
             }
             fclose($newsFile);
-            $_SESSION['body'] = "<h2>Check out this promo item!</h2><br><br>".$prodpromo[0]."<br><br>".$prodpromo[1]." 
-            <a target='_blank' href=".$prodpromo[2]."><br><br>See product details</a>";
+            $_SESSION['body'] = "<h2>Check out this promo item!</h2><br><br>".$prodnew[0]."<br><br>".$prodnew[1]." 
+            <a target='_blank' href=".$prodnew[2]."><br><br>See product details</a>";
             include("../PHPMailer/mailer.php");
         }
     ?>

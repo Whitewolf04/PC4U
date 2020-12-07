@@ -3,7 +3,8 @@
 <html lang="en">
     <head>
         <title> PC4U - Signup </title>
-        <meta charset="utf-8" />
+		<meta charset="utf-8" />
+		<link rel="icon" href="../pc_icon.png">
         <link rel="stylesheet" type="text/css" href="sign.css" />
         <script type="text/javascript" src="signup.js"></script>
     </head>
@@ -13,13 +14,13 @@
 			
 			if(!isset($_SESSION['redirect']))
 			{
-				$_SESSION['redirect'] = "../DIY_BuildPage/DIY_Mainpage.php";
+				$_SESSION['redirect'] = "../Newsletter/pc4u.php";
 			}
 
             //If signedin, signup redirects back to main page.
             if(isset($_SESSION['signedin']))
             {
-                header("Location: ../DIY_BuildPage/DIY_Mainpage.php");
+                header("Location: ".$_SESSION['redirect']);
                 exit;
             }
 

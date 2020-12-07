@@ -3,7 +3,8 @@
 <html lang="en">
     <head>
         <title> PC4U </title>
-        <meta charset="utf-8" />
+		<meta charset="utf-8" />
+		<link rel="icon" href="../pc_icon.png">
         <link rel="stylesheet" type="text/css" href="../Menu/sign.css" />
         <script type="text/javascript" src="payment.js"></script>
     </head>
@@ -31,6 +32,7 @@
 				unset($_SESSION['billingpostalcode']);
 				unset($_SESSION['billingcity']);
 				unset($_SESSION['billingprovince']);
+				unset($_SESSION['sameaddress']);
 				unset($_SESSION['shippingaddressl1']);
 				unset($_SESSION['shippingaddressl2']);
 				unset($_SESSION['shippingphone']);
@@ -110,7 +112,7 @@
 				';
 			}
 
-			else if($_SESSION['state'] === 3 || $_SESSION['state'] === 5)
+			else if($_SESSION['state'] === 3 || $_SESSION['state'] === 5 || $_SESSION['state'] === 7)
             {
 				$_SESSION['state'] = 4;
 				echo '
@@ -161,7 +163,7 @@
 				';
 			}
 
-			else if($_SESSION['state'] === 6)
+			else if($_SESSION['state'] === 6 || $_SESSION['state'] === 8)
 			{
 				$_SESSION['state'] = 5;
 				echo '
@@ -210,19 +212,51 @@
 				';
 			}
 
-			else if($_SESSION['state'] === 7)
+			else if($_SESSION['state'] === 9)
 			{
 				if(isset($_SESSION['sameaddress']))
 				{
-					$_SESSION['state'] = 5;
+					$_SESSION['state'] = 7;
 				} else {
-					$_SESSION['state'] = 6;
+					$_SESSION['state'] = 8;
 				}
+
+				$_SESSION['parts'] = "";
+
+				$list = "";
+				$items = array_keys($_SESSION['cart']);
+				$i = 0;
+				foreach($_SESSION['cart'] as $price)
+				{
+					if(strpos($items[$i], ", ") !== false)
+					{
+						$list .= "<div class='flexlist'><p class='bold'>Prebuilt</p><p>".$price."</p></div><ul class='flexlist'>";
+						$items[$i] = str_replace(", ,", ",", $items[$i]);
+						$pieces = explode(", ", $items[$i]);
+						foreach($pieces as $piece)
+						{
+							$list .= "<li>".$piece."</li>";
+							$_SESSION['parts'] .= $piece."~";
+						}
+						$list .= "</ul>";
+					} else {
+						$list .= "<div class='flexlist'><p>".$items[$i]."</p><p>".$price."</p></div><ul>";
+						$_SESSION['parts'] .= $items[$i]."~";
+					}
+					$i++;
+				}
+
+				$_SESSION['parts'] = preg_replace("/~$/", "\n", $_SESSION['parts']);
+				$_SESSION['total'] = intval($_SESSION['subtotal'])*1.15;
+
 				echo '
 					<form id="payment" method="POST" action="paymenthandler.php">
 						<div class="block">
 							<h2>Order Summary</h2>
-							<div class="flex"><p>Amount:</p><p>test</p></div>
+							'.$list.'
+							<div class="flexlist"><p class="bold">Subtotal</p><p>'.$_SESSION['subtotal'].'</p></div>
+							<div class="flexlist"><p class="bold">Tax</p><p>'.intval($_SESSION['subtotal'])*0.15.'</p></div>
+							<div class="flexlist"><p class="bold">Total</p><p>'.$_SESSION['total'].'</p></div>
 							<div class="flex">
 								<div><a href="../Account/payment.php">BACK</a></div>
 								<button type="button" id="nextButton">PLACE ORDER</button>

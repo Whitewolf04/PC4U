@@ -94,7 +94,6 @@
 					readSpecs("midrange1");
           include "../Account/addToCart.php";
 					?>
-					<button type="submit" form="midrange1" class="cart" value="midrange1">Add to cart</button>
 				</td>
 		</tr>
 		<tr class="fps">
@@ -125,7 +124,7 @@
 
 
 	<table class="builds" border="0" cellspacing="20px">
-		<tr class="build">
+		<tr class="build" id="mid1"> <!-- id for reference from another page -->
 			<td class="picture">
 				<img src="Images/CMMB311L.png" width="300px" height="300px" />
 			</td>
