@@ -75,7 +75,7 @@
 				$_SESSION['shippingpostalcode'] = $_SESSION['billingpostalcode'];
 				$_SESSION['shippingcity'] = $_SESSION['billingcity'];
 				$_SESSION['shippingprovince'] = $_SESSION['billingprovince'];
-				$_SESSION['state'] = 7;
+				$_SESSION['state'] = 9;
 			} else {
 				unset($_SESSION['sameaddress']);
 				$_SESSION['state'] = 6;
@@ -119,7 +119,7 @@
 			$order .= file_get_contents('orders.txt');
 			file_put_contents("../Database/orders.txt", $order);
 			unset($_SESSION['cart']);
-			setcookie('cart', "", false, "/");
+			setcookie('cart', "~", false, "/");
             header("Location: cart.php");
             exit;
         }
