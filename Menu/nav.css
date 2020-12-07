@@ -1,7 +1,11 @@
 body.darkmode
 {
     color:#a7b1c1;
-    background-image: linear-gradient(to bottom right,#31394e,#1d212d,#191e33,#141829,#101321);
+	background-image:linear-gradient(to bottom right,#31394e,#1d212d,#191e33,#141829,#101321);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	background-attachment:fixed;
 }
 
 #nav
