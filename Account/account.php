@@ -16,6 +16,10 @@
                 </div>
                 <div class="content">
                     <?php echo "<h3>". $_SESSION['signedin']. "'s profile</h3>"?>
+                    <h3>Your Order History</h3>
+                    <?php
+                    include "orderHistory.php";
+                    ?>
                 </div>
             </div>
         </div>
