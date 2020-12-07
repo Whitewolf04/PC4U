@@ -68,6 +68,7 @@
             }
         ?>
     <!--List of newly released products and Promos-->
+    <!-- Visible -->
     <table class="item-table">
         <tr>
             <td>
@@ -91,7 +92,7 @@
     </table>
     <table class="item-table">
         <tr>
-            <td colspan="2" style="width:35%; border-style: none; "><img  class="promo" src="../Newsletter/Images/promo.gif" alt="Promo gif"></td>
+            <td colspan="2" style="border-style: none; "><img  class="promo" src="../Newsletter/Images/promo.gif" alt="Promo gif"></td>
         </tr>
         <tr>
             <td>
@@ -136,6 +137,7 @@
             </td>
         </tr>
     </table>
+    <!-- Loaded on click -->
     <table style="display: none" class="item-table" id="more-items1">
         <tr>
             <td>
@@ -158,7 +160,7 @@
             </td>
         </tr>
     </table>
-    <table class="item-table" tyle="display: none" id="more-items2">
+    <table class="item-table" style="display: none" id="more-items2">
         <tr>
             <td colspan="2" style="width:35%; border-style: none; "><img  class="promo" src="../Newsletter/Images/promo.gif" alt="Promo gif"></td>
         </tr>
@@ -169,7 +171,7 @@
             </td>
             <td rowspan="4">
                 <a target="_blank"
-                    href="<?php if(isset($promo2)) { echo $promo2[4]; }?>">
+                    href="<?php if(isset($promo2)) { echo $promo2[3]; }?>">
                     <img class="img2" onmouseover="overImage(this)" onmouseout="outImage(this)"
                         src="<?php if(isset($promo2)) { echo $promo2[4]; }?>"
                         alt="Image  of <?php if(isset($promo2)) { echo $promo2[0]; } ?>" />
@@ -178,8 +180,8 @@
         </tr>
         <tr>
             <td>
-                <p class="item-desc"> <?php if(isset($promo1)) { echo $promo1[2]; }?></p>
-                <a class="details" target="_blank" href="<?php if(isset($promo1)) { echo $promo1[3]; }?>">See product details</a>
+                <p class="item-desc"> <?php if(isset($promo2)) { echo $promo2[2]; }?></p>
+                <a class="details" target="_blank" href="<?php if(isset($promo2)) { echo $promo2[3]; }?>">See product details</a>
             </td>
         </tr>
     </table>
