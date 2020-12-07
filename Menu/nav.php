@@ -32,15 +32,16 @@
 
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+		<meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="../Menu/nav.css" />
         <script type="text/javascript" src="../Menu/nav.js"></script>
     </head>
     <body class="darkmode">
         <div id="nav">
             <ul id="buttonGroup">
-                <li><img src="../placeholder.png" width="50" height="50" id="logo"/></li>
-                <li><a class="menuButton" href="../DIY_BuildPage/DIY_Mainpage.php">Prebuilt</a></li>
+                <li><a href="../Newsletter/pc4u.php"><img src="../placeholder.png" width="50" height="50" id="logo"/></a></li>
+				<li><a class="menuButton" href="../DIY_BuildPage/DIY_Mainpage.php">Prebuilt</a></li>
+				<li><a class="menuButton" href="../DIY_BuildPage/PCBuildingWizard.php">Custom</a></li>
                 <li><a class="menuButton" href="../Newsletter/Newsletter.php">Promotions</a></li>
                 <li><a class="menuButton" href="../DIY_BuildPage/DIY_GUIDE_PAGE.php">Guides</a></li>
             </ul>
