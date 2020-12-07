@@ -85,18 +85,20 @@
 	<h1 id="banner">Mid-Range Builds</h1>
 
 	<!--Might do a form to ask what are the needs of the customer!-->
-	<form action="cart.php" method="POST" id="highend1">
 	<table class="builds" border="0" cellspacing="20px">
 		<tr class="build">
 			<td class="picture">
 				<img src="Images/corsairicue.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="highend1">
 					<?php
 					readSpecs("highend1");
-          include "../Account/addToCart.php";
+					include "../Account/addToCart.php";
 					?>
-				</td>
+				</form>
+			</td>
 		</tr>
 		<tr class="fps">
 			<td class="fpsleft">
@@ -122,7 +124,6 @@
 			</td>
 		</tr>
 	</table>
-</form>
 
 
 	<table class="builds" border="0" cellspacing="20px">
@@ -131,13 +132,13 @@
 				<img src="Images/lianli.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
-			<form action="" method="POST">
-			<input type="hidden" name="prebuilt" value="highend2">
-				<?php
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="highend2">
+					<?php
 					readSpecs("highend2");
 					include "../Account/addToCart.php";
 
-				?>
+					?>
 				</form>
 			</td>
 		</tr>
