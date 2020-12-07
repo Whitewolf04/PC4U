@@ -49,7 +49,7 @@ h3{
 }
 /* Fomating the Subscribe form */
 #main-div-subs{
-    position: absolute; 
+    position: fixed; 
     display: flex; 
     top: 40%;
     left: 40%; 
