@@ -18,6 +18,7 @@
                     $cookie_cart = explode("~", $_COOKIE['cart']);
                     //print_r($cookie_cart);
                     $cart = array();
+                    $_SESSION['cart'] = array();
                     //checks if a prebuild was added to the cart
                     for($i = 0; $i < count($cookie_cart); $i++){
                         $title = substr($cookie_cart[$i], 0, strpos($cookie_cart[$i], " "));
@@ -39,6 +40,7 @@
                                         $price = substr($line, strrpos($line, "\t"), strlen($line)-strrpos($line, "\t"));
                                         //removes price from prebuild string
                                         $prebuild = substr($prebuild, 0, strrpos($prebuild,"\t"));
+                                        $_SESSION['cart'][$prebuild." ".$i] = $price;
                                     }
                                 }
                                 fclose($stream);
@@ -86,6 +88,7 @@
                                                 $price = trim(substr($line, 0, strpos($line, "\t")));
                                                 //adds this as an element to the cart
                                                 $cart[$name] = $price;
+                                                $_SESSION['cart'][$name] = $price;
                                             }
                                         }
                                     }
