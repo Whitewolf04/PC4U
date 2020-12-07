@@ -19,7 +19,7 @@ body {
 
 .box select {
     background: #99E8FD;
-    color: #fff;
+    color: #918484;
     padding-left: 10px;
     width: 300px;
     height: 35px;
@@ -33,11 +33,39 @@ body {
 table {
   border-collapse: separate;
   border-spacing: 0 15px;
+  width: 50%;
+  margin: auto;
 }
 
 th,
 td {
-  width: 200px;
+  width: 75%;
   text-align: left;
   padding: 5px;
+}
+
+td.label {
+  text-align: right;
+  width: 35%;
+}
+
+div#button{
+  text-align: center;
+}
+
+button.cart {
+  width: 20%;
+  height: 35px;
+  background-color: #0338a1;
+  border: 0px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: large;
+}
+
+button.cart:hover {
+  border: 3px solid;
+  background-color: white;
+  color: #0338a1;
 }
