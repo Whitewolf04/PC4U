@@ -49,6 +49,45 @@
         return $outputArr;
     }
 
+    function checkCompatibility($value){
+        $myfile = fopen("../Database/compatibility.txt", "r");
+        $contents = fread($myfile, filesize("../Database/compatibility.txt"));
+        $lines = explode("\n", $contents);
+
+        if(strcmp($value, "intel10thcpu") == 0){
+            $intel10thcpu = explode("\t", $lines[0]);
+            return $intel10thcpu;
+        }
+        if(strcmp($value, "intel9thcpu") == 0){
+            $intel9thcpu = explode("\t", $lines[1]);
+            return $intel9thcpu;
+        }
+        if(strcmp($value, "amd5000scpu") == 0){
+            $amd5000scpu = explode("\t", $lines[2]);
+            return $amd5000scpu;
+        }
+        if(strcmp($value, "amd3000scpu") == 0){
+           $amd3000scpu = explode("\t", $lines[3]);
+           return $amd3000scpu;
+        }
+        if(strcmp($value, "intel10thmobo") == 0){
+            $intel10thmobo = explode("\t", $lines[4]);
+            return $intel10thmobo;
+        }
+        if(strcmp($value, "intel9thmobo") == 0){
+            $intel9thmobo = explode("\t", $lines[5]);
+            return $intel9thmobo;
+        }
+        if(strcmp($value, "amd5000smobo") == 0){
+            $amd5000smobo = explode("\t", $lines[6]);
+            return $amd5000smobo;
+        }
+        if(strcmp($value, "amd3000smobo") == 0){
+            $amd3000smobo = explode("\t", $lines[7]);
+            return $amd3000smobo;
+        }
+    }
+
     function generateDatabase($item, $value)
     {
         $products = fopen("../Database/products.txt", "r");
@@ -116,7 +155,7 @@
                 </tr>
                 <tr>
                     <td class="label"><label for="cpu">CPU&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
-                    <td><select id="cpu" name="cpu">
+                    <td><select id="cpu" name="cpu" onchange="checkCompatibility()">
                             <!--Populated by JavaScript-->
                         </select></td>
                 </tr>
@@ -125,7 +164,9 @@
                     <td class="label"><label for="moboChipset">Motherboard Chipset&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="moboChipset" name="moboChipset">
                             <!--Populated by JavaSript-->
-                        </select></td>
+                        </select>
+                        <p id="message"></p>
+                    </td>
                 </tr>
                 <tr>
                     <td class="label"><label for="mobo">Motherboard&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
@@ -407,6 +448,54 @@
 
         };
 
+        function checkCompatibility(){
+            var moboChipset = document.getElementById("moboChipset").value;
+            var cpu = document.getElementById("cpu").value;
+            var cpuBrand = document.getElementById("cpuBrand").value;
+
+            if(cpu != "none" && moboChipset != "none" && cpuBrand == "intel"){
+                var intel9thcpu = <?php echo json_encode(checkCompatibility("intel9thcpu"))?>;
+                var intel10thcpu = <?php echo json_encode(checkCompatibility("intel10thcpu"))?>;
+                var intel9thmobo = <?php echo json_encode(checkCompatibility("intel9thmobo"))?>;
+                var intel10thmobo = <?php echo json_encode(checkCompatibility("intel10thmobo"))?>;
+
+                
+                if(intel9thcpu.indexOf(cpu) >= 0){
+                    document.getElementById("message").innerHTML = intel9thcpu.find(cpu);
+                    if(intel9thmobo.indexOf(moboChipset) == -1){
+                        document.getElementById("message").innerHTML = "Your motherboard chipset is not compatible with your cpu, please choose another chipset!";
+                    } else{
+                        document.getElementById("message").innerHTML = "";
+                    }
+                } else if(intel10thcpu.indexOf(cpu) >= 0){
+                    if(intel10thmobo.indexOf(moboChipset) == -1){
+                        document.getElementById("message").innerHTML = "Your motherboard chipset is not compatible with your cpu, please choose another chipset!";
+                    } else{
+                        document.getElementById("message").innerHTML = "";
+                    }
+                }
+            } else if(cpu != "none" && moboChipset != "none" && cpuBrand == "amd"){
+                var amd3000scpu = <?php echo json_encode(checkCompatibility("amd3000scpu"))?>;
+                var amd5000scpu = <?php echo json_encode(checkCompatibility("amd5000scpu"))?>;
+                var amd3000smobo = <?php echo json_encode(checkCompatibility("amd3000smobo"))?>;
+                var amd5000smobo = <?php echo json_encode(checkCompatibility("amd5000smobo"))?>;
+                
+                if(amd3000scpu.indexOf(cpu) >= 0){
+                    if(amd3000smobo.indexOf(moboChipset) == -1){
+                        document.getElementById("message").innerHTML = "Your motherboard chipset is not compatible with your cpu, please choose another chipset!";
+                    } else{
+                        document.getElementById("message").innerHTML = "";
+                    }
+                } else if(amd5000scpu.indexOf(cpu) >= 0){
+                    if(amd5000smobo.indexOf(moboChipset) == -1){
+                        document.getElementById("message").innerHTML = "Your motherboard chipset is not compatible with your cpu, please choose another chipset!";
+                    } else {
+                        document.getElementById("message").innerHTML = "";
+                    }
+                }
+            }
+        }
+
         function removeAllOptions(sel, removeGrp) {
             var len, groups, par;
             if (removeGrp) {
@@ -489,6 +578,8 @@
 
             removeAllOptions(moboMenu, true);
             appendDataToSelect(moboMenu, mobo);
+
+            checkCompatibility();
         };
 
         document.forms['mainCompForm'].elements['gpuBrand'].onchange = function(s) {
