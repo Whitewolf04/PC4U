@@ -19,6 +19,7 @@ $mail->addAddress($_SESSION['email']);
 
 $mail->isHTML(true);
 
+$mail->addAttachment('../logo_light.png', 'logo_light.png');   
 $mail->Subject = $_SESSION['subject'];
 $mail->Body = $_SESSION['body'];
 

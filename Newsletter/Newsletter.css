@@ -23,22 +23,15 @@ h3{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: justify;
     font-size: 100%;
-
 }
-#img1 {
+.hidden-table{
+    display: none;
+}
+.img {
 
     float: right;
     width: 75%;
 }
-#img2 {
-    float: right;
-    width: 75%;
-}
-#img3{
-    float: right;
-    width: 75%;
-}
-
 .details  a:link {
     color: inherit;
     color: grey;

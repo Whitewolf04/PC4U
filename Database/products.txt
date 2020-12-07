@@ -17,9 +17,10 @@ MOTHERBOARD A520	asrockA520	Asrock A520M-HVS	85.41	msiA520	MSI MAG A520M VECTOR 
 MOTHERBOARD A320	gigabyteA320	Gigabyte GA-A320M-S2H	75.75	asusA320	Asus Prime A320I-K	128.61
 GPU Nvidia	3090	Nvidia RTX 3090	1927.76	3080	Nvidia RTX 3080	898.93	3070	Nvidia RTX 3070	641.73	2080Ti	Nvidia RTX 2080Ti	1284.74	2080S	Nvidia RTX 2080 Super	898.93	2080	Nvidia RTX 2080	898.93	2070s	Nvidia RTX 2070 Super	641.73	2070	Nvidia RTX 2070	680.31	2060s	Nvidia RTX 2060 Super	513.13	2060	Nvidia RTX 2060	435.96	1660Ti	Nvidia GTX 1660Ti	358.80	1660s	Nvidia GTX 1660 Super	294.50	1660	Nvidia GTX 1660	294.50	1650s	Nvidia GTX 1650 Super	192.90	1650	Nvidia GTX 1650	204.48	
 GPU AMD	5700XT	AMD RX 5700XT	513.13	5700	AMD RX 5700	448.82	5600XT	AMD RX 5600XT	358.80	5500XT	AMD RX 5500XT	255.92
-COOLER fan Size	80mm	80mm fan size	69.68	92mm	92mm fan size	36.65	120mm	120mm fan size	118.00	140mm	140mm fan size	163.58
-COOLER liquid	240mm	240mm radiator size	149.99	280	280mm radiator size	193.99
-CASE Medium	lianlilancooliimesh	Lian Li Lancool II Mesh	124.00	corsair4000dairflow	Corsair 4000D Airflow	239.99	metallicgearneoair	MetallicGear Neo Air	77.15	coolermasterh500	Cooler Master H500	128.02	nzxth510elite	193.06	corsairobsidianseries500drgbse	Corsair Obsidian Series 500D RGB SE	329.99	fractaldesigndefine7	221.95	phantekseclipsep500a	Phanteks Eclipse P500A	167.17
+Cooler size fan	80mm	80mm fan size	69.68	92mm	92mm fan size	36.65	120mm	120mm fan size	118.00	140mm	140mm fan size	163.58
+Cooler size liquid	240mm	240mm radiator size	149.99	280mm	280mm radiator size	193.99
+CASE Medium	lianlilancooliimesh	Lian Li Lancool II Mesh	124.00	corsair4000dairflow	Corsair 4000D Airflow	239.99	metallicgearneoair	MetallicGear Neo Air	77.15	coolermasterh500	Cooler Master H500	128.02	nzxth510elite	NZXT H510 Elite	193.06	corsairobsidianseries500drgbse	Corsair Obsidian Series 500D RGB SE	329.99	fractaldesigndefine7	Fractal Design Define 7	221.95	phantekseclipsep500a	Phanteks Eclipse P500A	167.17
+CASE Full	corsair1000d	Corsair 1000D	415.52	coolermastercosmosc700p	Cooler Master Cosmos C700P	321.99	bequietdarkbasepro900	be quiet! Dark Base Pro 900	259.19	thermaltakeview71	Thermaltake View 71	196.99	phanteksenthoopro	Phanteks Enthoo Pro	250.99
 POWER SUPPLY EVGA	500w	500W	84.50	750w	750W	178.75	1000w	1000W	299.99
 POWER SUPPLY Corsair	500w	500W	102.87	750w	750W	122.16	1000w	1000W	263.62
 POWER SUPPLY CoolerMaster	500w	500W	64.99	750w	750W	114.99	1000w	1000w	395.15
