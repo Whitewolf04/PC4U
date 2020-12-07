@@ -304,6 +304,27 @@
 	text-align:left;
 }
 
+.block div.flexlist
+{
+    display:flex;
+    justify-content:space-between;
+    text-align:left;
+    margin-top:0px;
+    margin-bottom:-20px;
+    align-items:center;
+}
+
+.block ul.flexlist
+{
+	list-style-type:none;
+	text-align:left;
+}
+
+.block p.bold
+{
+	font-weight:bold;
+}
+
 .block p.info
 {
 	text-align:left;

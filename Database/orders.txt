@@ -1,2 +1,0 @@
-*Line k of orders.txt corresponds to line k of accounts.txt (user k has order-list k). This file is meant to hold the order history.
-product1	product2	product3	<<<Each line can look like this maybe? Use \t for delimiters?

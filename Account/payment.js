@@ -7,18 +7,28 @@ document.addEventListener("DOMContentLoaded", function()
 		next.addEventListener("click", validateEmail);
 	}
 
-	if(document.getElementById("CCnum") != null)
+	else if(document.getElementById("CCnum") != null)
 	{
 		var next = document.getElementById("nextButton");
 
 		next.addEventListener("click", validateCreditcard);
 	}
 
-	if(document.getElementById("addressl1") != null)
+	else if(document.getElementById("addressl1") != null)
 	{
 		var next = document.getElementById("nextButton");
 
 		next.addEventListener("click", validateShipping);
+	}
+
+	else
+	{
+		var next = document.getElementById("nextButton");
+
+		next.addEventListener("click", function()
+		{
+			document.getElementById("payment").submit();
+		});
 	}
 });
 

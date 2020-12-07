@@ -104,14 +104,24 @@
 
 		if(preg_match("/[0-9]+/", $_SESSION['shippingaddressl1']) && preg_match("/[a-zA-Z]+/", $_SESSION['shippingaddressl1']) && preg_match("/^[0-9]{10}$/", $_SESSION['shippingphone']) && preg_match("/^[a-zA-Z0-9]{6}$/", $_SESSION['shippingpostalcode']) && preg_match("/^[a-zA-Z]+$/", $_SESSION['shippingcity']) && preg_match("/^[A-Z]+$/", $_SESSION['shippingprovince']))
 		{
-			$_SESSION['state'] = 7;
+			$_SESSION['state'] = 9;
 		}
 
 		header("Location: ../Account/payment.php");
 		exit;
 	}
 
-	else if($_SESSION['state'] === 7)
+	else if($_SESSION['state'] === 7 || $_SESSION['state'] === 8)
 	{
+		if(file_exists("../Database/orders.txt"))
+        {
+			$order = (isset($_SESSION['signedin']) ? $_SESSION['signedin'] : $_SESSION['email'])."\t".time()."\t".$_SESSION['total']."\t".$_SESSION['shippingaddressl1'].",".$_SESSION['shippingaddressl2'].",".$_SESSION['shippingphone'].",".$_SESSION['shippingpostalcode'].",".$_SESSION['shippingcity'].",".$_SESSION['shippingprovince']."\t".$_SESSION['parts'];
+			$order .= file_get_contents('orders.txt');
+			file_put_contents("../Database/orders.txt", $order);
+			unset($_SESSION['cart']);
+			setcookie('cart', "", false, "/");
+            header("Location: cart.php");
+            exit;
+        }
 	}
 ?>
