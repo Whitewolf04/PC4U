@@ -3,7 +3,8 @@
 <html lang="en">
     <head>
         <title> PC4U - Signup </title>
-        <meta charset="utf-8" />
+		<meta charset="utf-8" />
+		<link rel="icon" href="../pc_icon.png">
         <link rel="stylesheet" type="text/css" href="sign.css" />
         <script type="text/javascript" src="signup.js"></script>
     </head>

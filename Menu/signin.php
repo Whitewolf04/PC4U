@@ -2,8 +2,9 @@
 
 <html lang="en">
     <head>
-        <title> PC4U - Sign In </title>
-        <meta charset="utf-8" />
+        <title> PC4U - Signin </title>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../pc_icon.png">
         <link rel="stylesheet" type="text/css" href="sign.css" />
         <script type="text/javascript" src="signin.js"></script>
     </head>
