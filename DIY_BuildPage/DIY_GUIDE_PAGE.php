@@ -4,10 +4,11 @@
 	<meta charset="UTF-8" />
 	<title>PC4U DIY Guide</title>
 	<link rel="stylesheet" type="text/css" href="DIY_GUIDE_PAGE.css" />
+	<link rel="icon" href="../pc_icon.png">
 </head>
 <body id="page">
 	<header>	
-		<?php require_once "../Menu/nav.php" ?>
+		<?php require_once "../Menu/nav.php"; $_SESSION['redirect'] = "../DIY_BuildPage/DIY_GUIDE_PAGE.php"; ?>
 	</header>
 	<div class="main">
 		<div class="wrap">
