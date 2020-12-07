@@ -52,7 +52,7 @@ function generateDatabase($item, $value)
 <head>
     <meta charset="UTF-8" />
     <title>PC4U</title>
-    <link rel="stylesheet" type="text/css" href="NewWizard.css" />
+    <link rel="stylesheet" type="text/css" href="Wizard.css" />
 </head>
 
 <body>
