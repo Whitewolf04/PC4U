@@ -1,33 +1,33 @@
 h1#banner {
-    text-align: center;
-    font-size: 400%;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0px 0px 10px 3px #000000;
+  text-align: center;
+  font-size: 400%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0px 0px 10px 3px #000000;
 }
 
 body {
-    font-size: medium;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .box {
-    position: relative;
-    top: 5%;
+  position: relative;
+  top: 5%;
 }
 
 .box select {
-    background: #99E8FD;
-    color: #918484;
-    padding-left: 10px;
-    width: 400px;
-    height: 35px;
-    border: none;
-    font-size: medium;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
-    -webkit-appearance: none;
-    outline: none;
+  background: #99E8FD;
+  color: #918484;
+  padding-left: 10px;
+  width: 400px;
+  height: 35px;
+  border: none;
+  font-size: medium;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+  -webkit-appearance: none;
+  outline: none;
 }
 
 table {
@@ -37,8 +37,7 @@ table {
   margin: auto;
 }
 
-th,
-td {
+th, td {
   width: 75%;
   text-align: left;
   padding: 5px;
@@ -49,8 +48,10 @@ td.label {
   width: 35%;
 }
 
-div#button{
+div#button {
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 button.cart {

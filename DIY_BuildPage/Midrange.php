@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="Buildpage.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="icon" href="../pc_icon.png">
 	<style>
 		td {
 			width: 33.33333%;
@@ -18,6 +19,7 @@
 	<?php
 	require_once "../Menu/nav.php";
 	ob_start();
+	$_SESSION['redirect'] = "../DIY_BuildPage/Midrange.php";
 
 	function buildSearch($lines, $buildname)
 	{

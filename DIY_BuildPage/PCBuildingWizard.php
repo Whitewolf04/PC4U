@@ -6,11 +6,20 @@
     <meta charset="UTF-8" />
     <title>PC4U</title>
     <link rel="stylesheet" type="text/css" href="Wizard.css" />
+    <link rel="icon" href="../pc_icon.png">
+    <style>
+        div#button {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+    </style>
 </head>
 
 <body>
     <?php require_once "../Menu/nav.php";
     ob_start();
+    $_SESSION['redirect'] = "../DIY_BuildPage/PCBuildingWizard.php";
 
 
     function sortDatabase($line)
@@ -63,7 +72,7 @@
             if (strcmp($value, "text") == 0) {
                 array_push($outputArr, "Select");
                 for ($i = 0; $i < count($line); $i++) {
-                    $pushItem = $line[$i][1]." ($".$line[$i][2].")";
+                    $pushItem = $line[$i][1] . " ($" . $line[$i][2] . ")";
                     array_push($outputArr, $pushItem);
                 }
                 return $outputArr;
