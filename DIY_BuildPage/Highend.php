@@ -94,7 +94,6 @@
 					readSpecs("highend1");
           include "../Account/addToCart.php";
 					?>
-					<button type="submit" form="highend1" class="cart" value="highend1">Add to cart</button>
 				</td>
 		</tr>
 		<tr class="fps">
