@@ -33,7 +33,6 @@
 <html lang="en">
     <head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="../pc_icon.png">
         <link rel="stylesheet" type="text/css" href="../Menu/nav.css" />
         <script type="text/javascript" src="../Menu/nav.js"></script>
     </head>
