@@ -14,13 +14,13 @@
 			
 			if(!isset($_SESSION['redirect']))
 			{
-				$_SESSION['redirect'] = "../DIY_BuildPage/DIY_Mainpage.php";
+				$_SESSION['redirect'] = "../Newsletter/pc4u.php";
 			}
 
             //If signedin, signin redirects back to main page.
             if(isset($_SESSION['signedin']))
             {
-                header("Location: ../DIY_BuildPage/DIY_Mainpage.php");
+                header("Location: ".$_SESSION['redirect']);
                 exit;
             }
 
