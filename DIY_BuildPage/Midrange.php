@@ -85,18 +85,20 @@
 	<h1 id="banner">Mid-Range Builds</h1>
 
 	<!--Might do a form to ask what are the needs of the customer!-->
-	<form action="cart.php" method="POST" id="midrange1">
 	<table class="builds" border="0" cellspacing="20px">
 		<tr class="build">
 			<td class="picture">
 				<img src="Images/CMMB311L.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="midrange1">
 					<?php
 					readSpecs("midrange1");
-          include "../Account/addToCart.php";
+					include "../Account/addToCart.php";
 					?>
-				</td>
+				</form>
+			</td>
 		</tr>
 		<tr class="fps">
 			<td class="fpsleft">
@@ -122,22 +124,22 @@
 			</td>
 		</tr>
 	</table>
-</form>
 
 
 	<table class="builds" border="0" cellspacing="20px">
-		<tr class="build" id="mid1"> <!-- id for reference from another page -->
+		<tr class="build" id="mid1">
+			<!-- id for reference from another page -->
 			<td class="picture">
 				<img src="Images/CMMB311L.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
-			<form action="" method="POST">
-			<input type="hidden" name="prebuilt" value="midrange2">
-				<?php
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="midrange2">
+					<?php
 					readSpecs("midrange2");
 					include "../Account/addToCart.php";
 
-				?>
+					?>
 				</form>
 			</td>
 		</tr>
@@ -172,13 +174,13 @@
 				<img src="Images/corsair275r.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
-			<form action="" method="POST">
-			<input type="hidden" name="prebuilt" value="midrange3">
-				<?php
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="midrange3">
+					<?php
 					readSpecs("midrange3");
 					include "../Account/addToCart.php";
 
-				?>
+					?>
 				</form>
 			</td>
 		</tr>
@@ -213,13 +215,13 @@
 				<img src="Images/corsair275r.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
-			<form action="" method="POST">
-			<input type="hidden" name="prebuilt" value="midrange4">
-				<?php
+				<form action="" method="POST">
+					<input type="hidden" name="prebuilt" value="midrange4">
+					<?php
 					readSpecs("midrange4");
 					include "../Account/addToCart.php";
 
-				?>
+					?>
 				</form>
 			</td>
 		</tr>
