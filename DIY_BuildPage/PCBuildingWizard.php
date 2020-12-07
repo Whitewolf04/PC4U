@@ -63,7 +63,8 @@
             if (strcmp($value, "text") == 0) {
                 array_push($outputArr, "Select");
                 for ($i = 0; $i < count($line); $i++) {
-                    array_push($outputArr, $line[$i][1]);
+                    $pushItem = $line[$i][1]." ($".$line[$i][2].")";
+                    array_push($outputArr, $pushItem);
                 }
                 return $outputArr;
             }
@@ -151,12 +152,6 @@
                             <option value="none" selected disabled hidden>Select a GPU Brand</option>
                             <option value="nvidia">Nvidia</option>
                             <option value="amd">AMD</option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td class="label"><label for="gpuType">GPU Type&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
-                    <td><select id="gpuType" name="gpuType">
-                            <!--Populated by JavaScript-->
                         </select></td>
                 </tr>
                 <tr>
