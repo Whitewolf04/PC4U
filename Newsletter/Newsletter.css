@@ -39,6 +39,10 @@ h3{
     float: right;
     max-width: 45%;
 }
+.imgrec{
+    width: 100%;
+    position: relative;
+}
 .details  a:link {
     color: inherit;
     color: grey;
@@ -61,6 +65,22 @@ h3{
     top: 40%;
     left: 40%; 
     
+}
+.recredirect{
+    margin-left:40%;
+    margin-top:5%;
+    
+}
+#subrec{
+    background-color: #0299E3;
+    border: none;
+    padding:10px 40px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    position: absolute;
 }
 #button-subs-open{
     background-color: #0338a1;
@@ -98,7 +118,6 @@ h3{
   outline:none;
   margin-left: 45%;
 }
-
 .form-container input[id="subsmail"]:focus
 {
     border-color:#0299E3;
