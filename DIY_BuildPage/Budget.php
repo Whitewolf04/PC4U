@@ -93,7 +93,6 @@
 					readSpecs("budget5");
           include "../Account/addToCart.php";
 					?>
-					<button type="submit" form="budget5" class="cart" value="budget5">Add to cart</button>
 				</td>
 			</tr>
 			<tr class="fps">
@@ -139,7 +138,6 @@
 				<?php
 					readSpecs("budget3");
 					include "../Account/addToCart.php";
-
 				?>
 				</form>
 			</td>
