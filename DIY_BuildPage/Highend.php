@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="Buildpage.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="icon" href="../pc_icon.png">
 	<style>
 		td {
 			width: 33.33333%;
@@ -18,6 +19,7 @@
 	<?php
 	require_once "../Menu/nav.php";
 	ob_start();
+	$_SESSION['redirect'] = "../DIY_BuildPage/Highend.php";
 
 	function buildSearch($lines, $buildname)
 	{
@@ -87,7 +89,7 @@
 	<table class="builds" border="0" cellspacing="20px">
 		<tr class="build">
 			<td class="picture">
-				<img src="Images/corsairicue.jpg" width="300px" height="300px" />
+				<img src="Images/corsairicue.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
 					<?php
@@ -126,7 +128,7 @@
 	<table class="builds" border="0" cellspacing="20px">
 		<tr class="build">
 			<td class="picture">
-				<img src="Images/lianli.jpg" width="300px" height="300px" />
+				<img src="Images/lianli.png" width="300px" height="300px" />
 			</td>
 			<td colspan="2" class="specs">
 			<form action="" method="POST">
