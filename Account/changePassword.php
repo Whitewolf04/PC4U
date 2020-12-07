@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8" />
 	<title>PC4U</title>
-    <link rel="stylesheet" type="text/css" href="../DIY_BuildPage/Buildpage.css" />
     <link rel="stylesheet" type="text/css" href="account.css" />
 </head>
 <body>
