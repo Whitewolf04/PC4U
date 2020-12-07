@@ -84,7 +84,7 @@
 	<!--Might do a form to ask what are the needs of the customer!-->
 	<form action="" method="POST" id="budget5">
 		<table class="builds" border="0" cellspacing="20px">
-			<tr class="build">
+			<tr class="build" id="bud1"> <!-- id for reference from another page -->
 				<td class="picture">
 					<img src="Images/DIYPC_MA08.png" width="300px" height="300px" />
 				</td>
