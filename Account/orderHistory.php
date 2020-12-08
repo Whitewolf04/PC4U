@@ -1,6 +1,10 @@
 <?php
 $orderNumber = $orders = $price = "";
 $history = array();
+/**
+ * looks at orders.txt and finds lines containing user's email
+ * makes orders into array and then is displayed on table
+ */
 if(file_exists("../Database/orders.txt")){
     $stream = fopen("../Database/orders.txt", "r");
     while(($line = fgets($stream))!==false){
@@ -29,6 +33,10 @@ if(file_exists("../Database/orders.txt")){
     }
     fclose($stream);
 }
+/**
+ * Sort order history button from most recent to oldest or from oldest to most recent
+ * it does this by toggling a boolean which on refresh decides how the arrays are merged.
+ */
 if(isset($_POST['sortOrder'])){
     if($_SESSION['recentToOldest']){
         $_SESSION['recentToOldest'] = false;

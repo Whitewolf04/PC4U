@@ -53,6 +53,9 @@
 							echo "One of the fields is missing! Please try again.";
 						}
 					}
+					/**
+					 * checks password by looking into accounts.txt and verifying the hashed password with the one given in input
+					 */
 					function checkPassword($password, $username, $newpassword){
 						$hashedpassword = password_hash($newpassword, PASSWORD_DEFAULT);
 						if(file_exists("../Database/accounts.txt")){
@@ -76,7 +79,9 @@
 							}
 						}
 					}
-
+					/**
+					 * changes the hashed password with new, hashed password
+					 */
 					function changePassword($oldpassword, $newpassword){
 						$content = file_get_contents("../Database/accounts.txt");
 						$content = str_replace($oldpassword, $newpassword, $content);

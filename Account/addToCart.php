@@ -1,10 +1,16 @@
 <?php
+    /**
+     * creates cookie cart
+     */
     if(!isset($_COOKIE['cart'])){
         setcookie("cart","~", false, "/");
     }else{
         $cookievalue = $_COOKIE['cart'];
         setcookie("cart", $cookievalue, false, "/");
     }
+    /**
+     * adds products to cookie cart
+     */
     if(isset($_POST['cart'])){
         if(isset($_POST['prebuilt'])){
             $cookievalue = $_COOKIE['cart']."Prebuilt ".$_POST['prebuilt']."~";

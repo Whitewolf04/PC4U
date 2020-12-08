@@ -11,6 +11,9 @@
 		<h1>Your Cart</h1>
 		<div id="cart">
 		<?php
+		/**
+		 * sets the cookie cart if there is no cookie
+		 */
 		if(!isset($_COOKIE['cart'])){
 			setcookie("cart","~", false, "/");
 			header("Location: ".$_SESSION['redirect']);
@@ -23,9 +26,13 @@
 		//print_r($cookie_cart);
 		$cart = array();
 		$_SESSION['cart'] = array();
-		//checks if a prebuild was added to the cart
+		/**
+		 * cookie cart is turned into an array and all of its elements are turned into products with prices that can be seen in the cart.
+		 * the elements are checked for keywords in different files in the database which allows us to pull out the corresponding product with its price.
+		 */
 		for($i = 0; $i < count($cookie_cart); $i++){
 			$title = substr($cookie_cart[$i], 0, strpos($cookie_cart[$i], " "));
+			//checks if a prebuild was added to the cart
 			if($title === "Prebuilt"){
 				$key = substr($cookie_cart[$i], strrpos($cookie_cart[$i], " ")+1, strlen($cookie_cart[$i])-strrpos($cookie_cart[$i], " "));
 				$prebuild = "";
@@ -95,6 +102,7 @@
 									$possiblePrice = trim(substr($line, 0, strpos($line, "\t")));
 									$price = ($possiblePrice==="") ? trim($line) : $possiblePrice;
 									//adds this as an element to the cart
+									//EXCEPTIONAL PARTS DUE TO THEIR SPECIAL NATURE IN THE DATABASE
 									if($start === "Ram"){
 										$ramSpeed = substr($ramSpeed, 1, strlen($ramSpeed));
 										$name = "RAM ". $name. " ".$ramSpeed;
@@ -115,6 +123,9 @@
 			}
 		}
 		//print_r($cart);
+		/**
+		 * each individual part in the custom build or each prebuild is given a remove button, which removes them from the cart
+		 */
 		if(isset($_POST['remove'])){
 			$cookievalue = $_COOKIE['cart'];
 			$itemvalue = '/,?'.$_POST['item'].',?/';
@@ -141,6 +152,7 @@
 				}
 			}
 			echo "<tr><td>Total Price : </td><td>".$_SESSION['subtotal']."$</td></tr>";
+			//If the cart is emptied with remove, then this resets the cookie cart
 			if($_SESSION['subtotal'] == 0){
 				setcookie('cart', "~", false, "/");
 			}
