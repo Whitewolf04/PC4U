@@ -68,8 +68,13 @@
 				echo "<img class='imgrec2' src='../Newsletter/Images/motherboard.jfif' alt='Image  of CPU'>";
 			} else { // The are orders 
 				$ordersFile = fopen("../Database/orders.txt", "r") or die("Unable to open orders.txt file!");
-				$fline=fgets($ordersFile);
-				$info = preg_split("/[\t]/", $fline);
+				while(!feof($ordersFile)){
+					$fline=fgets($ordersFile);
+					$info = preg_split("/[\t]/", $fline);
+					if($info[0] == $_SESSION['signedin']){
+					break;
+					}
+				}
 				if($info[0] == $_SESSION['signedin']){
 					$foundcpu = preg_grep("/(CPU)/i", $info);
 					$foundgpu = preg_grep("/(GPU)/i", $info);
