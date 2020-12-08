@@ -32,9 +32,11 @@ if(file_exists("../Database/orders.txt")){
 if(isset($_POST['sortOrder'])){
     if($_SESSION['recentToOldest']){
         $_SESSION['recentToOldest'] = false;
+        header("Location: account.php");
         //echo "true";
     }else{
         $_SESSION['recentToOldest'] = true;
+        header("Location: account.php");
         //echo "false";
     }
 }
