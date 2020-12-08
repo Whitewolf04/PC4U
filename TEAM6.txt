@@ -3,3 +3,4 @@ TEAM 6 MEMBERS:		Full Name		Student ID			Github Username
 			Arnold Tse		2630 2076			arnoldT25
 			Kevin Nguyen		4015 8397			kvmn2000
 			Minh Tuan To		4011 4920			Whitewolf04
+			Ulyana Ilnytska		4001 5925			UlyanaI
