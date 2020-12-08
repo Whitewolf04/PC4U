@@ -20,7 +20,7 @@
 	require_once "../Menu/nav.php";
 	ob_start();
 	$_SESSION['redirect'] = "../DIY_BuildPage/Highend.php";
-
+	//function for seaching values in database
 	function buildSearch($lines, $buildname)
 	{
 		$line = "";
@@ -33,7 +33,7 @@
 		$line = "";
 		return $line;
 	}
-
+	//function for reading form the database
 	function readSpecs($buildname)
 	{
 		$prebuilds = fopen("../Database/prebuilds.txt", "r");
@@ -71,7 +71,7 @@
 		}
 	}
 
-
+	//function for calculating the amount of fps
 	function calculatePercentage($fps)
 	{
 		$ratio = (float) $fps * 100 / 200.0;
@@ -84,7 +84,7 @@
 
 	<h1 id="banner">Mid-Range Builds</h1>
 
-	<!--Might do a form to ask what are the needs of the customer!-->
+	<
 	<table class="builds" border="0" cellspacing="20px">
 		<tr class="build">
 			<td class="picture">
@@ -94,12 +94,14 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="highend1">
 					<?php
+					//generating information specs for highend
 					readSpecs("highend1");
 					include "../Account/addToCart.php";
 					?>
 				</form>
 			</td>
 		</tr>
+		<!--generating fps style and information-->
 		<tr class="fps">
 			<td class="fpsleft">
 				<img src="Images/shadowOfTombRaider.jpg" width="180" height="240" /><br><br>
@@ -135,6 +137,7 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="highend2">
 					<?php
+					//generating information specs for highend
 					readSpecs("highend2");
 					include "../Account/addToCart.php";
 
