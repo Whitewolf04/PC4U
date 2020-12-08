@@ -240,7 +240,7 @@
 						}
 						$list .= "</ul>";
 					} else {
-						$list .= "<div class='flexlist'><p>".$items[$i]."</p><p>".$price."</p></div><ul>";
+						$list .= "<div class='flexlist'><p>".$items[$i]."</p><p>".$price."</p></div>";
 						$_SESSION['parts'] .= $items[$i]."~";
 					}
 					$i++;
