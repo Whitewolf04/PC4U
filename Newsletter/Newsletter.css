@@ -40,8 +40,25 @@ h3{
     max-width: 45%;
 }
 .imgrec{
-    width: 100%;
+    width: 30%;
+    top: -170px;
+    left: 45%;
     position: relative;
+    z-index: -1;
+    box-shadow: 20px 20px 20px 20px rgba(0,0,0,0.75);
+}
+.imgrec2{
+    width: 30%;
+    top: -120px;
+    left: 45%;
+    position: relative;
+    z-index: -1;
+    box-shadow: 20px 20px 20px 20px rgba(0,0,0,0.75);
+}
+.recs{
+    position: relative;
+    width: 30%;
+    left: 30%;
 }
 .details  a:link {
     color: inherit;

@@ -214,27 +214,18 @@
     </table>
     <h2 style="cursor: pointer; text-align: center;" onclick="addNews()" id="load">Load more</h2>
     <br><br><br>
-	<?php 
-		if(isset($_POST['subscribed']))
-		{
-			$_SESSION['subscribed'] = $_POST['subscribed'];
-		}
-		if(!isset($_SESSION['subscribed']))
-		{
-			echo '
-			<div id="main-div-subs">
-				<div id="pop-subscribe">
-					<button type="button" id="button-close" onclick="closeSubs()">&#9932;</button>
-					<h3>Be the first to know about newly released products</h3>
-					<form class="form-container" action="" method="POST">
-						<input id="subsmail" name="emailsubs" placeholder="Enter your email address"><br><br>
-						<input type="hidden" id="subs" name="subscribed" value="1">
-						<button type="submit" id="button-subs" name="subscribe">Subscribe</button><br>
-					</form>
-				</div>
-			</div>
-			';
-		}
+    <div id="main-div-subs">
+        <div id="pop-subscribe">
+            <button type="button" id="button-close" onclick="closeSubs()">&#9932;</button>
+            <h3>Be the first to know about newly released products</h3>
+            <form class="form-container" action="" method="POST">
+                <input id="subsmail" name="emailsubs" placeholder="Enter your email address"><br><br>
+                <input type="hidden" id="subs" name="subscribed" value="1">
+                <button type="submit" id="button-subs" name="subscribe">Subscribe</button><br>
+            </form>
+        </div>
+    </div>
+    <?php 
         if(isset($_POST['subscribe']) && !empty($_POST['emailsubs']) && $_POST['subscribed']=="1"){
             if(!isset($_SESSION)){
                 session_start();
