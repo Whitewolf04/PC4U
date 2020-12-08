@@ -3,7 +3,7 @@
     color: navy;
 }
 .individualparts{
-    background-color: yellowgreen;
+    background-color: #d4ffe0;
     color: navy;
 }
 
@@ -29,6 +29,7 @@ td {
 	padding-right: 20px;
     font-weight: bolder;
     width: 90%;
+    border-radius: 3px;
 }
 
 h1 {
