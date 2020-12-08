@@ -49,12 +49,20 @@
                 $cookievalue = $_COOKIE['cart']."PCwizard ". json_encode($pcWizard)."|".$_POST['ram']."~";
                 //echo $cookievalue;
                 setcookie("cart", $cookievalue, false, "/");
+                echo '<script>alert("Added to your cart!")</script>';
                 //echo "Added to cart!";
                 //echo $_COOKIE['cart'];
             }else{
-                //echo "One of the fields was missing! Try again.<br>";
+                echo "One of the fields was missing! Try again.<br>";
             }
         }
     }
 ?>
-<button type="submit" name="cart" class="cart" value="cart">Add to Cart</button>
+<button type="submit" name="cart" class="cart" value="cart" onclick="notification()">Add to Cart</button>
+<script>
+function notification(){
+    if(window.location.pathname == '/FinalProject/PC4U/DIY_BuildPage/Budget.php'){
+        alert("Added to your cart!");
+    }
+}
+</script>
