@@ -141,6 +141,9 @@
 				}
 			}
 			echo "<tr><td>Total Price : </td><td>".$_SESSION['subtotal']."$</td></tr>";
+			if($_SESSION['subtotal'] == 0){
+				setcookie('cart', "~", false, "/");
+			}
 			?>
 		</table>
 		</div>
