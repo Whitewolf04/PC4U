@@ -20,7 +20,7 @@
 	require_once "../Menu/nav.php";
 	ob_start();
 	$_SESSION['redirect'] = "../DIY_BuildPage/Midrange.php";
-
+	//function for searching for values in database
 	function buildSearch($lines, $buildname)
 	{
 		$line = "";
@@ -33,6 +33,7 @@
 		$line = "";
 		return $line;
 	}
+	//function for reading database
 
 	function readSpecs($buildname)
 	{
@@ -70,7 +71,7 @@
 			echo $printSpec;
 		}
 	}
-
+	//function for calculating the amount of fps
 
 	function calculatePercentage($fps)
 	{
@@ -84,7 +85,6 @@
 
 	<h1 id="banner">Mid-Range Builds</h1>
 
-	<!--Might do a form to ask what are the needs of the customer!-->
 	<table class="builds" border="0" cellspacing="20px">
 		<tr class="build">
 			<td class="picture">
@@ -94,12 +94,14 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="midrange1">
 					<?php
+					//generating database for midrange
 					readSpecs("midrange1");
 					include "../Account/addToCart.php";
 					?>
 				</form>
 			</td>
 		</tr>
+		<!-- creating fps information and style -->
 		<tr class="fps">
 			<td class="fpsleft">
 				<img src="Images/shadowOfTombRaider.jpg" width="180" height="240" /><br><br>
@@ -136,6 +138,7 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="midrange2">
 					<?php
+					//generating database for midrange
 					readSpecs("midrange2");
 					include "../Account/addToCart.php";
 
@@ -177,6 +180,7 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="midrange3">
 					<?php
+					//generating database for midrange
 					readSpecs("midrange3");
 					include "../Account/addToCart.php";
 
@@ -218,6 +222,7 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="midrange4">
 					<?php
+					//generating database for midrange
 					readSpecs("midrange4");
 					include "../Account/addToCart.php";
 
