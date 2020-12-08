@@ -33,10 +33,8 @@
 						$count++;
 					}
 				} // End of while 1 
-				// fclose($productsFile);
 				echo "<img class='imgrec2'  src='../Newsletter/Images/cpuintel.jfif' alt='Image  of GPU'>";
 				fseek($productsFile , 0);
-				// $productsFile = fopen("../Database/products.txt", "r") or die("Unable to open products.txt file!");
 				$count=1;
 				while(!feof($productsFile)){
 					$line=fgets($productsFile);
@@ -61,7 +59,6 @@
 				} // End of while 2
 				echo "<img class='imgrec2' src='../Newsletter/Images/motherboard.jfif' alt='Image  of CPU'>";
 			} else { // The are orders 
-				// $productsFile = fopen("../Database/products.txt", "r") or die ("Unable to open products.txt file!");
 				$ordersFile = fopen("../Database/orders.txt", "r") or die("Unable to open orders.txt file!");
 				$fline=fgets($ordersFile);
 				$info = preg_split("/[\t]/", $fline);
@@ -76,7 +73,6 @@
 						$fountnone = false;
 						echo "<h2 style='text-align:center;'>CPU for you</h2>";
 						fseek($productsFile , 0);
-						// $productsFile = fopen("../Database/products.txt", "r") or die("Unable to open products.txt file!");
 						$count = 1;
 						while(!feof($productsFile)){
 							$line=fgets($productsFile);
@@ -101,7 +97,6 @@
 					if($foundmother != false){
 						echo "<h2 style='text-align:center;'>Motherboard for you</h2>";
 						fseek($productsFile , 0);
-						// $productsFile = fopen("../Database/products.txt", "r") or die("Unable to open products.txt file!");
 						$count2 = 1;
 						while(!feof($productsFile)){
 							$line=fgets($productsFile);
@@ -125,7 +120,6 @@
 					if($foundgpu != false){
 						echo "<h2 style='text-align:center;'>GPU for you</h2>";
 						fseek($productsFile , 0);
-						// $productsFile = fopen("../Database/products.txt", "r") or die("Unable to open products.txt file!");
 						$count3 = 1;
 						while(!feof($productsFile)){
 							$line=fgets($productsFile);
