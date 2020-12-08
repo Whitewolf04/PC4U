@@ -10,9 +10,9 @@
         <?php require_once "../Menu/nav.php"; $_SESSION['redirect'] = "../Account/account.php"; ?>
         <div class="main">
             <div class="wrap">
-                <div class="sidebar">
+				<div class="outer"><div class="sidebar">
                     <a href="changePassword.php">Change your password</a>
-                </div>
+                </div></div>
                 <div class="content">
                     <?php echo "<h3>". $_SESSION['signedin']. "'s profile</h3>"?>
                     <h3>Your Order History</h3>
