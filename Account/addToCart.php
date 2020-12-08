@@ -9,7 +9,7 @@
         if(isset($_POST['prebuilt'])){
             $cookievalue = $_COOKIE['cart']."Prebuilt ".$_POST['prebuilt']."~";
             setcookie("cart", $cookievalue, false, "/");
-            echo "Added to cart!";
+            //echo "Added to cart!";
         }else{
             $cpu = $motherboard = $gpu = $ram = $storage = $cooler = $case = $powerSupply = "";
             if(!(empty($_POST['cpu'])||empty($_POST['mobo'])||empty($_POST['gpu'])||empty($_POST['ram'])||empty($_POST['storageAmount'])||empty($_POST['coolerSize'])||empty($_POST['caseSize'])||empty($_POST['powerWatt']))){
@@ -47,14 +47,14 @@
 
                 $pcWizard = array($cpu, $motherboard, $gpu, $ram, $storage, $cooler, $case, $powerSupply);
                 $cookievalue = $_COOKIE['cart']."PCwizard ". json_encode($pcWizard)."|".$_POST['ram']."~";
-                echo $cookievalue;
+                //echo $cookievalue;
                 setcookie("cart", $cookievalue, false, "/");
-                echo "Added to cart!";
+                //echo "Added to cart!";
                 //echo $_COOKIE['cart'];
             }else{
-                echo "One of the fields was missing! Try again.<br>";
+                //echo "One of the fields was missing! Try again.<br>";
             }
         }
     }
 ?>
-<button type="submit" name="cart" class="cart" value="cart" onclick="alert('Your item has been added to cart!')">Add to Cart</button>
+<button type="submit" name="cart" class="cart" value="cart">Add to Cart</button>
