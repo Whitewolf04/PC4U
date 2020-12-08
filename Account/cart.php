@@ -51,7 +51,6 @@
 				}
 				//explode prebuild line into parts
 				$parts = explode(",",$prebuild);
-				echo "<br>";
 				//starts cart of with prebuild entry to indicate the start of a prebuild.
 				$cart["Prebuild #".$i] = "";
 				//adds to the cart the parts with blank price entries
@@ -66,7 +65,6 @@
 				$ramSpeed = substr($key, strpos($key, "|"), strlen($key)-strpos($key, "|"));
 				$key = str_replace($ramSpeed, "", $key);
 				//print_r(json_decode($key));
-				echo $key;
 				//checks to see if products.txt file exists
 				if(file_exists("../Database/products.txt")){
 					//gets all the pc parts from the pcWizard array
