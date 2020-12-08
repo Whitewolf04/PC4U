@@ -1,4 +1,5 @@
 TEAM 6 MEMBERS:		Full Name		Student ID			Github Username
-					Bilal Samee		2728 6295			Endgineer
-					Arnold Tse		2630 2076			arnoldT25
-					Kevin Nguyen	4015 8397			kvmn2000
+			Bilal Samee		2728 6295			Endgineer
+			Arnold Tse		2630 2076			arnoldT25
+			Kevin Nguyen		4015 8397			kvmn2000
+			Minh Tuan To		4011 4920			Whitewolf04
