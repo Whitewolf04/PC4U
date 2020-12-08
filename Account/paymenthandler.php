@@ -116,9 +116,13 @@
 		if(file_exists("../Database/orders.txt"))
         {
 			$timestamp = time();
-			$order = (isset($_SESSION['signedin']) ? $_SESSION['signedin'] : $_SESSION['email'])."\t".$timestamp."\t".$_SESSION['total']."\t".$_SESSION['shippingaddressl1'].",".$_SESSION['shippingaddressl2'].",".$_SESSION['shippingphone'].",".$_SESSION['shippingpostalcode'].",".$_SESSION['shippingcity'].",".$_SESSION['shippingprovince']."\t".$_SESSION['parts'];
+			$order = (isset($_SESSION['signedin']) ? $_SESSION['signedin'] : $_SESSION['email'])."\t".$timestamp."\t".$_SESSION['total']."\t".$_SESSION['shippingaddressl1'].",".$_SESSION['shippingaddressl2'].",".$_SESSION['shippingphone'].",".$_SESSION['shippingpostalcode'].",".$_SESSION['shippingcity'].",".$_SESSION['shippingprovince']."\t".$_SESSION['parts']."\n";
 			$order .= file_get_contents('orders.txt');
 			file_put_contents("../Database/orders.txt", $order);
+			if(isset($_SESSION['signedin']))
+			{
+				$_SESSION['email'] = $_SESSION['signedin'];
+			}
 			$_SESSION['subject'] = "PC4U Order#".$timestamp." Confirmation";
             $_SESSION['body'] = "<p>Dear customer,</p><p>Your order has been confirmed. If you did not make this order, please contact customer support immediately.</p><p>Beep Boop,<br/>PC4U MailBot</p>";
             require_once "../PHPMailer/mailer.php";
