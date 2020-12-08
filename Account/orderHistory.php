@@ -15,7 +15,7 @@ if(file_exists("../Database/orders.txt")){
                 $entry[$i] = "<td class=item>".$entry[$i]."</td>";
             }
             array_unshift($entry, "<td class=order>Order Number: ".$orderNumber." Price: ".$price."$</td>");
-            $history = array_merge($entry, $history);
+            $history = array_merge($history, $entry);
         }
     }
     fclose($stream);
