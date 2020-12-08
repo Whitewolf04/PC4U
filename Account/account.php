@@ -7,7 +7,14 @@
 		<link rel="icon" href="../pc_icon.png">
 	</head>
     <body>
-        <?php require_once "../Menu/nav.php"; $_SESSION['redirect'] = "../Account/account.php"; ?>
+		<?php
+			require_once "../Menu/nav.php";
+			if(!isset($_SESSION['signedin']))
+			{
+				header("Location: ../Menu/signin.php");
+				exit;
+			}
+		?>
         <div class="main">
             <div class="wrap">
 				<div class="outer"><div class="sidebar">
