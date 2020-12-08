@@ -13,7 +13,7 @@ DISTRIBUTION OF WORK:	https://github.com/Whitewolf04/PC4U
 	Arnold & Minh
 		Misc (diy_mainpage.php, datafeeder.php)
 		Prebuilds (budget.php, midrange.php, highend.php)
-		Custom (wizard.php, PCBuildingWizard.php)
+		Custom (PCBuildingWizard.php)
 		Databases (compatibility, prebuilds, products)
 	Kevin
 		Guide (diy_guide_page.php)
