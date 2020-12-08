@@ -21,7 +21,7 @@
     ob_start();
     $_SESSION['redirect'] = "../DIY_BuildPage/PCBuildingWizard.php";
 
-
+    //Function to sort the database
     function sortDatabase($line)
     {
         $outputArr = array();
@@ -49,6 +49,7 @@
         return $outputArr;
     }
 
+    //Function to check the compatibility of the computer parts
     function checkCompatibility($value){
         $myfile = fopen("../Database/compatibility.txt", "r");
         $contents = fread($myfile, filesize("../Database/compatibility.txt"));
@@ -87,7 +88,7 @@
             return $amd3000smobo;
         }
     }
-
+    //function to generate the database for computer parts that will be used for the selection menu
     function generateDatabase($item, $value)
     {
         $products = fopen("../Database/products.txt", "r");
@@ -145,7 +146,7 @@
 
                 <tr>
                     <td class="label"><label for="cpuBrand">CPU Brand&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
-
+                        <!--option to choose between intel or amd cpu-->
                     <td><select id="cpuBrand" name="cpuBrand" class="selectStyle">
                             <option value="none" selected disabled hidden>Select a CPU Brand</option>
                             <option value="intel">Intel</option>
@@ -153,7 +154,8 @@
                         </select></td>
 
                 </tr>
-                <tr>
+                <tr>    
+                    <!--Select menu for cpu-->
                     <td class="label"><label for="cpu">CPU&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="cpu" name="cpu" onchange="checkCompatibility()">
                             <!--Populated by JavaScript-->
@@ -161,6 +163,7 @@
                 </tr>
 
                 <tr>
+                        <!--select menu for motherboard chipset-->
                     <td class="label"><label for="moboChipset">Motherboard Chipset&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="moboChipset" name="moboChipset">
                             <!--Populated by JavaSript-->
@@ -169,12 +172,14 @@
                     </td>
                 </tr>
                 <tr>
+                    <!--Selection menu for motherboard type-->
                     <td class="label"><label for="mobo">Motherboard&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="mobo" name="mobo">
                             <!--Populated by JavaScript-->
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for ram size-->
                     <td class="label"><label for="ramConfig">Memory Configuration&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="ramConfig" name="ramConfig">
                             <option value="none" selected disabled hidden>Select a RAM configuration</option>
@@ -186,6 +191,7 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for ram speed-->
                     <td class="label"><label for="ram">Memory Configuration&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="ram" name="ram">
                             <option value="none" selected disabled hidden>Select a RAM Speed</option>
@@ -197,6 +203,7 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for gpu brand-->
                     <td class="label"><label for="gpuBrand">GPU Brand&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="gpuBrand" name="gpuBrand">
                             <option value="none" selected disabled hidden>Select a GPU Brand</option>
@@ -205,12 +212,14 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for gpu type-->
                     <td class="label"><label for="gpu">Graphics Card&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="gpu" name="gpu">
                             <!--Populated by JavaScript-->
                         </select></td>
                 </tr>
                 <tr>
+                    <!-- Selection menu for storage type-->
                     <td class="label"><label for="storageType">Storage Type &nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="storageType" name="storageType">
                             <option value="none">Select Storage Type</option>
@@ -219,6 +228,7 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for storage size-->
                     <td class="label"><label for="storageAmount"> Storage Amount&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="storageAmount" name="storageAmount">
                             <option value="none" selected disabled hidden> Select Amount of Storage </option>
@@ -230,6 +240,7 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for cooler type-->
                     <td class="label"><label for="coolerType">CPU Cooler Type &nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="coolerType" name="coolerType">
                             <option value="none" selected disabled hidden> Select CPU Cooler Type</option>
@@ -239,6 +250,7 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for cooler size-->
                     <td class="label"><label for="coolerSize">CPU Cooler Size &nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="coolerSize" name="coolerSize">
                             <!--Populated by JavaScript-->
@@ -246,6 +258,7 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for computer case type-->
                     <td class="label"><label for="case">Computer Case &nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="case" name="case">
                             <option value="none" selected disabled hidden> Select a Computer Case</option>
@@ -254,7 +267,7 @@
 
                         </select></td>
                 </tr>
-                <tr>
+                <tr><!--Selection for computer case variety-->
                     <td class="label"><label for="caseSize">Computer Case Size &nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="caseSize" name="caseSize">
                             <!--Populated by JavaScript-->
@@ -262,6 +275,7 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for power supply brand-->
                     <td class="label"><label for="powerBrand">Power Supply Brand &nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="powerBrand" name="powerBrand">
                             <option value="none" selected disabled hidden> Select a Power Supply Brand</option>
@@ -273,6 +287,7 @@
                         </select></td>
                 </tr>
                 <tr>
+                    <!--Selection menu for power supply wattage-->
                     <td class="label"><label for="powerWatt">Power Supply Wattage&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                     <td><select id="powerWatt" name="powerWatt">
 
@@ -281,7 +296,9 @@
                 </tr>
         </table>
         <div id="button">
+
                 <?php
+                //add to cart option
                 include "../Account/addToCart.php";
                 ob_flush();
                 ?>
@@ -290,6 +307,7 @@
     </div>
 
     <script type="text/javascript">
+        //calling database to be used and to populate the selection menu
         var CPU_Data = {
             'cpu': {
                 intel: {
@@ -448,6 +466,7 @@
 
         };
 
+        //checking compatibility of parts
         function checkCompatibility(){
             var moboChipset = document.getElementById("moboChipset").value;
             var cpu = document.getElementById("cpu").value;
@@ -496,6 +515,7 @@
             }
         }
 
+        //function for removing selection menus that cannot be called if the previous options are not checked
         function removeAllOptions(sel, removeGrp) {
             var len, groups, par;
             if (removeGrp) {
@@ -512,6 +532,7 @@
                 par.removeChild(sel.options[i - 1]);
             }
         }
+        //if the previous data are check then continu with the rest of the data
 
         function appendDataToSelect(sel, obj) {
             var f = document.createDocumentFragment();
