@@ -195,7 +195,7 @@
 								}
 							}
 						}
-						echo "<img class='imgrec' src='../Newsletter/Images/power.jpg' alt='Image  of a power supply'>";
+						echo "<img class='imgrec' src='../Newsletter/Images/power.jfif' alt='Image  of a power supply'>";
 					}
 					if($foundcase != false){	
 						$founnone = false;
