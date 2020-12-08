@@ -4,3 +4,22 @@ TEAM 6 MEMBERS:		Full Name		Student ID			Github Username
 			Kevin Nguyen		4015 8397			kvmn2000
 			Minh Tuan To		4011 4920			Whitewolf04
 			Ulyana Ilnytska		4001 5925			UlyanaI
+DISTRIBUTION OF WORK:	https://github.com/Whitewolf04/PC4U
+	Bilal
+		Navigation (nav.php, navhandler.php)
+		Sign In (signin.php, signinhandler.php)
+		Sign Up (signup.php, signuphandler.php)
+		Payment (payment.php, paymenthandler.php)
+	Arnold & Minh
+		Misc (diy_mainpage.php, datafeeder.php)
+		Prebuilds (budget.php, midrange.php, highend.php)
+		Custom (wizard.php, PCBuildingWizard.php)
+		Databases (compatibility, prebuilds, products)
+	Kevin
+		Guide (diy_guide_page.php)
+		Profile (account.php, orderhistory.php, changepassword.php)
+		Cart (cart.php, addtocart.php)
+	Ulyana
+		Promotions (newsletter.php)
+		Landing Page (pc4u.php)
+		Databases (news)
