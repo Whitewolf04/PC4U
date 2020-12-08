@@ -21,6 +21,7 @@
 	ob_start();
 	$_SESSION['redirect'] = "../DIY_BuildPage/Budget.php";
 
+	//function for searching for the required data from database
 	function buildSearch($lines, $buildname)
 	{
 		$line = "";
@@ -33,7 +34,7 @@
 		$line = "";
 		return $line;
 	}
-
+	// function for reading from database and putting them into array style
 	function readSpecs($buildname)
 	{
 		$prebuilds = fopen("../Database/prebuilds.txt", "r");
@@ -70,7 +71,7 @@
 			echo $printSpec;
 		}
 	}
-
+	//function for calculating the amount of fps for games
 	function calculatePercentage($fps)
 	{
 		$ratio = (float) $fps * 100 / 200.0;
@@ -83,7 +84,7 @@
 
 	<h1 id="banner">Budget Builds</h1>
 
-	<!--Might do a form to ask what are the needs of the customer!-->
+	
 	<table class="builds" border="0" cellspacing="20px">
 		<tr class="build" id="bud1">
 			<!-- id for reference from another page -->
@@ -94,6 +95,7 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="budget5">
 					<?php
+					//reading from budget database
 					readSpecs("budget5");
 					include "../Account/addToCart.php";
 					?>
@@ -140,6 +142,7 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="budget3">
 					<?php
+					//reading from budget database
 					readSpecs("budget3");
 					include "../Account/addToCart.php";
 
@@ -181,6 +184,7 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="budget2">
 					<?php
+					//reading from budget database
 					readSpecs("budget2");
 					include "../Account/addToCart.php";
 					?>
@@ -221,6 +225,7 @@
 				<form action="" method="POST">
 					<input type="hidden" name="prebuilt" value="budget1">
 					<?php
+					//reading from budget database
 					readSpecs("budget1");
 					include "../Account/addToCart.php";
 					ob_end_flush();
