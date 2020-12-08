@@ -13,6 +13,8 @@
 		<?php
 		if(!isset($_COOKIE['cart'])){
 			setcookie("cart","~", false, "/");
+			header("Location: ".$_SESSION['redirect']);
+			exit;
 		}else{
 			$cookievalue = $_COOKIE['cart'];
 			setcookie("cart", $cookievalue, false, "/");
