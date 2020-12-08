@@ -43,12 +43,23 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .order{
-	background-color: azure;
-	color:navy;
+	background-color: #a32727;
+	color:whitesmoke;
 	font-weight: bolder;
 	font-size: large;
 }
 .item{
-	background-color: olivedrab;
+	background-color: #bec6ed;
 	color: navy;
+}
+
+.orderHistory td {
+	padding: 5px;
+	border-radius: 5px;
+	padding-left: 20px;
+}
+
+.orderHistory {
+	border-radius: 5px;
+	width: 80%;
 }

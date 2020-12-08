@@ -12,9 +12,9 @@ if(file_exists("../Database/orders.txt")){
             $orders = substr($line, strrpos($line, "\t"), strlen($line)-strrpos($line, "\t"));
             $entry = explode("~", $orders);
             for($i=0; $i<count($entry); $i++){
-                $entry[$i] = "<td class=item>".$entry[$i]."</td>";
+                $entry[$i] = "<td class=\"item\">".$entry[$i]."</td>";
             }
-            array_unshift($entry, "<td class=order>Order Number: ".$orderNumber." Price: ".$price."$</td>");
+            array_unshift($entry, "<td class=\"order\">Order Number: ".$orderNumber." Price: ".$price."$</td>");
             $history = array_merge($history, $entry);
         }
     }
@@ -22,7 +22,7 @@ if(file_exists("../Database/orders.txt")){
 }
 
 ?>
-<table border = 1>
+<table border = 1 class="orderHistory">
 <?php
 for($i=0; $i<count($history);$i++){
     echo "<tr>".$history[$i]."</tr>";
