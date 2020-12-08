@@ -15,13 +15,35 @@ if(file_exists("../Database/orders.txt")){
                 $entry[$i] = "<td class=\"item\">".$entry[$i]."</td>";
             }
             array_unshift($entry, "<td class=\"order\">Order Number: ".$orderNumber." Price: ".$price."$</td>");
-            $history = array_merge($history, $entry);
+            if(!isset($_SESSION['recentToOldest'])){
+                $history = array_merge($history, $entry);
+                $_SESSION['recentToOldest'] = true;
+            }else{
+                if($_SESSION['recentToOldest']){
+                    $history = array_merge($history, $entry);
+                }else if($_SESSION['recentToOldest'] == false){
+                    $history = array_merge($entry, $history);
+                }
+            }
         }
     }
     fclose($stream);
 }
-
+if(isset($_POST['sortOrder'])){
+    if($_SESSION['recentToOldest']){
+        $_SESSION['recentToOldest'] = false;
+        //echo "true";
+    }else{
+        $_SESSION['recentToOldest'] = true;
+        //echo "false";
+    }
+}
+$buttonstring = ($_SESSION['recentToOldest']) ? "Most Recent to Oldest Orders":"Oldest to Most Recent Orders";
 ?>
+<form method="POST">
+<input type="submit" name="sortOrder" value="Sort Order History from <?php echo $buttonstring;?>">
+</form>
+<br>
 <table border = 1 class="orderHistory">
 <?php
 for($i=0; $i<count($history);$i++){
