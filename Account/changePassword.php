@@ -37,13 +37,13 @@
 						$password = $confirm = "";
 						if(!(empty($_POST['password'])||empty($_POST['confirm']))){
 							if(strcmp($password, $confirm)==0){
-								if(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\-\/:-@\[-`\{-\~])[a-zA-Z0-9\-\/:-@\[-`\{-\~](?=.{8,}).*$/', $_POST['newPassword'])){
+								if(preg_match('/[a-z]/', $_POST['newPassword']) && preg_match('/[A-Z]/', $_POST['newPassword']) && preg_match('/[0-9]/', $_POST['newPassword']) && preg_match('/[\ -\/:-@\[-`\{-\~]/', $_POST['newPassword'])){
 									$password = $_POST['password'];
 									$confirm = $_POST['confirm'];
-									checkPassword($password, $_SESSION['signedin']);
+									checkPassword($password, $_SESSION['signedin'], $_POST['newPassword']);
 								}else{
 									echo "Your new password must have at least 8 characters, at least 1 lower case character,  at least 1 upper case character,
-									and at least one of these special characters(:;<=>?@-[\]^_`{|}~)";
+									and at least one of these special characters(:;<=>?@-[\]^_`{|}~.)";
 								}
 							}else{
 								echo "Password and confirm password do not match. Please Try Again.";
@@ -53,8 +53,8 @@
 							echo "One of the fields is missing! Please try again.";
 						}
 					}
-					function checkPassword($password, $username){
-						$hashedpassword = password_hash($password, PASSWORD_DEFAULT);
+					function checkPassword($password, $username, $newpassword){
+						$hashedpassword = password_hash($newpassword, PASSWORD_DEFAULT);
 						if(file_exists("../Database/accounts.txt")){
 							$stream = fopen("../Database/accounts.txt", "r");
 							while(($line=fgets($stream))!== false){
