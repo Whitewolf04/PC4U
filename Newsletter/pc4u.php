@@ -12,7 +12,15 @@
 		if(isset($_SESSION['signedin'])){
 			$productsFile = fopen("../Database/products.txt", "r") or die("Unable to open products.txt file!");
 			$ordersFile = fopen("../Database/orders.txt", "r") or die("Unable to open orders.txt file!");
-			if(filesize("../Database/orders.txt")==0){ // filesize("../Database/orders.txt")==0
+			$orderedbefore = true;
+			while(!feof($ordersFile)){
+				$oline=fgets($ordersFile);
+				$oinfo = preg_split("/[\t]/", $oline);
+				if($oinfo[0] == $_SESSION['signedin']){
+					$orderedbefore = false;
+				}
+			}
+			if($orderedbefore){
 				$count = 1;
 				 while(!feof($productsFile)){
 					$line=fgets($productsFile);
