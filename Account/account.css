@@ -42,3 +42,13 @@ a:hover, .sidebar a:hover{
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.order{
+	background-color: azure;
+	color:navy;
+	font-weight: bolder;
+	font-size: large;
+}
+.item{
+	background-color: olivedrab;
+	color: navy;
+}
