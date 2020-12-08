@@ -61,7 +61,7 @@
 <button type="submit" name="cart" class="cart" value="cart" onclick="notification()">Add to Cart</button>
 <script>
 function notification(){
-    if(window.location.pathname == '/FinalProject/PC4U/DIY_BuildPage/Budget.php'){
+    if(window.location.pathname == '/FinalProject/PC4U/DIY_BuildPage/Budget.php' || window.location.pathname == '/FinalProject/PC4U/DIY_BuildPage/Highend.php' || window.location.pathname == '/FinalProject/PC4U/DIY_BuildPage/Midrange.php'){
         alert("Added to your cart!");
     }
 }
